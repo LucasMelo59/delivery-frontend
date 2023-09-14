@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Produto } from 'src/app/models/Produto';
 
 @Component({
   selector: 'app-template-home',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./template-home.component.scss']
 })
 export class TemplateHomeComponent {
+
+ listaProdutos: Array<Produto> = [
+  {
+    nomeProduto: "Blusa branca",
+    caminhoImagem: "/assets/produtcs/58091631-1600-auto (1).jpg",
+    descricaoProduto: "Blusa Masculina",
+    preco: 80,
+    modeloDeColecao: ""
+  }
+ ]
 
 }

@@ -1,0 +1,17 @@
+<section id="product1" class="section-p1" >
+  <h2>Featured products</h2>
+  <p>{{modeloDeColecao}}</p>
+  <div *ngFor="let produtos of listaProdutos" >
+    <div class="pro-container"  >
+      <div class="pro">
+        <img src="{{produtos.caminhoImagem}}" alt="">
+        <div class="des" >
+          <span>{{produtos.descricaoProduto}}</span>
+          <h5>{{produtos.nomeProduto}}</h5>
+          <h4>${{produtos.preco}}</h4>
+        </div>
+        <a class="cart" href="" ><i class="fa-solid fa-cart-shopping"></i></a>
+      </div>
+    </div>
+  </div>
+</section>

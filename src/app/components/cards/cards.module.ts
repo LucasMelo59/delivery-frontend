@@ -1,18 +1,19 @@
+
 import { NgModule } from '@angular/core';
-import { NavHeaderComponent } from './nav-header/nav-header.component';
+import { CardProdutoComponent } from './card-produto/card-produto.component';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
-    NavHeaderComponent,
+    CardProdutoComponent,
 
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    NavHeaderComponent,
+    CardProdutoComponent,
   ]
 
 })
-export class HeadersModule { }
+export class CardModule { }
