@@ -9,6 +9,7 @@ import { FeatureComponent } from './feature/feature.component';
 import { BannersModule } from './banners/banners.module';
 import { FooterHomeComponent } from './footers/footer-home/footer-home.component';
 import { FootersModule } from './footers/footers.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -16,10 +17,12 @@ import { FootersModule } from './footers/footers.module';
   ],
   imports: [
     CommonModule,
+    RouterModule,
     CardModule,
     HeadersModule,
     BannersModule,
-    FootersModule
+    FootersModule,
+
   ],
   exports: [
     CardModule,
