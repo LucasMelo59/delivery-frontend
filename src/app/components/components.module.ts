@@ -10,10 +10,12 @@ import { BannersModule } from './banners/banners.module';
 import { FooterHomeComponent } from './footers/footer-home/footer-home.component';
 import { FootersModule } from './footers/footers.module';
 import { RouterModule } from '@angular/router';
+import { CarroselComponent } from './carrosel/carrosel.component';
 
 @NgModule({
   declarations: [
     FeatureComponent,
+    CarroselComponent,
   ],
   imports: [
     CommonModule,
@@ -29,7 +31,8 @@ import { RouterModule } from '@angular/router';
     HeadersModule,
     FeatureComponent,
     BannersModule,
-    FootersModule
+    FootersModule,
+    CarroselComponent
   ]
 })
 export class ComponentsModule { }

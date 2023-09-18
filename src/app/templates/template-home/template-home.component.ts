@@ -18,4 +18,11 @@ export class TemplateHomeComponent {
   }
  ]
 
+
+ imagens: string[] = [
+ '/assets/hero4.png',
+ '/assets/2.jpg'
+
+ ]
+
 }
