@@ -9,6 +9,7 @@ import { CardModule } from './components/cards/cards.module';
 import { TemplatesModule } from './templates/templates.module';
 import { RouterModule } from '@angular/router';
 import { PerfilProdutoComponent } from './pages/perfil-produto/perfil-produto.component';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { PerfilProdutoComponent } from './pages/perfil-produto/perfil-produto.co
     RouterModule,
     AppRoutingModule,
     TemplatesModule,
+    ComponentsModule,
     HeadersModule,
     CardModule,
     CommonModule,
