@@ -10,6 +10,7 @@ import { TemplatesModule } from './templates/templates.module';
 import { RouterModule } from '@angular/router';
 import { PerfilProdutoComponent } from './pages/perfil-produto/perfil-produto.component';
 import { ComponentsModule } from './components/components.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ComponentsModule } from './components/components.module';
     HeadersModule,
     CardModule,
     CommonModule,
+    HttpClientModule,
 
   ],
   providers: [],
