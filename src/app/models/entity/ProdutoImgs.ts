@@ -1,4 +1,4 @@
-export interface PŕodutoImgs{
+export interface ProdutoImgs{
   forEach(arg0: (x: any) => void): unknown;
   id: number;
   grp_data: any[];

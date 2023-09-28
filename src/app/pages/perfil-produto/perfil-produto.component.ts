@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { PerfilProdutoService } from './perfil-produto.service';
 import { ProdutoRest } from 'src/app/models/entity/ProdutoRest';
-import { PŕodutoImgs } from 'src/app/models/entity/ProdutoImgs';
+import { ProdutoImgs } from 'src/app/models/entity/ProdutoImgs';
 import { ArquivosService } from 'src/app/service/arquivos.service';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil-produto',
@@ -11,21 +12,23 @@ import { ArquivosService } from 'src/app/service/arquivos.service';
 })
 export class PerfilProdutoComponent implements OnInit {
 
-  teste : any[] = []
-
-  constructor(private serviceProduto: PerfilProdutoService, private serviceArquivo: ArquivosService){}
+  listImagensProduto : any[] = []
+  productId: any = "";
+  mainImg: any;
+  constructor(private serviceProduto: PerfilProdutoService, private serviceArquivo: ArquivosService,  private route: ActivatedRoute){}
   ngOnInit(): void {
-
-    this.serviceProduto.getProdutoById(2).subscribe((res: ProdutoRest) => {
-      res.imagens_do_produto.forEach((x:PŕodutoImgs) => {
+    this.productId = this.route.snapshot.paramMap.get('id');
+    this.serviceProduto.getProdutoById(this.productId).subscribe((res: ProdutoRest) => {
+      res.imagens_do_produto.forEach((x:ProdutoImgs) => {
         this.serviceArquivo.downlodImagem(x.id).subscribe((res: any) => {
           const reader = new FileReader();
           reader.onload = () => {
-            this.teste.push(reader.result as string);
+            this.listImagensProduto.push(reader.result as string);
+            this.mainImg = this.listImagensProduto[0];
           }
           reader.readAsDataURL(res)
+
         })
-        console.log(x);
       });
 
     })
@@ -34,20 +37,12 @@ export class PerfilProdutoComponent implements OnInit {
   }
 
 
-  listImagensProduto = [
-    {
-      pathImg: "/assets/produtcs/57968305-800-auto.jpg"
-    },
-    {
-      pathImg: "/assets/produtcs/57968304-800-auto.jpg"
-    },
-    {
-      pathImg: "/assets/produtcs/57968303-800-auto.jpg"
-    },
-    {
-      pathImg: "/assets/produtcs/58091631-1600-auto (1).jpg"
-    }
-  ];
+  tradeImg(index: number) {
+    this.mainImg = this.listImagensProduto[index]
+  }
+
+
+
 
   tamanhoBlusas = [
     {

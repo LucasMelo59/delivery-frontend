@@ -10,9 +10,9 @@ const routes: Routes = [
     component: TemplateHomeComponent
   },
  {
-  path: 'produto',
+  path: 'produtos/:id',
   component: PerfilProdutoComponent
- },
+ }
 
 ];
 

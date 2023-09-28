@@ -1,4 +1,4 @@
-import { PŕodutoImgs } from "./ProdutoImgs";
+import { ProdutoImgs } from "./ProdutoImgs";
 
 export interface ProdutoRest {
 id: number;
@@ -8,5 +8,5 @@ descricao: string;
 categoria: string;
 createAt: Date;
 updateat: Date;
-imagens_do_produto: PŕodutoImgs[];
+imagens_do_produto: ProdutoImgs[];
 }

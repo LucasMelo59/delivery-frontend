@@ -19,14 +19,16 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    RouterModule,
     AppRoutingModule,
+    RouterModule,
+    CommonModule,
     TemplatesModule,
     ComponentsModule,
     HeadersModule,
     CardModule,
-    CommonModule,
+
     HttpClientModule,
+
 
   ],
   providers: [],

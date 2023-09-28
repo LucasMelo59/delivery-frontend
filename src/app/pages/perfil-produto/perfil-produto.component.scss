@@ -67,3 +67,23 @@ button.normal {
   outline: none;
   transition: 0.2s;
 }
+
+
+// new css
+.details__container {
+  grid-template-columns: 5.5fr 6.5fr;
+}
+
+.details__img {
+  margin-bottom: 0.5rem;
+}
+
+.details__small-images {
+  grid-template-columns: repeat(4,1fr);
+  column-gap: .625rem;
+}
+
+
+.details__small-img{
+  cursor: pointer;
+}
