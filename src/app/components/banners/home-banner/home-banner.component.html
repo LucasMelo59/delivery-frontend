@@ -1,7 +1,16 @@
-<section id="hero">
-  <h4>{{titulo}}</h4>
-  <h2>{{texto2}}</h2>
-  <h1>{{texto3}} </h1>
-  <p>{{mensagem}}</p>
-  <button>{{textButton}}</button>
+<section class="home section--lg">
+  <div class="home__container container grid ">
+    <div class="home__content">
+      <span class="home__subtitle" >{{componentBanner.titulo}}</span>
+      <h1 class="home__title" >
+        Testando <span>{{componentBanner.subtitulo}}</span>
+      </h1>
+      <p class="home__description">
+        {{componentBanner.descricao}}
+      </p>
+
+      <a href="" routerLink="/shop" class="btn" >{{componentBanner.textoBotao}}</a>
+    </div>
+    <img src="{{componentBanner.imgB64}}" alt="" class="home__img">
+  </div>
 </section>

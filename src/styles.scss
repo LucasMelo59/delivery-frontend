@@ -1,56 +1,117 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Spartan:wght@400;500;600;700&display=swap');
+
+:root {
+  --header-height: 4rem;
+
+
+
+  --first-color: hsl(176, 88%, 27%);
+  --first-color-alt: hsl(129, 44%, 94%);
+  --second-color: hsl(34,94%,87%);
+  --title-color:  hsl(0, 0, 13%);
+  --text-color: hsl(154, 13%, 32%);
+  --text-color-light: hsl(60, 1%, 56%);
+  --body-color: hsl(0, 0, 100%);
+  --container-color: hsl(176, 88%, 93% );
+  --border-color: hsl(129, 36%, 85%);
+  --border-color-alt: hsl(113, 15% ,90%);
+
+  --body-font: 'Lato', sans-serif;
+  --second-font: 'Spartan', sans-serif;
+  --big-font-size: 3.5rem;
+  --h1-font-size: 2.75rem;
+  --h2-font-size: 2rem;
+  --h3-font-size: 1.75rem;
+  --h4-font-size: 1.375rem;
+  --large-font-size: 1.125rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+  --smaller-font-size: 0.75rem;
+  --tiny-font-size: 0.6875;
+
+
+  --weight-400: 400;
+  --weight-500: 500;
+  --weight-600: 600;
+  --weight-700: 700;
+
+  --transition: cubic-bezier(0, 0 , 0.05, 1);
+
+
+
+}
 
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Spartan', sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-h1 {
-  font-size: 50px;
-  line-height: 64px;
-  color: #222;
-}
 
-h2 {
-  font-size: 46px;
-  line-height: 54px;
-  color: #222;
-}
-
-h4{
-  font-size: 46px;
-  line-height: 54px;
-  color: #222;
-}
-
-h6
- {
-  font-weight: 700;
-  font-size: 12px;
- }
-
- p{
-  font-size: 16px;
-  color: #465b52;
-  margin: 15px 0 20px 0;
- }
-
+ input,
+ textarea,
  body
  {
-  width: 100%;
+  color: var(--text-color);
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  font-weight: var(--weight-400);
  }
 
- .section-p1 {
-  padding: 40px 80px;
+ body{
+  background-color: var(--body-color);
+ }
+
+ h1,h2,h3,h4 {
+  font-family: var(--second-font);
+  color: var(--title-color);
+  font-weight: var(--weight-600);
+ }
+
+
+
+a{
+  text-decoration: none;
 }
 
-.section-m1 {
-  margin: 40px 0;
+p{
+  line-height: 1.5rem;
 }
+
+img {
+  max-width: 100%;
+}
+
+button,
+textarea,
+input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+
+.grid {
+  display: grid;
+  gap: 1.5rem
+}
+
+.container {
+  max-width: 1320px;
+  margin-inline: auto;
+  padding-inline: 0.75rem;
+}
+
+
+.section--lg {
+  padding-block: 4rem;
+}
+
+
+
+

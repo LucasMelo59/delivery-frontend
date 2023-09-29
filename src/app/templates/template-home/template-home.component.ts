@@ -19,6 +19,16 @@ export class TemplateHomeComponent {
  ]
 
 
+ homeBannerItems: any = {
+      titulo: "teste",
+      subtitulo: "oi",
+      descricao: "haha",
+      textoBotao: "kakakaka",
+      imgB64: "/assets/hero4.png",
+      rotaBotao: "/shop"
+ }
+
+
  imagens: string[] = [
  '/assets/hero4.png',
  '/assets/2.jpg'
