@@ -6,6 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./home-banner.component.scss']
 })
 export class HomeBannerComponent {
+  @Input()  route:string = ''
 
   @Input() componentBanner: any =
     {
@@ -13,8 +14,7 @@ export class HomeBannerComponent {
       subtitulo: "",
       descricao: "",
       textoBotao: "",
-      imgB64: "",
-      rotaBotao: ""
+      imgB64: ""
 
     }
 

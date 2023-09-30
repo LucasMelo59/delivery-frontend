@@ -12,6 +12,10 @@ const routes: Routes = [
  {
   path: 'produtos/:id',
   component: PerfilProdutoComponent
+ },
+ {
+  path: '**',
+  redirectTo: 'home'
  }
 
 ];

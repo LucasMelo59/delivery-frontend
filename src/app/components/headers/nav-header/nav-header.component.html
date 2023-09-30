@@ -1,22 +1,55 @@
-<section id="header">
+<!-- <section id="header">
   <a href="#"><img class="logo" src="\assets\aurora.png" alt=""></a>
 
   <div>
     <ul id="navbar" >
       <li  >
-        <a [routerLink]="['/home']" class="active" >home</a>
+        <a routerLink= "/home" class="active" >home</a>
       </li>
-      <li><a [routerLink] ="['/shop']" >shop</a></li>
+      <li><a routerLink ="/produtos/2" >shop</a></li>
     </ul>
   </div>
-</section>
+</section> -->
 
 
-<div class="banner" >
-  <div class="container" >
+<header class="header" >
+  <nav class="nav container">
+    <a routerLink="/home" class="nav__logo" >
+      <img src="\assets\aurora.png" class="nav__logo-img" alt="">
+    </a>
 
-  </div>
-</div>
+    <!-- *ngFor="let produtos of listaProdutos" -->
+    <div class="nav__menu" id="nav-menu">
+      <ul class="nav__list" *ngFor="let routes of route"  >
+        <li class="nav__item">
+          <a routerLink ="{{routes.routerLink}}" class="nav__link">{{routes.title}}</a>
+        </li>
+      </ul>
+
+      <div class="header__search">
+        <input type="text" class="form__input" placeholder="Search for items..."  >
+
+        <button class="search__btn" >
+          <img src="" alt="">
+        </button>
+      </div>
+    </div>
+
+    <div class="header__user-actions">
+      <a href="" class="header__action-btn">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="count" >3</span>
+      </a>
+
+
+      <a href="" class="header__action-btn">
+        <i class="fa-regular fa-bookmark"></i>
+        <span class="count" >3</span>
+      </a>
+
+    </div>
+  </nav>
+</header>
 
 
 
