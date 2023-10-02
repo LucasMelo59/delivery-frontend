@@ -1,0 +1,55 @@
+<section class="products section container" >
+  <div class="tab_btns">
+      <span class="tab_btn active-tab" (click)="submitFilter(1)" >
+        Featured
+    </span>
+    <span class="tab_btn" (click)="submitFilter(2)" >
+      Popular
+    </span>
+    <span class="tab_btn" >
+      New added
+    </span>
+  </div>
+
+  <div class="tab_items">
+    <div class="tab_item">
+      <div class="products_container grid">
+        <div class="product_item" *ngFor="let item of data_products">
+          <div class="product_banner">
+            <a href="" class="product_images">
+              <img src="{{item.imagens[0]}}" class="product_img default" alt="">
+
+              <img src="{{item.imagens[1]}}" class="product_img hover" alt="">
+            </a>
+
+           <!-- <div class="produtc_badge light-pink">Hot</div> -->
+          </div>
+
+          <div class="product_content">
+            <span class="product_category">{{item.produto.categoria}}</span>
+            <a href="">
+              <h3 class="product_title" >{{item.produto.nome}}</h3>
+            </a>
+            <div class="product_rating">
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="product_price flex" >
+              <span class="new_price">{{item.produto.preco}}</span>
+              <span class="old_price">$267.85</span>
+            </div>
+
+            <!-- <a href="" class="action_btn cart_btn" aria-label="Add To Cart">
+              <i class="fa-solid fa-cart-plus"></i>
+            </a> -->
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>

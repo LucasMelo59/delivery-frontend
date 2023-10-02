@@ -7,7 +7,23 @@ import { Component } from '@angular/core';
 })
 export class NavHeaderComponent {
 
-  
+  route = [
+    {
+      title: "Home",
+      routerLink: "/home"
+    },
+
+    {
+      title: "Shop",
+      routerLink: "/home"
+    },
+
+    {
+      title: "Blog",
+      routerLink: "/home"
+    },
+
+  ]
 
 
 }

@@ -1,4 +1,4 @@
-<section id="header">
+<!-- <section id="header">
   <a href="#"><img class="logo" src="\assets\aurora.png" alt=""></a>
 
   <div>
@@ -9,14 +9,44 @@
       <li><a [routerLink] ="['/shop']" >shop</a></li>
     </ul>
   </div>
-</section>
+</section> -->
 
 
-<div class="banner" >
-  <div class="container" >
+<header class="header">
+  <nav class="nav container">
+    <a routerLink="/home" class="nav_logo">
+      <img src="/assets/LOGO PNG.png" alt="" class="nav_logo-img" >
+    </a>
 
+    <div class="nav_menu" id="nav_menu">
+      <ul class="nav_list" *ngFor="let item of route">
+        <li class="nav_item">
+          <a href="" class="nav_link">{{item.title}}</a>
+        </li>
+      </ul>
+
+      <!-- <div class="header_search">
+        <input type="text" placeholder="search someting" class="form_input">
+        <button class="search_btn">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div> -->
+    </div>
+
+  <div class="header_user-actions">
+    <a href="" class="header_action-btn">
+      <i style="color: black;" class="fa-solid fa-cart-shopping"></i>
+      <span class="count" >3</span>
+    </a>
+
+    <a href="" class="header_action-btn">
+      <i style="color: black;" class="fa-solid fa-cart-shopping"></i>
+      <span class="count" >3</span>
+    </a>
   </div>
-</div>
+  </nav>
+</header>
+
 
 
 

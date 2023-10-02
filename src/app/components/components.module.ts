@@ -1,6 +1,6 @@
 import { Declaration } from './../../../node_modules/@types/estree/index.d';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
-import { NgModule } from '@angular/core';
 
 import { CardModule } from './cards/cards.module';
 import { CommonModule } from '@angular/common';
@@ -11,11 +11,17 @@ import { FooterHomeComponent } from './footers/footer-home/footer-home.component
 import { FootersModule } from './footers/footers.module';
 import { RouterModule } from '@angular/router';
 import { CarroselComponent } from './carrosel/carrosel.component';
+import { SectionsViewsCardsProdutosComponent } from './exibicao/sections-views-cards-produtos/sections-views-cards-produtos.component';
+import { register } from 'swiper/element/bundle';
+
+register();
 
 @NgModule({
   declarations: [
     FeatureComponent,
     CarroselComponent,
+    SectionsViewsCardsProdutosComponent
+
   ],
   imports: [
     CommonModule,
@@ -32,7 +38,9 @@ import { CarroselComponent } from './carrosel/carrosel.component';
     FeatureComponent,
     BannersModule,
     FootersModule,
-    CarroselComponent
-  ]
+    CarroselComponent,
+    SectionsViewsCardsProdutosComponent
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ComponentsModule { }

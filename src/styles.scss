@@ -9,10 +9,10 @@
   --first-color: hsl(176, 88%, 27%);
   --first-color-alt: hsl(129, 44%, 94%);
   --second-color: hsl(34,94%,87%);
-  --title-color:  hsl(0, 0, 13%);
+  --title-color:  hsl(0, 0%, 13%);
   --text-color: hsl(154, 13%, 32%);
   --text-color-light: hsl(60, 1%, 56%);
-  --body-color: hsl(0, 0, 100%);
+  --body-color: hsl(0, 0%, 100%);
   --container-color: hsl(176, 88%, 93% );
   --border-color: hsl(129, 36%, 85%);
   --border-color-alt: hsl(113, 15% ,90%);
@@ -28,7 +28,7 @@
   --normal-font-size: 1rem;
   --small-font-size: 0.875rem;
   --smaller-font-size: 0.75rem;
-  --tiny-font-size: 0.6875;
+  --tiny-font-size: 0.6875rem;
 
 
   --weight-400: 400;
@@ -46,10 +46,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 
@@ -87,6 +83,10 @@ img {
   max-width: 100%;
 }
 
+ul{
+  list-style: none;
+}
+
 button,
 textarea,
 input {
@@ -98,7 +98,7 @@ input {
 
 .grid {
   display: grid;
-  gap: 1.5rem
+  gap: 1.5rem;
 }
 
 .container {
@@ -108,10 +108,14 @@ input {
 }
 
 
-.section--lg {
-  padding-block: 4rem;
+section {
+  padding-block: 2rem;
 }
-
+.flex{
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+}
 
 
 

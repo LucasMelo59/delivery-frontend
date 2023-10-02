@@ -6,7 +6,7 @@ import { Produto } from 'src/app/models/Produto';
   templateUrl: './template-home.component.html',
   styleUrls: ['./template-home.component.scss']
 })
-export class TemplateHomeComponent {
+export class TemplateHomeComponent  {
 
  listaProdutos: Array<Produto> = [
   {
