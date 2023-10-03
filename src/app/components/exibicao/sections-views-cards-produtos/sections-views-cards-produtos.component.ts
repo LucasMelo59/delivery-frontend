@@ -6,6 +6,7 @@ import { ArquivosService } from 'src/app/service/arquivos.service';
 import { Produto_ArquivoDTO } from '../../../models/dto/produto_arquivoDTO';
 import { ProdutoImgs } from 'src/app/models/entity/ProdutoImgs';
 import { PerfilProdutoService } from 'src/app/pages/perfil-produto/perfil-produto.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sections-views-cards-produtos',
@@ -14,9 +15,7 @@ import { PerfilProdutoService } from 'src/app/pages/perfil-produto/perfil-produt
 })
 export class SectionsViewsCardsProdutosComponent {
 
-
-
-
+  constructor(private route: Router){}
 
   @Input() data_products: Produto_ArquivoDTO[] = []
   @Output() submit_data = new EventEmitter();
@@ -26,6 +25,9 @@ export class SectionsViewsCardsProdutosComponent {
     this.submit_data.emit(data)
   }
 
+  detailsProduct(produto_id: number) {
+    this.route.navigate(['/produtos', produto_id])
+  }
 }
 
 

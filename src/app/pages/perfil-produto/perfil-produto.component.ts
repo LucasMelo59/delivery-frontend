@@ -18,6 +18,8 @@ export class PerfilProdutoComponent implements OnInit {
   constructor(private serviceProduto: PerfilProdutoService, private serviceArquivo: ArquivosService,  private route: ActivatedRoute){}
   ngOnInit(): void {
     this.productId = this.route.snapshot.paramMap.get('id');
+    console.log(this.productId);
+
     this.serviceProduto.getProdutoById(this.productId).subscribe((res: ProdutoRest) => {
       console.log(res);
 

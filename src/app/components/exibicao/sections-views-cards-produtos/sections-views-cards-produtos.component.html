@@ -15,8 +15,8 @@
     <div class="tab_item">
       <div class="products_container grid">
         <div class="product_item" *ngFor="let item of data_products">
-          <div class="product_banner">
-            <a href="" class="product_images">
+          <div class="product_banner" (click)="detailsProduct(item.produto.id)">
+            <a  class="product_images">
               <img src="{{item.imagens[0]}}" class="product_img default" alt="">
 
               <img src="{{item.imagens[1]}}" class="product_img hover" alt="">

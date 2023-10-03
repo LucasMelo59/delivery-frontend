@@ -12,38 +12,55 @@ import { ArquivosService } from 'src/app/service/arquivos.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  data_produtos: ProdutoRest[] = [];
   data_produto_dto: Produto_ArquivoDTO[] = [];
   constructor(private service: PerfilProdutoService, private service_imgs: ArquivosService){}
 
   ngOnInit(): void {
-    this.service.getProdutoById(1).subscribe((res: any) => {
+    this.service.getAllProdutos().subscribe((produtos: ProdutoRest[]) => {
+      produtos.forEach((produto:ProdutoRest) => {
+        let imagens: any[] = []
+        produto.imagens_do_produto.forEach((imagens_produto:ProdutoImgs) => {
+          this.service_imgs.downlodImagem(imagens_produto.id).subscribe(bytes => {
+            const reader = new FileReader();
+            reader.onload = () => {
+              imagens.push(reader.result as string)
+            }
+            reader.readAsDataURL(bytes)
+          })
+        })
+        this.data_produto_dto.push({
+          produto: produto,
+          imagens: imagens
+        });
+      })
+      console.log(this.data_produto_dto);
 
-      this.data_produtos.push(res);
-      console.log(this.data_produtos);
     })
   }
 
   submitId(data:any) {
     this.data_produto_dto = []
-    this.service.getProdutoById(data).subscribe((res: ProdutoRest) => {
-      let imagens: any[] = [];
-      res.imagens_do_produto.forEach((x: ProdutoImgs) => {
+    this.service.getAllProdutos().subscribe((produtos: ProdutoRest[]) => {
 
-        this.service_imgs.downlodImagem(x.id).subscribe((y:any) => {
-          const reader = new FileReader();
-          reader.onload = () => {
-            imagens.push(reader.result as string)
-          }
-          reader.readAsDataURL(y)
+      produtos.forEach((produto:ProdutoRest) => {
+        let imagen: any[] = [];
+        produto.imagens_do_produto.forEach((imagens_produto: ProdutoImgs) => {
+
+          this.service_imgs.downlodImagem(imagens_produto.id).subscribe((bytes: any) => {
+            const reader = new FileReader();
+            reader.onload = () => {
+              imagen.push(reader.result as string)
+            }
+            reader.readAsDataURL(bytes)
+          })
 
         })
+        this.data_produto_dto.push({
+          imagens: imagen,
+          produto: produto
+        })
+      })
 
-      })
-      this.data_produto_dto.push({
-        imagens: imagens,
-        produto: res
-      })
 
     })
   }
