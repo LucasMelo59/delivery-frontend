@@ -1,67 +1,105 @@
-footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.footer {
+  background-color: #282828;
+  padding: 5rem 0 3rem;
+  color: var(--color-bg);
 }
 
-footer .col {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 20px;
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
 }
 
-footer .logo {
-  margin-bottom: 30px;
-  width: 114px;
-}
-
-footer h4 {
-  font-size: 14px;
-  padding-bottom: 20px;
-}
-
-footer p {
-  font-size: 13px ;
-  margin: 0 0 8px 0;
-}
-footer a {
-  font-size: 13px ;
-  margin: 0 0 8px 0;
-  text-decoration: none ;
-  color: #222;
-  margin-bottom: 10px;
+.footer-container .col-1{
+  color: var(--color-tertiary);
 }
 
 
-
-footer .follow {
-  margin-top: 20px;
+.footer-container .col-1 .logo{
+  color: var(--color-primary);
 }
 
 
-footer .follow i {
-  color: #465b52;
-  padding-right: 4px;
-  cursor: pointer;
+.footer-container .col-1 p {
+  padding-top: 1.5rem;
 }
 
-footer .install .row img {
-  border: 1px solid #088178;
-  border-radius: 6px;
+.footer-container .col-1 img {
+  padding-top: 2rem;
 }
 
-footer .install img {
-  margin: 10px 0 15px 0;
+.footer-container .col {
+  overflow: hidden;
 }
 
-footer .follow i:hover,
-footer a:hover
-{
-color: #088178;
+
+.footer-container h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  color: #fff;
 }
 
-footer .copyright {
-  width: 100%;
+.footer-container .col .col-1 p {
+  color: var(--color-tertiary);
+}
+
+
+.footer-container .col-2 ul {
+  list-style: none;
+  float: left;
+  margin-right: 1.5rem;
+}
+
+.footer-container .col-2 ul li a {
+  color: var(--color-tertiary);
+  display: inline-block;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 1rem;
+}
+
+.footer-container .col-2 ul li a::after {
+  position: absolute;
+  background: url('/assets/borboleta.ico');
+  content: '';
+  width: .33rem;
+  height: .33rem;
+  left: 0;
+  top: .33rem;
+  border: .1rem solid var(--color-secondary);
+  border-radius: 50%;
+  transition: var(--transition2);
+}
+
+.footer-container .col-2 ul li a:hover::after {
+  background: var(--color-secondary);
+}
+
+.footer-container .col-4 .box {
+  margin-bottom: 1rem;
+}
+
+.footer-container .col-4 span {
+  float: left;
+  color: var(--color-secondary);
+  margin-right: 1rem;
+  overflow: hidden;
+  display: block;
+  padding-bottom: 1rem;
+}
+
+.copyright{
   text-align: center;
+  padding: 1.5rem 0;
+}
+
+.copyright p{
+  padding: .3rem 0;
+  font-weight: 500;
+}
+
+.copyright a{
+  color: var(--color-secondary);
 }

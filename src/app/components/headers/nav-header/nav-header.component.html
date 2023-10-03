@@ -1,51 +1,27 @@
-<!-- <section id="header">
-  <a href="#"><img class="logo" src="\assets\aurora.png" alt=""></a>
 
-  <div>
-    <ul id="navbar" >
-      <li  >
-        <a [routerLink]="['/home']" class="active" >home</a>
-      </li>
-      <li><a [routerLink] ="['/shop']" >shop</a></li>
-    </ul>
-  </div>
-</section> -->
-
-
-<header class="header">
-  <nav class="nav container">
-    <a routerLink="/home" class="nav_logo">
-      <img src="/assets/LOGO PNG.png" alt="" class="nav_logo-img" >
-    </a>
-
-    <div class="nav_menu" id="nav_menu">
-      <ul class="nav_list" *ngFor="let item of route">
-        <li class="nav_item">
-          <a href="" class="nav_link">{{item.title}}</a>
+<div class="bottom-nav">
+  <div class="container bn-container">
+      <a href="" class="logo">
+        <img src="/assets/LOGO PNG.png" >
+      </a>
+      <ul class="navlist" *ngFor="let item of route" >
+        <li>
+          <a routerLink="{{item.routerLink}}">{{item.title}}</a>
         </li>
       </ul>
-
-      <!-- <div class="header_search">
-        <input type="text" placeholder="search someting" class="form_input">
-        <button class="search_btn">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-      </div> -->
-    </div>
-
-  <div class="header_user-actions">
-    <a href="" class="header_action-btn">
-      <i style="color: black;" class="fa-solid fa-cart-shopping"></i>
-      <span class="count" >3</span>
-    </a>
-
-    <a href="" class="header_action-btn">
-      <i style="color: black;" class="fa-solid fa-cart-shopping"></i>
-      <span class="count" >3</span>
-    </a>
+      
+      <div class="right">
+        <div class="menu-btn" *ngIf="isMobile">
+          <i class="fa-solid fa-bars icons"></i>
+        </div>
+        <i class="fa-regular fa-heart icons"></i>
+        <div class="cart">
+          <i class="fa-solid fa-cart-shopping icons"></i>
+        </div>
+      </div>
   </div>
-  </nav>
-</header>
+</div>
+
 
 
 

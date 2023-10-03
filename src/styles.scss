@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Spartan:wght@400;500;600;700&display=swap');
-
-:root {
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=League+Spartan:wght@400;500;600;700&family=Rubik:wght@300;400;500;600;700;800&display=swap');
+  :root {
   --header-height: 4rem;
 
 
@@ -18,7 +17,7 @@
   --border-color-alt: hsl(113, 15% ,90%);
 
   --body-font: 'Lato', sans-serif;
-  --second-font: 'Spartan', sans-serif;
+  --second-font: 'League Spartan', sans-serif;  ;
   --big-font-size: 3.5rem;
   --h1-font-size: 2.75rem;
   --h2-font-size: 2rem;
@@ -38,7 +37,16 @@
 
   --transition: cubic-bezier(0, 0 , 0.05, 1);
 
+    --color-primary: #fff;
+    --color-secondary: #b5010a;
+    --color-tertiary: #777;
+    --color-bg: #f2f3f5;
+    --color-text: #252b48;
+    --shadow: 0 25px 29px rgba(63, 78, 100, .15);
+    --transition2: all .4s ease;
 
+    --width-lg: 80%;
+    --width-sm: 95%;
 
 }
 
@@ -46,6 +54,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  resize: none;
 }
 
 
@@ -60,31 +73,27 @@
  }
 
  body{
-  background-color: var(--body-color);
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  height: 111vh;
  }
 
  h1,h2,h3,h4 {
   font-family: var(--second-font);
   color: var(--title-color);
   font-weight: var(--weight-600);
+  line-height: 1.2;
  }
 
 
 
 a{
-  text-decoration: none;
+  color: var(--color-text);
+  font-size: .9rem;
 }
 
-p{
-  line-height: 1.5rem;
-}
-
-img {
-  max-width: 100%;
-}
-
-ul{
-  list-style: none;
+p, span{
+font-size: .9rem;
 }
 
 button,
@@ -102,19 +111,52 @@ input {
 }
 
 .container {
-  max-width: 1320px;
-  margin-inline: auto;
-  padding-inline: 0.75rem;
+  margin: 0 auto;
+  width: var(--width-lg);
+}
+
+section{
+  padding: 5rem 0 3rem;
 }
 
 
-section {
-  padding-block: 2rem;
-}
+
 .flex{
   display: flex;
   align-items: center;
   column-gap: .5rem;
+}
+
+img{
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+
+
+button  {
+  padding: 1rem 2rem;
+  background: var(--color-text);
+  color: var(--color-primary);
+  font-weight: var(--weight-600);
+  text-transform: capitalize;
+  letter-spacing: .05rem;
+  cursor: pointer;
+  border-radius: 5rem;
+  border: .1rem solid var(--color-text);
+  transition: var(--transition2);
+}
+
+
+button:hover {
+  color: var(--color-text);
+  background-color: var(--color-primary);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 
