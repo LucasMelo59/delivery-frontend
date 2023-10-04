@@ -17,7 +17,7 @@ export class NavHeaderComponent implements OnInit{
 
     {
       title: "Shop",
-      routerLink: "/home"
+      routerLink: "/shop"
     },
 
     {

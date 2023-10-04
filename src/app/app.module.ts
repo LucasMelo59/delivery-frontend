@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SectionsViewsCardsProdutosComponent } from './components/exibicao/sections-views-cards-produtos/sections-views-cards-produtos.component';
 import { register } from 'swiper/element/bundle';
 import { HomeComponent } from './pages/home/home.component';
+import { PaginaComprasComponent } from './pages/pagina-compras/pagina-compras.component';
 
 register();
 
@@ -21,7 +22,8 @@ register();
   declarations: [
     AppComponent,
     PerfilProdutoComponent,
-    HomeComponent
+    HomeComponent,
+    PaginaComprasComponent
   ],
   imports: [
     BrowserModule,

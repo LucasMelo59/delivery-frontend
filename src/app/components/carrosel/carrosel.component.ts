@@ -7,48 +7,18 @@ import { Subscription, timer } from 'rxjs';
   styleUrls: ['./carrosel.component.scss']
 })
 export class CarroselComponent implements OnInit, OnDestroy {
-
-  timerSubs!: Subscription
-
-  @Input() imagens: string[] = []
-
-  private _indexImagemAtiva: number = 0;
-
-  get indexImagemAtiva(){
-    return this._indexImagemAtiva;
-  }
-
-  set indexImagemAtiva(value: number) {
-    this._indexImagemAtiva =
-      value < this.imagens.length ? value : 0;
-  }
-
   ngOnDestroy(): void {
-    this.pararTimer();
+    throw new Error('Method not implemented.');
   }
-
-
   ngOnInit(): void {
-  this.iniciarTimer()
+    throw new Error('Method not implemented.');
   }
 
-  iniciarTimer(): void {
-    this.timerSubs = timer(5000).subscribe(()=> {
-      this.ativarImagem(
-        this.indexImagemAtiva + 1
-      )
-    })
-  }
-
-  pararTimer(): void {
-    this.timerSubs?.unsubscribe();
-  }
-
-  ativarImagem(index: number) {
-    this.indexImagemAtiva = index;
-    this.iniciarTimer();
-  }
-
+  swiperConfig = {
+    slidesPerView: 3, // Número de slides visíveis ao mesmo tempo
+    spaceBetween: 30, // Espaço entre os slides
+    navigation: true, // Setas de navegação
+  };
 
 
 

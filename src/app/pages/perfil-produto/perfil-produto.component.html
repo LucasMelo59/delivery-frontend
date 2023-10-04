@@ -1,50 +1,28 @@
 <app-nav-header></app-nav-header>
-<section id="perfil-produto" class="section-p1" >
-<div class="single-produto-image" >
-  <img src={{mainImg}} width="100%" id="MainImg" alt="">
-  <div class="small-img-group" >
-    <div class="small-img-col" *ngFor="let img of listImagensProduto; let i = index" >
-      <img src="{{img}}" width="100%" class="small-img" (click)="tradeImg(i)" alt="">
-    </div>
-  </div>
-</div>
-<div class="detalis-single-product" >
-<h6>Home/T-Shirt</h6>
-<h4>Mens fashion</h4>
-<h2>$139</h2>
-<select name="" id="" >
-  <option value="" *ngFor="let tamanho of tamanhoBlusas">
-    {{tamanho.tamanho}}
-  </option>
-</select>
-<input type="number" value="1" >
-<button class="normal"  >Add to carrinho</button>
-<h4>Product Details</h4>
-<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
-</div>
-<div></div>
-</section>
-<app-footer-home></app-footer-home>
 
 
-<section class="details section--lg" >
-  <div class="details__container container grid">
-    <div class="details__group">
-      <img src="" alt="">
 
-      <div class="details__small-umages grid">
-        <img src="" alt="">
+<section class="details " >
+  <div class="details_container container grid">
+    <div class="details_group">
+      <img src="{{mainImg}}" alt="">
+
+      <div class="details_small-images grid"  >
+        <div *ngFor="let item of listImagensProduto; let index = index" >
+          <img src="{{item}}" class="details_small-img" (click)="tradeImg(index)" alt="">
+        </div>
+
       </div>
     </div>
 
-    <div class="details__group">
-      <h3 class="details__title">Henley Shirt</h3>
-      <p class="details__brand" > Brands: <span>adidas</span> </p>
+    <div class="details_group">
+      <h3 class="details_title">Henley Shirt</h3>
+      <p class="details_brand" > Brands: <span>adidas</span> </p>
 
-      <div class="details__price flex">
-        <span class="new__price" >$116.00</span>
-        <span class="old__price" >$200.00</span>
-        <span class="save__price" >25%</span>
+      <div class="details_price flex">
+        <span class="new_price" >$116.00</span>
+        <span class="old_price" >$200.00</span>
+        <span class="save_price" >25% off</span>
       </div>
 
 
@@ -52,66 +30,133 @@
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
       </p>
 
-      <ul class="product__list">
-        <li class="list__item flex" >
-          <i class="fi-rs-crown" ></i> 1 Year Al jazeera brand
+      <ul class="product_list">
+        <li class="list_item flex" >
+          <i class="fa-solid fa-crown"></i> 1 Year Al jazeera brand
         </li>
-        <li class="list__item flex" >
-          <i class="fi-rs-crown" ></i> 1 Year Al jazeera brand
+        <li class="list_item flex" >
+          <i class="fa-solid fa-arrows-rotate"></i> 30 Day Return Policy
         </li>
-        <li class="list__item flex" >
-          <i class="fi-rs-crown" ></i> 1 Year Al jazeera brand
+        <li class="list_item flex" >
+          <i class="fa-regular fa-credit-card"></i> Cash on Delivery available
         </li>
       </ul>
 
-      <div class="details__color flex">
-        <span class="details__color-title" >Color</span>
+      <div class="details_color flex">
+        <span class="details_color-title" >Color</span>
 
-        <ul class="color--list">
+        <ul class="color_list">
           <li>
-            <a href="" class="color__link" style="background-color: hsl(37,100%,65%);" ></a>
+            <a href="" class="color_link" style="background-color: hsl(37,100%,65%);" ></a>
           </li>
           <li>
-            <a href="" class="color__link" style="background-color: hsl(37,100%,65%);" ></a>
+            <a href="" class="color_link" style="background-color: hsl(353,100%,67%);" ></a>
           </li>
           <li>
-            <a href="" class="color__link" style="background-color: hsl(37,100%,65%);" ></a>
+            <a href="" class="color_link" style="background-color: hsl(49,100%,60%);" ></a>
+          </li>
+          <li>
+            <a href="" class="color_link" style="background-color: hsl(304,100%,78%);" ></a>
           </li>
         </ul>
       </div>
 
 
-      <div class="details__size flex">
-        <span class="details__size-title" >Color</span>
+      <div class="details_size flex">
+        <span class="details_size-title" >Size</span>
 
-        <ul class="size--list">
+        <ul class="size_list">
           <li>
-            <a href="" class="size__link"  >L</a>
+            <a href="" class="size_link size-active"  >L</a>
           </li>
           <li>
-            <a href="" class="size__link"  >XL</a>
+            <a href="" class="size_link"  >XL</a>
           </li>
           <li>
-            <a href="" class="size__link"  >XXL</a>
+            <a href="" class="size_link"  >XXL</a>
           </li>
 
         </ul>
       </div>
 
-      <div class="details__action">
+      <div class="details_action">
         <input type="number" class="quantity" value="3">
 
-        <a href="" class="btn btn--sm" >Add to Cart</a>
+        <a href="" class="btn btn-sm" >Add to Cart</a>
 
-        <a href="" class="details__action-btn" >
-          <i></i>
+        <a href="" class="details_action-btn" >
+          <i class="fa-regular fa-heart"></i>
         </a>
 
-
-        <ul class="details__meta">
-          <li class="meta__list flex" ><span>SKU:</span> FWM15VKT</li>
-        </ul>
       </div>
+
+      <ul class="details_meta">
+          <li class="meta_list flex" ><span>SKU:</span> FWM15VKT</li>
+          <li class="meta_list flex" ><span>Tags:</span> Cloth, Women, Dress</li>
+          <li class="meta_list flex" ><span>Availabiity:</span> Cloth, Women, Dress</li>
+        </ul>
     </div>
   </div>
 </section>
+
+<section class="details_tab container" >
+  <div class="detail_tabs">
+    <span class="detail_tab active-tab">
+      Additional Info
+    </span>
+  </div>
+
+  <div class="details_tabs-content">
+    <div class="details_tab-content active-tab" id="info">
+      <table class="info_table">
+        <tr>
+          <th>Stand up</th>
+          <td>35"L x 24"W x 37-45"H(front to back wheel)</td>
+        </tr>
+
+        <tr>
+          <th>Folded(w/o wheels)</th>
+          <td>35"L x 24"W x 37-45</td>
+        </tr>
+
+        <tr>
+          <th>Folded(w/ wheels)</th>
+          <td>35"L x 24"W x 37-45</td>
+        </tr>
+
+        <tr>
+          <th>Door Pass Through</th>
+          <td>24</td>
+        </tr>
+
+        <tr>
+          <th>Frame</th>
+          <td>Aluminum</td>
+        </tr>
+
+        <tr>
+          <th>Width</th>
+          <td>24"</td>
+        </tr>
+
+        <tr>
+          <th>Color</th>
+          <td>Black</td>
+        </tr>
+
+        <tr>
+          <th>Size</th>
+          <td>M,S</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="products container section--lg">
+  <h3 class="section_title"><span>Related</span> Products</h3>
+
+  <div class="products_container grid"></div>
+</section>
+
+<app-footer-home></app-footer-home>

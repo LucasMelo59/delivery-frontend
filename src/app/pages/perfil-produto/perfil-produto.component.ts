@@ -18,11 +18,7 @@ export class PerfilProdutoComponent implements OnInit {
   constructor(private serviceProduto: PerfilProdutoService, private serviceArquivo: ArquivosService,  private route: ActivatedRoute){}
   ngOnInit(): void {
     this.productId = this.route.snapshot.paramMap.get('id');
-    console.log(this.productId);
-
     this.serviceProduto.getProdutoById(this.productId).subscribe((res: ProdutoRest) => {
-      console.log(res);
-
       res.imagens_do_produto.forEach((x:ProdutoImgs) => {
         this.serviceArquivo.downlodImagem(x.id).subscribe((res: any) => {
           const reader = new FileReader();
@@ -42,6 +38,7 @@ export class PerfilProdutoComponent implements OnInit {
 
 
   tradeImg(index: number) {
+    
     this.mainImg = this.listImagensProduto[index]
   }
 
