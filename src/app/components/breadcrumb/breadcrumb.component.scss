@@ -1,0 +1,13 @@
+.breadcrumb {
+  background-color: var(--container-color);
+  padding-block: 1.5rem;
+}
+
+.breadcrumb-list {
+  column-gap: .75rem;
+}
+
+.breadcrumb-link {
+  color: var(--text-color);
+  font-size: var(--small-font-size);
+}

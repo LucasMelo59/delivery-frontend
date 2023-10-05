@@ -15,6 +15,7 @@ import { SectionsViewsCardsProdutosComponent } from './components/exibicao/secti
 import { register } from 'swiper/element/bundle';
 import { HomeComponent } from './pages/home/home.component';
 import { PaginaComprasComponent } from './pages/pagina-compras/pagina-compras.component';
+import { CarrinhoUsuarioComponent } from './pages/carrinho-usuario/carrinho-usuario.component';
 
 register();
 
@@ -23,7 +24,8 @@ register();
     AppComponent,
     PerfilProdutoComponent,
     HomeComponent,
-    PaginaComprasComponent
+    PaginaComprasComponent,
+    CarrinhoUsuarioComponent
   ],
   imports: [
     BrowserModule,

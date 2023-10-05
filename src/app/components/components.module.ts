@@ -13,6 +13,7 @@ import { RouterModule } from '@angular/router';
 import { CarroselComponent } from './carrosel/carrosel.component';
 import { SectionsViewsCardsProdutosComponent } from './exibicao/sections-views-cards-produtos/sections-views-cards-produtos.component';
 import { register } from 'swiper/element/bundle';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 register();
 
@@ -20,7 +21,8 @@ register();
   declarations: [
     FeatureComponent,
     CarroselComponent,
-    SectionsViewsCardsProdutosComponent
+    SectionsViewsCardsProdutosComponent,
+    BreadcrumbComponent
 
   ],
   imports: [
@@ -39,7 +41,8 @@ register();
     BannersModule,
     FootersModule,
     CarroselComponent,
-    SectionsViewsCardsProdutosComponent
+    SectionsViewsCardsProdutosComponent,
+    BreadcrumbComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -1,22 +1,22 @@
 
 <div class="bottom-nav">
   <div class="container bn-container">
-      <a href="" class="logo">
-        <img src="/assets/LOGO PNG.png" >
+      <a routerLink="/home" class="logo">
+        <img src="/assets/LOGO PNG.png" alt>
       </a>
       <ul class="navlist" *ngFor="let item of route" >
         <li>
           <a routerLink="{{item.routerLink}}">{{item.title}}</a>
         </li>
       </ul>
-      
+
       <div class="right">
         <div class="menu-btn" *ngIf="isMobile">
           <i class="fa-solid fa-bars icons"></i>
         </div>
-        <i class="fa-regular fa-heart icons"></i>
-        <div class="cart">
-          <i class="fa-solid fa-cart-shopping icons"></i>
+        <!-- <i class="fa-regular fa-heart icons"></i> -->
+        <div class="cart" routerLink="/cart">
+          <i class="fa-solid fa-cart-shopping icons" ></i>
         </div>
       </div>
   </div>

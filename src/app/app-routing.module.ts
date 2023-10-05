@@ -4,6 +4,7 @@ import { TemplateHomeComponent } from './templates/template-home/template-home.c
 import { PerfilProdutoComponent } from './pages/perfil-produto/perfil-produto.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PaginaComprasComponent } from './pages/pagina-compras/pagina-compras.component';
+import { CarrinhoUsuarioComponent } from './pages/carrinho-usuario/carrinho-usuario.component';
 
 const routes: Routes = [
 
@@ -18,6 +19,10 @@ const routes: Routes = [
  {
   path: 'shop',
   component: PaginaComprasComponent
+ },
+ {
+  path: 'cart',
+  component: CarrinhoUsuarioComponent
  }
 
 ];
