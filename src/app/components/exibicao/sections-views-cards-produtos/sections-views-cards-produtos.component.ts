@@ -20,9 +20,11 @@ export class SectionsViewsCardsProdutosComponent {
   @Input() data_products: Produto_ArquivoDTO[] = []
   @Output() submit_data = new EventEmitter();
   data_imagens = [];
+  activeTab = 1;
 
-  submitFilter(data: any) {
+  submitFilter(data: any, tabActive: number) {
     this.submit_data.emit(data)
+    this.activeTab = tabActive;
   }
 
   detailsProduct(produto_id: number) {

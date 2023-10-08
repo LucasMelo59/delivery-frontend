@@ -1,13 +1,13 @@
 <section class="products section container" >
 
   <div class="tab_btns">
-      <span class="tab_btn active-tab" (click)="submitFilter(1)" >
+      <span class="tab_btn" [ngClass]="{ 'active-tab': activeTab === 1 }" (click)="submitFilter('featured' ,1)" >
         Featured
     </span>
-    <span class="tab_btn" (click)="submitFilter(2)" >
+    <span class="tab_btn" [ngClass]="{ 'active-tab': activeTab === 2 }" (click)="submitFilter('popular',2)" >
       Popular
     </span>
-    <span class="tab_btn" >
+    <span class="tab_btn" [ngClass]="{ 'active-tab': activeTab === 3 }" (click)="submitFilter('new added',3)" >
       New added
     </span>
   </div>

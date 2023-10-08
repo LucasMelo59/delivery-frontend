@@ -16,6 +16,7 @@ import { register } from 'swiper/element/bundle';
 import { HomeComponent } from './pages/home/home.component';
 import { PaginaComprasComponent } from './pages/pagina-compras/pagina-compras.component';
 import { CarrinhoUsuarioComponent } from './pages/carrinho-usuario/carrinho-usuario.component';
+import { FormsModule } from '@angular/forms';
 
 register();
 
@@ -37,6 +38,7 @@ register();
     HeadersModule,
     CardModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

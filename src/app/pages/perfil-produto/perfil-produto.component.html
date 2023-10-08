@@ -45,18 +45,9 @@
       <div class="details_color flex">
         <span class="details_color-title" >Color</span>
 
-        <ul class="color_list">
+        <ul class="color_list" *ngFor="let item of cores; let index = index" >
           <li>
-            <a href="" class="color_link" style="background-color: hsl(37,100%,65%);" ></a>
-          </li>
-          <li>
-            <a href="" class="color_link" style="background-color: hsl(353,100%,67%);" ></a>
-          </li>
-          <li>
-            <a href="" class="color_link" style="background-color: hsl(49,100%,60%);" ></a>
-          </li>
-          <li>
-            <a href="" class="color_link" style="background-color: hsl(304,100%,78%);" ></a>
+            <a (click)="clickOnColor(index)" class="color_link" [ngClass]="{'selected-color': activeCor === index }" [ngStyle]="{'background-color': item.style}" ></a>
           </li>
         </ul>
       </div>
@@ -65,28 +56,22 @@
       <div class="details_size flex">
         <span class="details_size-title" >Size</span>
 
-        <ul class="size_list">
-          <li>
-            <a href="" class="size_link size-active"  >L</a>
+        <ul class="size_list" *ngFor="let item of tamanhoBlusas; let index = index " >
+          <li (click)="clickOnSize(index)">
+            <a  class="size_link" [ngClass]="{ 'size-active': activeTamanho === index }"  >{{item.tamanho}}</a>
           </li>
-          <li>
-            <a href="" class="size_link"  >XL</a>
-          </li>
-          <li>
-            <a href="" class="size_link"  >XXL</a>
-          </li>
-
         </ul>
       </div>
 
       <div class="details_action">
-        <input type="number" class="quantity" value="3">
+        <button (click)="diminuirQuantidade()" >-</button>
+        <input type="number" class="quantity" [(ngModel)]="quantidade" [min]="1" readonly>
+        <button (click)="aumentarQuantidade()" >+</button>
+        <a (click)="adicionarAoCarrinho()" class="btn btn-sm" >Add to Cart</a>
 
-        <a href="" class="btn btn-sm" >Add to Cart</a>
-
-        <a href="" class="details_action-btn" >
+        <!-- <a href="" class="details_action-btn" >
           <i class="fa-regular fa-heart"></i>
-        </a>
+        </a> -->
 
       </div>
 
