@@ -8,5 +8,6 @@ descricao: string;
 categoria: string;
 createAt: Date;
 updateat: Date;
-imagens_do_produto: ProdutoImgs[];
+produto_imgs_id: number[];
+produto_imgs: ProdutoImgs[];
 }

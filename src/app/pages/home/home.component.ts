@@ -16,11 +16,16 @@ export class HomeComponent implements OnInit {
   constructor(private service: PerfilProdutoService, private service_imgs: ArquivosService){}
 
   ngOnInit(): void {
-    this.service.getAllProdutos().subscribe((produtos: ProdutoRest[]) => {
+    const model = {
+      categoria: "featured"
+    }
+    this.service.getProdutosWithFilter(model).subscribe((produtos: ProdutoRest[]) => {
+      console.log(produtos);
+
       produtos.forEach((produto:ProdutoRest) => {
         let imagens: any[] = []
-        produto.imagens_do_produto.forEach((imagens_produto:ProdutoImgs) => {
-          this.service_imgs.downlodImagem(imagens_produto.id).subscribe(bytes => {
+        produto.produto_imgs_id.forEach((imagens_produto:number) => {
+          this.service_imgs.downlodImagem(imagens_produto).subscribe(bytes => {
             const reader = new FileReader();
             reader.onload = () => {
               imagens.push(reader.result as string)
@@ -40,13 +45,16 @@ export class HomeComponent implements OnInit {
 
   submitId(data:any) {
     this.data_produto_dto = []
-    this.service.getAllProdutos().subscribe((produtos: ProdutoRest[]) => {
+    const filter = {
+      categoria: data
+    }
+    this.service.getProdutosWithFilter(filter).subscribe((produtos: ProdutoRest[]) => {
 
       produtos.forEach((produto:ProdutoRest) => {
         let imagen: any[] = [];
-        produto.imagens_do_produto.forEach((imagens_produto: ProdutoImgs) => {
+        produto.produto_imgs_id.forEach((imagens_produto: number) => {
 
-          this.service_imgs.downlodImagem(imagens_produto.id).subscribe((bytes: any) => {
+          this.service_imgs.downlodImagem(imagens_produto).subscribe((bytes: any) => {
             const reader = new FileReader();
             reader.onload = () => {
               imagen.push(reader.result as string)
@@ -63,6 +71,10 @@ export class HomeComponent implements OnInit {
 
 
     })
+  }
+
+  submitCategoria(model: any) {
+
   }
 
 

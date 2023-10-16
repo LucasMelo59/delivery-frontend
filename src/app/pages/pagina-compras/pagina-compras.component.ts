@@ -22,8 +22,8 @@ export class PaginaComprasComponent implements OnInit{
     this.produtosService.getAllProdutos().subscribe((produtos: ProdutoRest[]) => {
       produtos.forEach((produto:ProdutoRest) => {
         let imagens: any[] = []
-        produto.imagens_do_produto.forEach((imagens_produto:ProdutoImgs) => {
-          this.arquivos.downlodImagem(imagens_produto.id).subscribe(bytes => {
+        produto.produto_imgs_id.forEach((imagens_produto:number) => {
+          this.arquivos.downlodImagem(imagens_produto).subscribe(bytes => {
             const reader = new FileReader();
             reader.onload = () => {
               imagens.push(reader.result as string)
