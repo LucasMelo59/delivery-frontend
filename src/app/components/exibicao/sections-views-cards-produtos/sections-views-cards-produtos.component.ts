@@ -7,15 +7,19 @@ import { Produto_ArquivoDTO } from '../../../models/dto/produto_arquivoDTO';
 import { ProdutoImgs } from 'src/app/models/entity/ProdutoImgs';
 import { PerfilProdutoService } from 'src/app/pages/perfil-produto/perfil-produto.service';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-sections-views-cards-produtos',
   templateUrl: './sections-views-cards-produtos.component.html',
   styleUrls: ['./sections-views-cards-produtos.component.scss']
 })
-export class SectionsViewsCardsProdutosComponent {
+export class SectionsViewsCardsProdutosComponent implements OnInit{
 
-  constructor(private route: Router){}
+  constructor(private route: Router, private spinner: NgxSpinnerService){}
+  ngOnInit(): void {
+    this.spinner.show();
+  }
 
   @Input() data_products: Produto_ArquivoDTO[] = []
   @Output() submit_data = new EventEmitter();

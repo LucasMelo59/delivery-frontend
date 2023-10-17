@@ -19,22 +19,24 @@ export class PaginaComprasComponent implements OnInit{
   constructor(private produtosService: PerfilProdutoService, private arquivos: ArquivosService){}
 
   ngOnInit(): void {
-    this.produtosService.getAllProdutos().subscribe((produtos: ProdutoRest[]) => {
+    const model = {}
+    this.produtosService.getProdutosWithFilter(model).subscribe((produtos: ProdutoRest[]) => {
+
       produtos.forEach((produto:ProdutoRest) => {
-        let imagens: any[] = []
-        produto.produto_imgs_id.forEach((imagens_produto:number) => {
-          this.arquivos.downlodImagem(imagens_produto).subscribe(bytes => {
-            const reader = new FileReader();
-            reader.onload = () => {
-              imagens.push(reader.result as string)
-            }
-            reader.readAsDataURL(bytes)
+          let imagens: any[] = []
+          produto.produto_imgs_id.forEach((imagens_produto:number) => {
+            this.arquivos.downlodImagem(imagens_produto).subscribe(bytes => {
+              const reader = new FileReader();
+              reader.onload = () => {
+                imagens.push(reader.result as string)
+              }
+              reader.readAsDataURL(bytes)
+            })
           })
-        })
-        this.data_products.push({
-          produto: produto,
-          imagens: imagens
-        });
+          this.data_products.push({
+            produto: produto,
+            imagens: imagens
+          });
       })
     })
   }

@@ -1,37 +1,47 @@
-<div class="products_container grid">
-  <div class="product_item" *ngFor="let item of data_products">
-    <div class="product_banner" (click)="detailsProduct(item.produto.id)">
-      <a  class="product_images">
-        <img src="{{item.imagens[0]}}" class="product_img default" alt="">
 
-        <img src="{{item.imagens[1]}}" class="product_img hover" alt="">
-      </a>
+<div class="products_container  grid" >
+  <div *ngIf="false; else loading" >
+    <div  class="product_item" *ngFor="let item of data_products">
 
-     <!-- <div class="produtc_badge light-pink">Hot</div> -->
+      <div class="product_banner" (click)="detailsProduct(item.produto.id)">
+        <a  class="product_images">
+          <img src="{{item.imagens[0]}}" class="product_img default" alt="">
+
+          <img src="{{item.imagens[1]}}" class="product_img hover" alt="">
+        </a>
+
+       <!-- <div class="produtc_badge light-pink">Hot</div> -->
+      </div>
+      <div class="product_content">
+        <span class="product_category">{{item.produto.categoria}}</span>
+        <a href="">
+          <h3 class="product_title" >{{item.produto.nome}}</h3>
+        </a>
+        <div class="product_rating">
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+        </div>
+        <div class="product_price flex" >
+          <span class="new_price">{{item.produto.preco}}</span>
+          <span class="old_price">$267.85</span>
+        </div>
+
+        <!-- <a href="" class="action_btn cart_btn" aria-label="Add To Cart">
+          <i class="fa-solid fa-cart-plus"></i>
+        </a> -->
+      </div>
     </div>
 
-    <div class="product_content">
-      <span class="product_category">{{item.produto.categoria}}</span>
-      <a href="">
-        <h3 class="product_title" >{{item.produto.nome}}</h3>
-      </a>
-      <div class="product_rating">
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-      </div>
-      <div class="product_price flex" >
-        <span class="new_price">{{item.produto.preco}}</span>
-        <span class="old_price">$267.85</span>
-      </div>
-
-      <!-- <a href="" class="action_btn cart_btn" aria-label="Add To Cart">
-        <i class="fa-solid fa-cart-plus"></i>
-      </a> -->
-    </div>
   </div>
 
 
 </div>
+<ng-template #loading>
+  <div class="card-body container" >
+    <h1>teste</h1>
+    <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "fire" [fullScreen] = "false"><p style="color: white" > Loading... </p></ngx-spinner>
+  </div>
+</ng-template>

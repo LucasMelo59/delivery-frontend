@@ -17,6 +17,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { PaginaComprasComponent } from './pages/pagina-compras/pagina-compras.component';
 import { CarrinhoUsuarioComponent } from './pages/carrinho-usuario/carrinho-usuario.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 register();
 
@@ -30,6 +32,7 @@ register();
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     RouterModule,
     CommonModule,

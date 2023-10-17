@@ -59,4 +59,12 @@
   display: none;
 }
 
+.card-body {
+  min-height: 50px;
+}
 
+.row{
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+}
