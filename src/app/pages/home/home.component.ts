@@ -5,6 +5,7 @@ import { ProdutoRest } from 'src/app/models/entity/ProdutoRest';
 import { Produto_ArquivoDTO } from 'src/app/models/dto/produto_arquivoDTO';
 import { ProdutoImgs } from 'src/app/models/entity/ProdutoImgs';
 import { ArquivosService } from 'src/app/service/arquivos.service';
+import { delay, tap } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -13,15 +14,22 @@ import { ArquivosService } from 'src/app/service/arquivos.service';
 })
 export class HomeComponent implements OnInit {
   data_produto_dto: Produto_ArquivoDTO[] = [];
+  loading: boolean = true;
   constructor(private service: PerfilProdutoService, private service_imgs: ArquivosService){}
 
   ngOnInit(): void {
+
     const model = {
       categoria: "featured"
     }
-    this.service.getProdutosWithFilter(model).subscribe((produtos: ProdutoRest[]) => {
-      console.log(produtos);
-
+    this.service.getProdutosWithFilter(model)
+    .pipe(
+      delay(2000),
+      tap(() => {
+        this.loading = false;
+      })
+    )
+    .subscribe((produtos: ProdutoRest[]) => {
       produtos.forEach((produto:ProdutoRest) => {
         let imagens: any[] = []
         produto.produto_imgs_id.forEach((imagens_produto:number) => {
