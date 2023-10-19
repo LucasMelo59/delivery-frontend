@@ -10,21 +10,20 @@ import { Produto_ArquivoDTO } from 'src/app/models/dto/produto_arquivoDTO';
   styleUrls: ['./card-produto.component.scss']
 })
 export class CardProdutoComponent implements OnInit{
+[x: string]: any;
   @Input() data_products: Produto_ArquivoDTO[] = []
-  @Input() loading = true;
+  @Input() loading = false;
 
   constructor(private route: Router) {
    }
+  ngOnInit(): void {
 
-   ngOnInit(): void {
-       setTimeout(() => {
-        this.loading = false
-       }, 2000);
-    }
 
+  }
 
   detailsProduct(produto_id: number) {
     this.route.navigate(['/produtos', produto_id])
   }
+
 
 }

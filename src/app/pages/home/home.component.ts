@@ -14,11 +14,11 @@ import { delay, tap } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
   data_produto_dto: Produto_ArquivoDTO[] = [];
-  loading: boolean = true;
+  loading: boolean = false;
   constructor(private service: PerfilProdutoService, private service_imgs: ArquivosService){}
 
   ngOnInit(): void {
-
+    this.loading = true;
     const model = {
       categoria: "featured"
     }
@@ -52,11 +52,19 @@ export class HomeComponent implements OnInit {
   }
 
   submitId(data:any) {
+    this.loading = true
     this.data_produto_dto = []
     const filter = {
       categoria: data
     }
-    this.service.getProdutosWithFilter(filter).subscribe((produtos: ProdutoRest[]) => {
+    this.service.getProdutosWithFilter(filter)
+    .pipe(
+      delay(2000),
+      tap(() => {
+        this.loading = false;
+      })
+    )
+    .subscribe((produtos: ProdutoRest[]) => {
 
       produtos.forEach((produto:ProdutoRest) => {
         let imagen: any[] = [];

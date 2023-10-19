@@ -19,7 +19,7 @@ export class SectionsViewsCardsProdutosComponent implements OnInit{
   constructor(private route: Router, private spinner: NgxSpinnerService){}
   ngOnInit(): void {
   }
-  @Input() loading: boolean = true;
+  @Input() loading: boolean = false;
   @Input() data_products: Produto_ArquivoDTO[] = []
   @Output() submit_data = new EventEmitter();
   data_imagens = [];
