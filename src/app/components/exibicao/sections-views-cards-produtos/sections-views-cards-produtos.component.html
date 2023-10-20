@@ -15,7 +15,7 @@
 
 
   <div  class="tab_items">
-    <div class="tab_item">
+    <div class="tab_item" *ngIf="data_products">
       <app-card-produto  [loading]="loading" [data_products]="data_products" >
       </app-card-produto>
     </div>

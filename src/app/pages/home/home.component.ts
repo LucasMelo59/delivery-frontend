@@ -51,17 +51,17 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  submitId(data:any) {
+
+   submitId(data:any) {
     this.loading = true
-    this.data_produto_dto = []
     const filter = {
       categoria: data
     }
     this.service.getProdutosWithFilter(filter)
     .pipe(
-      delay(2000),
       tap(() => {
         this.loading = false;
+        this.data_produto_dto = []
       })
     )
     .subscribe((produtos: ProdutoRest[]) => {
