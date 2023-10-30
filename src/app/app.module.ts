@@ -35,11 +35,11 @@ register();
     BrowserAnimationsModule,
     AppRoutingModule,
     RouterModule,
+    CardModule, 
     CommonModule,
     TemplatesModule,
     ComponentsModule,
     HeadersModule,
-    CardModule,
     HttpClientModule,
     FormsModule
   ],

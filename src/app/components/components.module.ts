@@ -15,6 +15,7 @@ import { SectionsViewsCardsProdutosComponent } from './exibicao/sections-views-c
 import { register } from 'swiper/element/bundle';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { SectionsViewsCategoryComponent } from './exibicao/sections-views-category/sections-views-category.component';
 
 register();
 
@@ -23,7 +24,8 @@ register();
     FeatureComponent,
     CarroselComponent,
     SectionsViewsCardsProdutosComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    SectionsViewsCategoryComponent
 
   ],
   imports: [

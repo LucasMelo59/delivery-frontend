@@ -24,12 +24,14 @@ export class HomeComponent implements OnInit {
     }
     this.service.getProdutosWithFilter(model)
     .pipe(
-      delay(2000),
+      delay(4000),
       tap(() => {
         this.loading = false;
       })
     )
     .subscribe((produtos: ProdutoRest[]) => {
+      console.log(produtos);
+
       produtos.forEach((produto:ProdutoRest) => {
         let imagens: any[] = []
         produto.produto_imgs_id.forEach((imagens_produto:number) => {
@@ -59,12 +61,14 @@ export class HomeComponent implements OnInit {
     }
     this.service.getProdutosWithFilter(filter)
     .pipe(
+      delay(4000),
       tap(() => {
         this.loading = false;
         this.data_produto_dto = []
       })
     )
     .subscribe((produtos: ProdutoRest[]) => {
+      console.log(produtos);
 
       produtos.forEach((produto:ProdutoRest) => {
         let imagen: any[] = [];

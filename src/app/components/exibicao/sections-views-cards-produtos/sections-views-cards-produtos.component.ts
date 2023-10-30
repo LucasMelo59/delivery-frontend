@@ -16,7 +16,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class SectionsViewsCardsProdutosComponent implements OnInit{
 
-  constructor(private route: Router, private spinner: NgxSpinnerService){}
+  constructor(private route: Router){}
   ngOnInit(): void {
   }
   @Input() loading: boolean = false;

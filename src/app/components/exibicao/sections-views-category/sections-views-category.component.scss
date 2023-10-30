@@ -1,0 +1,59 @@
+.sidebar-title {
+  font-size: 26px;
+}
+
+.sidebar .widget {
+  margin: 20px 0;
+}
+
+
+.sidebar label {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.sidebar label span {
+  font-weight: var(--fw600);
+}
+
+.sidebar label i {
+  font-size: 26px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar .list-block ul {
+  padding-left: 15px;
+  margin-top: 20px;
+  height: 230px;
+}
+
+.scrollto .wrapper:not(.initial) {
+  --display: grid;
+  padding: 0;
+  overflow: unset;
+  scroll-snap-type: unset;
+  overscroll-behavior-inline: unset;
+}
+
+input	[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+}
+
+input	[type="range"]:focus {
+  outline: none;
+}
+
+input	[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  background-color: var(--light-color);
+  box-shadow: none;
+  border: 0;
+}
