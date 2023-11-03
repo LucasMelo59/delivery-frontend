@@ -1,3 +1,5 @@
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Prata&display=swap');
+
 :root {
   --primary-color: #2bcbba;
   --light-color: #d1d8e0;
@@ -35,7 +37,7 @@ html {
   box-sizing: border-box;
 }
 
-.-teste {
+body {
   font-family: var(--primary-font);
   font-size: 16px;
   font-weight: 40px;
@@ -47,12 +49,17 @@ html {
 a {
   text-decoration: none;
   vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+}
+img{
+  max-width: 100%;
+  vertical-align: middle;
 }
 
 ul {list-style: none;}
 p {margin: 0 0 15px}
 input, textarea, select {font:  inherit; width: 100%;}
-
+input[type=checkbox], input[type=radio] {width: auto;}
 input::placeholder, textarea::placeholder {color: inherit;}
 button {font: inherit;}
 strong {font-weight: var(--fw600);}
@@ -75,3 +82,5 @@ h4 {font-size: 1em;}
   padding: 0 var(--gutter, 15px);
   margin: 0 auto;
 }
+
+

@@ -1,0 +1,108 @@
+.inner-header{
+  line-height: 80px;
+}
+
+.inner-header :where(.wrap, .menu > .list) ,
+.list-inline > ul {
+  display: flex;
+  align-items: center;
+}
+
+.header-left, .header-right {
+  flex-grow: 1;
+}
+
+.header-center nav {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  gap: 180px;
+  max-width: 720px;
+}
+
+.header-center .branding {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.header-center .branding a {
+  font-family: var(--second-font);
+  font-size: 30px;
+  line-height: inherit;
+  pointer-events: auto;
+  color: black;
+}
+
+.header-center .menu > .list > .list-items {
+ font-size: var(--fs14);
+ font-weight: var(--fw600);
+ text-transform: uppercase;
+ padding: 0 15px;
+ display: flex;
+ gap: 5px;
+}
+
+.header-right ul {
+  justify-content: flex-end;
+}
+
+.list-inline a,
+.menu-trigger {
+  position: relative;
+  font-size: 24px;
+  padding: 0 10px;
+  line-height: 1;
+  display: flex;
+  transition: var(--transition-color);
+}
+
+.list-inline a:hover {
+  color: var(--light-color);
+}
+
+.branding a:hover {
+  color: #daa520;
+}
+
+.header-left .list-inline {
+  display: none;
+}
+:where(.header-left , .header-right) ul {
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
+
+.item-floating {
+  position: absolute;
+  font-size: 10px;
+  font-weight: var(--fw600);
+  top: -8px;
+  right: 0;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+
+@media (min-width: 992px) {
+  .menu-trigger {
+    display: none;
+  }
+  .header-center nav {
+    display: grid;
+  }
+  .header-left .list-inline {
+    display: block;
+  }
+}
