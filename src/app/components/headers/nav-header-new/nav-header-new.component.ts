@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav-header-new.component.scss']
 })
 export class NavHeaderNewComponent {
-
+  mobileButton: boolean = false;
   showMenu: boolean = false;
   route = [
     {
@@ -43,6 +43,9 @@ export class NavHeaderNewComponent {
 
   ]
 
+  toggleMenuMobile() {
+    this.mobileButton = !this.mobileButton;
+  }
 
   toggleMenu(): void {
     this.showMenu = !this.showMenu;

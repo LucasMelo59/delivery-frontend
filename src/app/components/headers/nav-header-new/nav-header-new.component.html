@@ -5,7 +5,7 @@
         <div class="wrap">
           <div class="header-left">
             <div class="menu-bar">
-              <a  class="menu-trigger"><i class="fa-solid fa-bars"></i></a>
+              <a  class="menu-trigger" (click)="toggleMenuMobile()"><i class="fa-solid fa-bars"></i></a>
             </div>
             <div class="list-inline">
               <ul>
@@ -38,4 +38,26 @@
       </div>
     </div>
   </header>
+</div>
+<div class="mobile-menu" id="mobile-menu" *ngIf="mobileButton" [ngClass]="{'active': mobileButton === true}">
+  <div class="wrap">
+    <a  class="close-trigger" (click)="toggleMenuMobile()">
+      <i class="fa-solid fa-xmark"></i>
+    </a>
+    <div class="main-menu scrollto">
+      <nav class="wrapper">
+        <ul>
+          <li><a href=""><span></span></a>Home</li>
+          <li><a href=""><span></span></a>Home</li>
+          <li><a href=""><span></span></a>Home</li>
+          <li><a href=""><span></span></a>Home</li>
+          <li><a href=""><span></span></a>Home</li>
+        </ul>
+      </nav>
+      <!-- <div class="button">
+        <a href="" class="secondary-btn">login</a>
+        <a href="" class="primary-btn">register</a>
+      </div> -->
+    </div>
+  </div>
 </div>
