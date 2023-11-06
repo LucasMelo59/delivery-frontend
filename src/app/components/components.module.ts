@@ -16,6 +16,8 @@ import { register } from 'swiper/element/bundle';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { SectionsViewsCategoryComponent } from './exibicao/sections-views-category/sections-views-category.component';
+import { SliderComponent } from './sliders/slider/slider.component';
+import { SectionsCardsGuideComponent } from './exibicao/sections-cards-guide/sections-cards-guide.component';
 
 register();
 
@@ -25,7 +27,9 @@ register();
     CarroselComponent,
     SectionsViewsCardsProdutosComponent,
     BreadcrumbComponent,
-    SectionsViewsCategoryComponent
+    SectionsViewsCategoryComponent,
+    SliderComponent,
+    SectionsCardsGuideComponent
 
   ],
   imports: [
@@ -44,7 +48,9 @@ register();
     FootersModule,
     CarroselComponent,
     SectionsViewsCardsProdutosComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    SliderComponent,
+    SectionsCardsGuideComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -1,4 +1,3 @@
-<div id="page" class="page-home">
   <header>
     <div class="inner-header">
       <div class="container wide">
@@ -38,7 +37,7 @@
       </div>
     </div>
   </header>
-</div>
+<div class="overlay" *ngIf="mobileButton"  [ngClass]="{'active': mobileButton === true}"></div>
 <div class="mobile-menu" id="mobile-menu" *ngIf="mobileButton" [ngClass]="{'active': mobileButton === true}">
   <div class="wrap">
     <a  class="close-trigger" (click)="toggleMenuMobile()">
