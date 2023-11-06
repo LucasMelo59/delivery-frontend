@@ -18,28 +18,30 @@ export class CarroselComponent implements OnInit  {
 
   // swiper parameters
   const swiperParams = {
-    slidesPerView: 1,
-    navigation:true,
-    breakpoints: {
-      640: {
+    breakpoints:{
+      481:{
         slidesPerView: 2,
+        slidesPerGroup: 1,
+        centeredSlides: false
       },
-      1024: {
+      640:{
         slidesPerView: 3,
+        slidesPerGroup: 3,
+        centeredSlides: false
       },
-    },
-    on: {
-      init() {
-        // ...
-      },
-    },
+        992:{
+          slidesPerView: 4,
+          slidesPerGroup: 1,
+          centeredSlides: false
+        }
+    }
   };
 
   // now we need to assign all parameters to Swiper element
   Object.assign(!swiperEl, swiperParams);
 
   // and now initialize it
-  swiperEl!.initialize();
+  swiperEl?.initialize();
   }
 
 
