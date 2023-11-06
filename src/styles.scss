@@ -23,6 +23,49 @@
   --shadow: 0px 10px 20px 0px rgb(0 0 0 / 20%);
   --fade: fade-bottom .3s cubic-bezier(0.39, 0.0575, .0565, 1) both;
 
+  --header-height: 4rem;
+
+  --first-color: hsl(176, 88%, 27%);
+  --first-color-alt: hsl(129, 44%, 94%);
+  --second-color: hsl(34,94%,87%);
+  --title-color:  hsl(0, 0%, 13%);
+  --text-color: hsl(154, 13%, 32%);
+  --text-color-light: hsl(60, 1%, 56%);
+  --body-color: hsl(0, 0%, 100%);
+  --container-color: hsl(176, 88%, 93% );
+  --border-color: hsl(129, 36%, 85%);
+  --border-color-alt: hsl(113, 15% ,90%);
+
+  --big-font-size: 3.5rem;
+  --h1-font-size: 2.75rem;
+  --h2-font-size: 2rem;
+  --h3-font-size: 1.75rem;
+  --h4-font-size: 1.375rem;
+  --large-font-size: 1.125rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+  --smaller-font-size: 0.75rem;
+  --tiny-font-size: 0.6875rem;
+
+
+  --weight-400: 400;
+  --weight-500: 500;
+  --weight-600: 600;
+  --weight-700: 700;
+
+  --transition: cubic-bezier(0, 0 , 0.05, 1);
+
+    --color-primary: #fff;
+    --color-secondary: #b5010a;
+    --color-tertiary: #777;
+    --color-bg: #f2f3f5;
+    --color-text: #252b48;
+    --shadow: 0 25px 29px rgba(63, 78, 100, .15);
+    --transition2: all .4s ease;
+
+    --width-lg: 80%;
+    --width-sm: 95%;
+
 }
 
 html {
@@ -156,7 +199,7 @@ h4 {font-size: 1em;}
 .dotgrid .wrapper {
   display: var(--display, grid);
   --grid-col: 175px;
-  grid-template-columns: repeat(auto-fit, minimax(min(var(--grid-col), 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(var(--grid-col), 100%), 1fr));
   gap: 	var(--gutter, 30px);
 }
 
@@ -180,9 +223,14 @@ h4 {font-size: 1em;}
   z-index: 1;
 }
 
+.dot-image:hover {
+  opacity: 1;
+  transform: translateZ(0);
+}
+
 .dotgrid .thumbnail.hover {
   opacity: 0;
-  transition: opacity .75s ease transform 1.1s cubic-bezier(.15, .75, .5, 1) 0s;
+  transition: opacity .75s ease, transform 1.1s cubic-bezier(.15, .75, .5, 1) 0s;
   backface-visibility: hidden;
   transform: translateZ(0);
 }
@@ -209,6 +257,8 @@ h4 {font-size: 1em;}
   color: var(--white-color);
   border-radius: 50%;
   transition: var(--transition-background), var(--transition-color);
+  top: 0;
+  bottom: 0;
 }
 
 .dot-title {
@@ -252,3 +302,4 @@ h4 {font-size: 1em;}
   visibility: visible;
   pointer-events: all;
 }
+

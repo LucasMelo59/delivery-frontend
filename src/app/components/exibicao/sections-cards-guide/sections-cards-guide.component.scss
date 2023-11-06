@@ -1,20 +1,23 @@
-:is(.guide) .dot-image .thumbnail {
+ :is(.guide) .dot-image .thumbnail {
   position: relative;
   opacity: unset;
 }
 
 .guide {
   background-color: var(--flashwhite-color);
+  padding: 100px 0;
 }
-.guide .dotgrid .wrapper {
-  -grid-col: 260px;
-}
-.heading  {
+
+.heading {
   text-align: center;
   margin-bottom: 60px;
 }
+.guide .dotgrid .wrapper {
+  --grid-col: 260px;
+}
 
-.guide .fot-image .thumbnail img {
+
+.guide .dot-image .thumbnail img {
   width: 100%;
 }
 

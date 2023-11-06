@@ -1,4 +1,25 @@
-.heading  {
+.carousel .inner-wrapper {
+  position: relative;
+
+}
+.carousel .dotgrid .wrapper {
+  display: flex;
+  grid-template-columns: unset;
+  gap: unset;
+}
+
+.title {
   text-align: center;
-  margin-bottom: 60px;
+}
+
+.carousel .nav  > div ::after{
+  content: none;
+}
+
+.swiper-container::part(button-prev)  {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--grey-color);
+  border-radius: 50%;
+  font-size: 20px;
 }
