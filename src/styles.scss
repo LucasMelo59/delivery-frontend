@@ -311,3 +311,22 @@ h4 {font-size: 1em;}
 :is(.guide, .fromblog).dot-image .thumbnail img {
   width: 100%;
 }
+
+.scrollto .wrapper .item {
+  width: 290px;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+@media (min-width: 992px) {
+  .scrollto .wrapper {
+    --display: grid;
+    padding: 0;
+    overflow: unset;
+    scroll-snap-type: unset;
+    overscroll-behavior-inline: unset;
+  }
+  .scrollto .wrapper .item {
+    width: unset;
+  }
+}

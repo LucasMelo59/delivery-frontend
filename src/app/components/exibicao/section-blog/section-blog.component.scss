@@ -1,3 +1,35 @@
 .fromblog .dot-title {
   --primary-font: var(--second-font);
+  --fs14: 18px;
+  --fw600: 400;
+  margin-top: 15px;
+}
+
+.heading {
+  margin-bottom: 40px;
+
+}
+
+.fromblog{
+  justify-content: center;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.fromblog .dot-info > a {
+  display: inline-block;
+  font-size: 12px;
+  text-transform: uppercase;
+  border: 1px solid var(--light-color);
+  color: var(--grey-color);
+  padding: 1px 10px;
+  transition: var(--transition-background),
+              var(--transition-color),
+              var(--transition-border);
+}
+
+.fromblog .dot-info > a:hover {
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  border-color: var(--dark-color);
 }
