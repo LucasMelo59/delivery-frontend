@@ -20,6 +20,19 @@
   margin-bottom: 20px;
 }
 
+.inner-footer p {
+  font-size: var(--fs14);
+}
+
+.inner-footer .search {
+  max-width: 400px;
+}
+
+.inner-footer .search .input {
+  font-size: var(--fs14);
+  border: 2px solid var(--dark-color);
+}
+
 ul {
   justify-content: space-evenly;
 }
@@ -31,4 +44,74 @@ ul {
 .teste:hover {
   cursor: pointer;
   color: #3f729b;
+}
+
+
+form.search {
+  position: relative;
+}
+
+form.search :where(i, .submit) {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+form.search .input {
+  outline: 0;
+  padding: 15px 50px;
+}
+
+form.search i {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 100%;
+  cursor: pointer;
+}
+
+form.search :where(.submit, i:last-child) {
+  left: auto;
+  right: 0;
+}
+
+form.search .submit {
+  border: 0;
+  background-color: transparent;
+  color: transparent;
+  width: 50px;
+  height: 100%;
+  right: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+
+form :where(input, textarea, select) {
+  font-size: var(--fs14);
+  border: 1px solid var(--light-color);
+  outline: 0;
+  background-color: transparent;
+  padding: 10px 20px;
+  transition: border .3s;
+}
+
+form :where(input, textarea, select):focus {
+  border-color: var(--dark-color);
+}
+
+form :where(input, textarea, select)::placeholder {
+  color: var(--grey-color);
+}
+
+.inner-footer .bottom {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+@media (min-width: 992px) {
+  .inner .footer .wrap > div {
+    flex-flow: nowrap;
+  }
 }
