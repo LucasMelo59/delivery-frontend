@@ -1,0 +1,38 @@
+.frominsta{
+  text-align: center;
+}
+
+.frominsta .container.wide {
+  --mx-width: none;
+  --gutter: 0;
+}
+
+.frominsta .dot-grid .wrapper {
+  background-color: var(--light-color);
+}
+
+.frominsta img {
+  width: 100%;
+}
+
+.frominsta .dot-image {
+  margin: 0;
+}
+
+.frominsta .actions {
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--white-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto;
+  pointer-events: none;
+}
+
+.frominsta .scrollto .wrapper::-webkit-scrollbar-thumb {
+  --border-color: var(--light-color);
+  background-color: var(--grey-color);
+}

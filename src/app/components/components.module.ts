@@ -20,6 +20,7 @@ import { SliderComponent } from './sliders/slider/slider.component';
 import { SectionsCardsGuideComponent } from './exibicao/sections-cards-guide/sections-cards-guide.component';
 import { SimpleBannerComponent } from './banners/simple-banner/simple-banner.component';
 import { SectionBlogComponent } from './exibicao/section-blog/section-blog.component';
+import { SectionInstaBlogComponent } from './exibicao/section-insta-blog/section-insta-blog.component';
 
 register();
 
@@ -32,7 +33,8 @@ register();
     SectionsViewsCategoryComponent,
     SliderComponent,
     SectionsCardsGuideComponent,
-    SectionBlogComponent
+    SectionBlogComponent,
+    SectionInstaBlogComponent
 
   ],
   imports: [
@@ -54,7 +56,8 @@ register();
     BreadcrumbComponent,
     SliderComponent,
     SectionsCardsGuideComponent,
-    SectionBlogComponent
+    SectionBlogComponent,
+    SectionInstaBlogComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
