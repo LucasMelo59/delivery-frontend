@@ -111,7 +111,7 @@ form :where(input, textarea, select)::placeholder {
 }
 
 @media (min-width: 992px) {
-  .inner .footer .wrap > div {
+  .inner-footer .wrap > div {
     flex-flow: nowrap;
   }
 }
