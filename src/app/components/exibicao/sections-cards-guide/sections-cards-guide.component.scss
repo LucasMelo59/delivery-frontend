@@ -1,7 +1,4 @@
- :is(.guide) .dot-image .thumbnail {
-  position: relative;
-  opacity: unset;
-}
+
 
 .guide {
   background-color: var(--flashwhite-color);
@@ -16,10 +13,6 @@
   --grid-col: 260px;
 }
 
-
-.guide .dot-image .thumbnail img {
-  width: 100%;
-}
 
 
 .guide .dot-title {

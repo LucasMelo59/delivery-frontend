@@ -303,3 +303,11 @@ h4 {font-size: 1em;}
   pointer-events: all;
 }
 
+:is(.guide, .fromblog) .dot-image .thumbnail {
+  position: relative;
+  opacity: unset;
+}
+
+:is(.guide, .fromblog).dot-image .thumbnail img {
+  width: 100%;
+}

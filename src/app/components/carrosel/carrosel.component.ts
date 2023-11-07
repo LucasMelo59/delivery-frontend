@@ -1,8 +1,9 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription, timer } from 'rxjs';
+import Swiper from 'swiper';
 import { register } from 'swiper/element/bundle';
 
-register();
+
 
 @Component({
   selector: 'app-carrosel',
@@ -14,38 +15,39 @@ register();
 
 export class CarroselComponent implements OnInit  {
   ngOnInit(): void {
-    const swiperEl = document.querySelector('swiper-container');
 
-  // swiper parameters
-  const swiperParams = {
-    breakpoints:{
-      481:{
-        slidesPerView: 2,
-        slidesPerGroup: 1,
-        centeredSlides: false
-      },
-      640:{
-        slidesPerView: 3,
-        slidesPerGroup: 3,
-        centeredSlides: false
-      },
-        992:{
-          slidesPerView: 4,
-          slidesPerGroup: 1,
-          centeredSlides: false
-        }
-    }
-  };
+    const swiper = new Swiper('.carouselbox', {
+      spaceBetween: 30,
+      slidesPerView: 'auto',
+      centeredSlides: true,
 
-  // now we need to assign all parameters to Swiper element
-  Object.assign(!swiperEl, swiperParams);
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+        },
+        breakpoints: {
+          481: {
+            slidesPerView: 2,
+            slidesPerGroup: 1,
+            centeredSlides: false
+          },
+          640: {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+            centeredSlides: false
+          },
+          992: {
+            slidesPerView: 4,
+            slidesPerGroup: 4,
+            centeredSlides: false
+          }
 
-  // and now initialize it
-  swiperEl?.initialize();
+        },
+
+        });
+
   }
-
-
-
-
-
 }
+
+
+

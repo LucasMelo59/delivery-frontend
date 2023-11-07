@@ -18,7 +18,8 @@ import { SimpleBannerComponent } from './simple-banner/simple-banner.component';
   ],
   exports: [
     HomeBannerComponent,
-    ParallaxBannerComponent
+    ParallaxBannerComponent,
+    SimpleBannerComponent
   ]
 })
 export class BannersModule { }

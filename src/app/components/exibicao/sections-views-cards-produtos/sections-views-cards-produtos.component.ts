@@ -24,14 +24,22 @@ export class SectionsViewsCardsProdutosComponent implements OnInit{
   @Output() submit_data = new EventEmitter();
   data_imagens = [];
   activeTab = 1;
+  titleTab = "Swipe"
+  show = false;
 
   submitFilter(data: any, tabActive: number) {
-    this.submit_data.emit(data)
+    // this.submit_data.emit(data)
     this.activeTab = tabActive;
+    this.titleTab = data;
+    this.showOptions();
   }
 
   detailsProduct(produto_id: number) {
     this.route.navigate(['/produtos', produto_id])
+  }
+
+  showOptions() {
+    this.show = !this.show;
   }
 }
 

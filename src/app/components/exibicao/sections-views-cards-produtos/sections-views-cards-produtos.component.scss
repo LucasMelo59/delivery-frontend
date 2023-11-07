@@ -1,70 +1,130 @@
-.tab_btns {
+// .tab_btns {
+//   display: flex;
+//   margin-bottom: 2rem;
+//   column-gap: 0.75rem;
+// }
+
+// .product_banner,
+// .product_images {
+//   position: relative;
+// }
+
+// .product_images{
+//  display: block;
+//  overflow: hidden;
+//  border-radius: 1.25rem;
+// }
+
+// .product_img.hover {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+// }
+
+
+// .tab_btn{
+//   background-color:hsl(0, 0%, 93% ) ;
+//   color: hsl(0, 0%, 13%);
+//   padding: 1rem 1.25rem 0.875rem;
+//   border-radius: .25rem;
+//   font-family: 'Spartan', sans-serif;
+//   font-size: 0.875rem;
+//   font-weight: 600;
+//   cursor: pointer;
+// }
+
+// .product_item {
+//   border: 1px solid hsl(129, 36%, 85%);
+//   border-radius: 1.5rem;
+//   transition: all .2s var(--transition);
+// }
+
+// .product_banner {
+//   padding: 0.625rem 0.75rem 0.75rem;
+// }
+
+// .products_container {
+//   grid-template-columns: repeat(4,1fr);
+// }
+
+
+
+// .tab_btn.active-tab{
+//   color: hsl(176, 88%, 27%) ;
+//   background-color: hsl(34,94%,87%);
+// }
+
+
+// .tab_tems:not(.active-tab){
+//   display: none;
+// }
+
+// .card-body {
+//   min-height: 50px;
+// }
+
+// .row{
+//   display: flex;
+//   flex: 1;
+//   flex-direction: row;
+// }
+
+.bycats .heading {
   display: flex;
-  margin-bottom: 2rem;
-  column-gap: 0.75rem;
+  justify-content: center;
+}
+.bycats {
+  padding: 100px 0;
 }
 
-.product_banner,
-.product_images {
-  position: relative;
+.tabs {
+  margin-bottom: 6rem;
 }
 
-.product_images{
- display: block;
- overflow: hidden;
- border-radius: 1.25rem;
+.bycats .heading > span {
+  font: var(--second-font);
+  font-size: 32px;
+  margin-right: 20px;
 }
 
-.product_img.hover {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-
-.tab_btn{
-  background-color:hsl(0, 0%, 93% ) ;
-  color: hsl(0, 0%, 13%);
-  padding: 1rem 1.25rem 0.875rem;
-  border-radius: .25rem;
-  font-family: 'Spartan', sans-serif;
-  font-size: 0.875rem;
-  font-weight: 600;
+.bycats .heading > span ,
+.opt-trigger {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  --webkit-tap-highlight-color: transparent;
   cursor: pointer;
 }
 
-.product_item {
-  border: 1px solid hsl(129, 36%, 85%);
-  border-radius: 1.5rem;
-  transition: all .2s var(--transition);
+.sort-list .wrap {
+  position: relative;
 }
 
-.product_banner {
-  padding: 0.625rem 0.75rem 0.75rem;
-}
-
-.products_container {
-  grid-template-columns: repeat(4,1fr);
-}
-
-
-
-.tab_btn.active-tab{
-  color: hsl(176, 88%, 27%) ;
-  background-color: hsl(34,94%,87%);
-}
-
-
-.tab_tems:not(.active-tab){
+.sort-list .wrap ul {
+  position: absolute;
+  text-align: left;
+  top: 50px;
+  left: 0;
+  right: 0;
+  background-color: var(--white-color);
+  box-shadow: var(--shadow);
+  z-index: 10;
   display: none;
 }
 
-.card-body {
-  min-height: 50px;
+.sort-list .wrap ul.show {
+  display: block;
 }
 
-.row{
-  display: flex;
-  flex: 1;
-  flex-direction: row;
+.sort-list ul li a {
+  display: block;
+  padding: 5px 20px;
+  transition: var(--transition-background), var(--transition-color);
+}
+
+.sort-list ul li a:hover,
+.sort-list ul  li.active a {
+  background-color: var(--dark-color);
+  color: var(--white-color);
 }

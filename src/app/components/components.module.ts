@@ -18,6 +18,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { SectionsViewsCategoryComponent } from './exibicao/sections-views-category/sections-views-category.component';
 import { SliderComponent } from './sliders/slider/slider.component';
 import { SectionsCardsGuideComponent } from './exibicao/sections-cards-guide/sections-cards-guide.component';
+import { SimpleBannerComponent } from './banners/simple-banner/simple-banner.component';
+import { SectionBlogComponent } from './exibicao/section-blog/section-blog.component';
 
 register();
 
@@ -29,7 +31,8 @@ register();
     BreadcrumbComponent,
     SectionsViewsCategoryComponent,
     SliderComponent,
-    SectionsCardsGuideComponent
+    SectionsCardsGuideComponent,
+    SectionBlogComponent
 
   ],
   imports: [
@@ -50,7 +53,8 @@ register();
     SectionsViewsCardsProdutosComponent,
     BreadcrumbComponent,
     SliderComponent,
-    SectionsCardsGuideComponent
+    SectionsCardsGuideComponent,
+    SectionBlogComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

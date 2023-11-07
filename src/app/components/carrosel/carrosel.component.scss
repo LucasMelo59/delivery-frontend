@@ -2,6 +2,9 @@
   position: relative;
 
 }
+.carousel{
+  padding: 100px 0;
+}
 .carousel .dotgrid .wrapper {
   display: flex;
   grid-template-columns: unset;
@@ -12,14 +15,58 @@
   text-align: center;
 }
 
-.carousel .nav  > div ::after{
+.carousel .nav  > div::after{
   content: none;
 }
 
-.swiper-container::part(button-prev)  {
+.carousel .nav > div  {
   width: 40px;
   height: 40px;
   border: 1px solid var(--grey-color);
   border-radius: 50%;
+  color: var(--dark-color);
   font-size: 20px;
+  --webkit-tap-highlight-color: transparent;
+  transition: var(--transition-background),
+              var(--transition-color),
+              var(--transition-border);
+}
+
+.carousel .nav > div:hover {
+  color: var(--white-color);
+  background-color: var(--dark-color);
+  border-color: var(--dark-color);
+}
+
+.heading {
+  margin-bottom: 6rem;
+}
+
+
+.carousel .nav .swiper-button-disabled {
+  opacity: 0;
+}
+
+@media (max-width: 480px) {
+  .carousel .dotgrid .item {
+    width: 270px;
+
+  }
+}
+
+@media (min-width: 1400px) {
+  .mega-content {
+    grid-template-columns: 1fr 1fr;
+  }
+  .carousel .inner-wrapper {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  .carousel .nav > .swiper-button-next {
+    right: -40px;
+  }
+  .carousel .nav > .swiper-button-prev {
+    left: -40px;
+  }
 }

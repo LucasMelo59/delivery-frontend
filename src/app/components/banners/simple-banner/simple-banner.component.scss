@@ -1,0 +1,30 @@
+.banner {
+  background-color: var(--light-color);
+  background-image: url('/assets/hero4.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-origin: border-box;
+  padding: 100px 0;
+}
+
+.banner .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+
+.banner .content span {
+  font-size: var(--fs14);
+  text-transform: uppercase;
+}
+.banner h3 {
+  --fs-max: 80px;
+}
+
+@media (min-width: 768px) {
+  .banner{
+    background-size: contain;
+  }
+}
