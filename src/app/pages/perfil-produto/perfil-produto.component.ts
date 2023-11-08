@@ -4,6 +4,7 @@ import { ProdutoRest } from 'src/app/models/entity/ProdutoRest';
 import { ProdutoImgs } from 'src/app/models/entity/ProdutoImgs';
 import { ArquivosService } from 'src/app/service/arquivos.service';
 import { ActivatedRoute, Route, Router } from '@angular/router';
+import Swiper from 'swiper';
 
 @Component({
   selector: 'app-perfil-produto',
@@ -53,6 +54,30 @@ export class PerfilProdutoComponent implements OnInit {
 
   constructor(private serviceProduto: PerfilProdutoService, private serviceArquivo: ArquivosService,  private route: ActivatedRoute){}
   ngOnInit(): void {
+    const thumbImage = new Swiper('.thumbnail-image' , {
+      // loop: true,
+      direction: 'vertical',
+      spaceBetween: 15,
+      slidesPerView: 1,
+      freeMode: true,
+      watchSlidesProgress: true,
+
+    })
+
+    const mainImage = new Swiper('.main-imgage' , {
+      loop: true,
+      autoHeight: true,
+
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      thumbs: {
+        swiper: thumbImage
+      }
+
+    })
+
     this.productId = this.route.snapshot.paramMap.get('id');
     this.serviceProduto.getProdutoById(this.productId).subscribe((res: ProdutoRest) => {
       console.log(res);
