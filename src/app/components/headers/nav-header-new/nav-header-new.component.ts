@@ -39,10 +39,30 @@ export class NavHeaderNewComponent {
         },
       ]
     }
-
-
   ]
+  routeMobile = [
+    {
+      title: "Home",
+      routerLink: "/home"
+    },
 
+    {
+      title: "Products",
+      routerLink: "/shop"
+    },
+    {
+      title: "Disc",
+      routerLink: "/home"
+    },
+    {
+      title: "Products",
+      routerLink: "/shop"
+    },
+    {
+      title: "Disc",
+      routerLink: "/home"
+    }
+  ]
   toggleMenuMobile() {
     this.mobileButton = !this.mobileButton;
   }

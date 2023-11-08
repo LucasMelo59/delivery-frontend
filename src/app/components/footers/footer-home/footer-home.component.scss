@@ -34,7 +34,8 @@
 }
 
 ul {
-  justify-content: space-evenly;
+  justify-content: space-between;
+  width: 100px;
 }
 
 .teste {
@@ -114,4 +115,10 @@ form :where(input, textarea, select)::placeholder {
   .inner-footer .wrap > div {
     flex-flow: nowrap;
   }
+}
+
+.search {
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
