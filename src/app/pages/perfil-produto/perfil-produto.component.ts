@@ -53,7 +53,9 @@ export class PerfilProdutoComponent implements OnInit {
 
 
   constructor(private serviceProduto: PerfilProdutoService, private serviceArquivo: ArquivosService,  private route: ActivatedRoute){}
+
   ngOnInit(): void {
+
     const thumbImage = new Swiper('.thumbnail-image' , {
       // loop: true,
       direction: 'vertical',
