@@ -289,3 +289,11 @@ table {
   background-color: transparent;
   color: var(--first-color);
 }
+
+.product .wrapper {
+  --grid-col: 331px
+}
+
+.product .main-image img {
+  width: 100%;
+}

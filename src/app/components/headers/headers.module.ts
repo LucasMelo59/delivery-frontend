@@ -3,6 +3,7 @@ import { NavHeaderComponent } from './nav-header/nav-header.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NavHeaderNewComponent } from './nav-header-new/nav-header-new.component';
+import { ComponentsModule } from '../components.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { NavHeaderNewComponent } from './nav-header-new/nav-header-new.component
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    
   ],
   exports: [
     NavHeaderComponent,
