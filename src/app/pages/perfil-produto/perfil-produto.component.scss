@@ -311,6 +311,22 @@
   height: 90px;
 }
 
+.product .outer-thumb .swiper-slide-thumb-active > div ,
+.product .outer-thumb .item:hover > div {
+  border: 1px solid var(--grey-color);
+}
+
+.product .outer-thumb .swiper-slide-thumb-active img ,
+.product .outer-thumb .item:hover img {
+  transform: scale3d(.85, .85, .85);
+}
+
+
+.product .custom-pagination {
+  position: relative;
+  height: 50px;
+}
+
 
 @media (min-width: 481px){
   .product .wrapper {
@@ -335,5 +351,8 @@
     position: absolute;
     top: 0;
     left: 0;
+  }
+  .custom-pagination {
+    display: none;
   }
 }
