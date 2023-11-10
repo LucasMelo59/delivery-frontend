@@ -311,6 +311,10 @@
   height: 90px;
 }
 
+.product .outer-thumb img {
+  transition: var(--transition-transform);
+}
+
 .product .outer-thumb .swiper-slide-thumb-active > div ,
 .product .outer-thumb .item:hover > div {
   border: 1px solid var(--grey-color);
