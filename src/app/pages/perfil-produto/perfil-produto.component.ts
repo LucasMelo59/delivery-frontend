@@ -66,7 +66,7 @@ export class PerfilProdutoComponent implements OnInit {
 
     })
 
-    const mainImage = new Swiper('.main-imgage' , {
+    const mainImage = new Swiper('.main-image' , {
       loop: true,
       autoHeight: true,
 
