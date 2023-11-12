@@ -1,147 +1,5 @@
 
 
-<!-- <section class="details " >
-  <div class="details_container container grid">
-    <div class="details_group">
-      <img src="{{mainImg}}" class="main_img" alt="">
-
-      <div class="details_small-images grid"  >
-        <div *ngFor="let item of listImagensProduto; let index = index" >
-          <img src="{{item}}" class="details_small-img" (click)="tradeImg(index)" alt="">
-        </div>
-
-      </div>
-    </div>
-
-    <div class="details_group">
-      <h3 class="details_title">Henley Shirt</h3>
-      <p class="details_brand" > Brands: <span>adidas</span> </p>
-
-      <div class="details_price flex">
-        <span class="new_price" >$116.00</span>
-        <span class="old_price" >$200.00</span>
-        <span class="save_price" >25% off</span>
-      </div>
-
-
-      <p class="short_description" >
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-      </p>
-
-      <ul class="product_list">
-        <li class="list_item flex" >
-          <i class="fa-solid fa-crown"></i> 1 Year Al jazeera brand
-        </li>
-        <li class="list_item flex" >
-          <i class="fa-solid fa-arrows-rotate"></i> 30 Day Return Policy
-        </li>
-        <li class="list_item flex" >
-          <i class="fa-regular fa-credit-card"></i> Cash on Delivery available
-        </li>
-      </ul>
-
-      <div class="details_color flex">
-        <span class="details_color-title" >Color</span>
-
-        <ul class="color_list" *ngFor="let item of cores; let index = index" >
-          <li>
-            <a (click)="clickOnColor(index)" class="color_link" [ngClass]="{'selected-color': activeCor === index }" [ngStyle]="{'background-color': item.style}" ></a>
-          </li>
-        </ul>
-      </div>
-
-
-      <div class="details_size flex">
-        <span class="details_size-title" >Size</span>
-
-        <ul class="size_list" *ngFor="let item of tamanhoBlusas; let index = index " >
-          <li (click)="clickOnSize(index)">
-            <a  class="size_link" [ngClass]="{ 'size-active': activeTamanho === index }"  >{{item.tamanho}}</a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="details_action">
-        <button (click)="diminuirQuantidade()" >-</button>
-        <input type="number" class="quantity" [(ngModel)]="quantidade" [min]="1" readonly>
-        <button (click)="aumentarQuantidade()" >+</button>
-        <a (click)="adicionarAoCarrinho()" class="btn btn-sm" >Add to Cart</a>
-
-        <a href="" class="details_action-btn" >
-          <i class="fa-regular fa-heart"></i>
-        </a>
-
-      </div>
-
-      <ul class="details_meta">
-          <li class="meta_list flex" ><span>SKU:</span> FWM15VKT</li>
-          <li class="meta_list flex" ><span>Tags:</span> Cloth, Women, Dress</li>
-          <li class="meta_list flex" ><span>Availabiity:</span> Cloth, Women, Dress</li>
-        </ul>
-    </div>
-  </div>
-</section> -->
-
-<!-- <section class="details_tab container" >
-  <div class="detail_tabs">
-    <span class="detail_tab active-tab">
-      Additional Info
-    </span>
-  </div>
-
-  <div class="details_tabs-content">
-    <div class="details_tab-content active-tab" id="info">
-      <table class="info_table">
-        <tr>
-          <th>Stand up</th>
-          <td>35"L x 24"W x 37-45"H(front to back wheel)</td>
-        </tr>
-
-        <tr>
-          <th>Folded(w/o wheels)</th>
-          <td>35"L x 24"W x 37-45</td>
-        </tr>
-
-        <tr>
-          <th>Folded(w/ wheels)</th>
-          <td>35"L x 24"W x 37-45</td>
-        </tr>
-
-        <tr>
-          <th>Door Pass Through</th>
-          <td>24</td>
-        </tr>
-
-        <tr>
-          <th>Frame</th>
-          <td>Aluminum</td>
-        </tr>
-
-        <tr>
-          <th>Width</th>
-          <td>24"</td>
-        </tr>
-
-        <tr>
-          <th>Color</th>
-          <td>Black</td>
-        </tr>
-
-        <tr>
-          <th>Size</th>
-          <td>M,S</td>
-        </tr>
-      </table>
-    </div>
-  </div>
-</section> -->
-
-<!-- <section class="products container section-lg">
-  <h3 class="section_title"><span>Related</span> Products</h3>
-
-  <div class="products_container grid"></div>
-</section> -->
-
 <div id="page" class="page-single">
   <app-nav-header-new></app-nav-header-new>
   <main>
@@ -204,10 +62,10 @@
                     </div>
                     <div class="product-rating">
                       <span>
-                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
                         <span>4.8</span>
                       </span>
-                      <a href="">3 Reviews</a>
+                      <a >3 Reviews</a>
                     </div>
                   </div>
                   <div class="product-color">
@@ -231,7 +89,7 @@
                     <div class="wrap">
                       <strong>201</strong>
                       <span class="grey-color">in stock</span>
-                      <i class="fa-regular fa-circle-check"></i>
+                      <i class="fa-solid fa-circle-check"></i>
                     </div>
                   </div>
                   <div class="product-action">
@@ -249,10 +107,10 @@
                   </div>
                   <div class="product-control list-inline">
                     <ul>
-                      <li><a ><i class="fa-regular fa-heart"></i><span>Add to wishlist</span></a></li>
+                      <li><a ><i class="fa-solid fa-heart"></i><span>Add to wishlist</span></a></li>
                       <li><a ><i class="fa-solid fa-arrow-right-arrow-left"></i><span>Compare</span></a></li>
                       <li><a ><i class="fa-solid fa-share-nodes"></i><span>Share</span></a></li>
-                      <li><a ><i class="fa-regular fa-circle-question"></i><span>Ask Question</span></a></li>
+                      <li><a ><i class="fa-solid fa-circle-question"></i><span>Ask Question</span></a></li>
                     </ul>
                   </div>
                   <div class="shipping">
@@ -260,12 +118,12 @@
                       <li>
                         <i class="fa-solid fa-share-nodes"></i>
                         <span>free shiing & return</span>
-                        <span class="grey-color" >On orders over $100</span>
+                        <span class="grey-color" > On orders over $100</span>
                       </li>
                       <li>
                         <i class="fa-solid fa-share-nodes"></i>
                         <span>Estimate delivery:</span>
-                        <span class="grey-color" >01 - 07 jan, 2023</span>
+                        <span class="grey-color" > 01 - 07 jan, 2023</span>
                       </li>
                     </ul>
                   </div>
@@ -274,12 +132,389 @@
             </div>
           </div>
           <div class="product detail">
+            <div class="wrapper tabbed">
+              <nav class="list-inline scrollto">
+                <ul class="wrapper">
+                  <li class="active"  [ngClass]="{'active': abaSelcionada === 'Product details'}" (click)="trocarAba('Product details')" ><a ><span>Product details</span></a></li>
+                  <li [ngClass]="{'active': abaSelcionada === 'Custom'}"  (click)="trocarAba('Custom')" ><a  class="tabbed-trigger"><span>Custom</span></a></li>
+                  <li [ngClass]="{'active': abaSelcionada === 'Reviews'}"  (click)="trocarAba('Reviews')" ><a class="tabbed-trigger"><span>Reviews</span><span class="item-floating" >{{itemFloating}}</span></a></li>
+                  <li [ngClass]="{'active': abaSelcionada === 'Shipping'}" (click)="trocarAba('Shipping')" ><a  class="tabbed-trigger"><span>Shipping</span></a></li>
+                </ul>
+              </nav>
+              <div id="product-description" class="product-about description active" *ngIf="abaSelcionada === 'Product details'" >
+                <div class="text-block">
+                  <h3>The Swater in tosca</h3>
+                  <div class="grey-color">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, voluptatem fugiat deserunt aliquid cum laborum illum deleniti nihil at, dolores veritatis, blanditiis fuga iste quis vel iure necessitatibus totam animi.</p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo, minus distinctio iusto quam laboriosam exercitationem, non velit, eos quidem adipisci dolore tenetur maxime! Perferendis pariatur voluptatum delectus. Fuga, quidem cum.</p>
+                  </div>
+                </div>
+                <div class="dotgrid">
+                  <div class="wrapper">
+                    <div class="list-block">
+                      <h4>What is this?</h4>
+                      <ul class="grey-color">
+                        <li>95% Polyester, 5% spandex</li>
+                        <li>Wrap closure</li>
+                        <li>Hand Wash only</li>
+                        <li>Simples yet flaterring dress</li>
+                      </ul>
+                    </div>
+                    <div class="list-block">
+                      <h4>What makes our products unique?</h4>
+                      <p class="grey-color">sempre esteja na moda, nos dedicamos para trazer o melhor</p>
+                    </div>
+                    <div class="list-block">
+                      <h4>WWashing instrutions</h4>
+                      <p class="grey-color">sempre esteja na moda, nos dedicamos para trazer o melhor</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="product-custom" class="product-about custom" *ngIf="abaSelcionada === 'Custom'">
+                <h3>Our custom size</h3>
+                <div class="image">
+                  <img src="\assets\imgs\custom-size.jpg" alt="">
+                </div>
+              </div>
+              <div id="product-review" class="product-about review" *ngIf="abaSelcionada === 'Reviews'">
+               <div class="wrapper">
+                <h3>Rating & Review</h3>
+                <div class="head-review">
+                  <div class="sum-rating">
+                    <strong>4.8</strong>
+                    <span>3 reviews</span>
+                  </div>
+                  <div class="button">
+                    <a  class="primary-btn">Write a review</a>
+                  </div>
+                </div>
+                <div class="body-review">
+                  <div class="profile">
+                    <div class="thumb-name">
+                      <div class="image">
+                        <img src="\assets\imgs\ig_01.jpg" alt="">
+                      </div>
+                      <div class="grouping">
+                        <div class="name">Sarah</div>
+                        <div class="rating">
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div class="data grey-color">On November 7, 2022</div>
+                      </div>
+                    </div>
+                    <div class="comment">
+                      <strong>Awesome Product</strong>
+                      <p class="grey-color">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur optio possimus quos soluta velit ratione earum ad quasi esse expedita, omnis, laborum et id officia totam distinctio minima inventore culpa.</p>
+                    </div>
+                  </div>
+                  <div class="profile">
+                    <div class="thumb-name">
+                      <div class="image">
+                        <img src="\assets\imgs\ig_02.jpg" alt="">
+                      </div>
+                      <div class="grouping">
+                        <div class="name">Sarah</div>
+                        <div class="rating">
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div class="data grey-color">On November 7, 2022</div>
+                      </div>
+                    </div>
+                    <div class="comment">
+                      <strong>Awesome Product</strong>
+                      <p class="grey-color">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur optio possimus quos soluta velit ratione earum ad quasi esse expedita, omnis, laborum et id officia totam distinctio minima inventore culpa.</p>
+                    </div>
+                  </div>
+                  <div class="profile">
+                    <div class="thumb-name">
+                      <div class="image">
+                        <img src="\assets\imgs\ig_03.jpg" alt="">
+                      </div>
+                      <div class="grouping">
+                        <div class="name">Sarah</div>
+                        <div class="rating">
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div class="data grey-color">On November 7, 2022</div>
+                      </div>
+                    </div>
+                    <div class="comment">
+                      <strong>Awesome Product</strong>
+                      <p class="grey-color">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur optio possimus quos soluta velit ratione earum ad quasi esse expedita, omnis, laborum et id officia totam distinctio minima inventore culpa.</p>
+                    </div>
+                  </div>
+                </div>
+               </div>
 
+              </div>
+              <div id="product-shipping" class="product-about shipping" *ngIf="abaSelcionada === 'Shipping'">
+                <div class="grey-color">
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid soluta enim iure, nisi voluptas libero. Iste omnis maxime excepturi, perspiciatis illum dolorem laudantium nulla vero consequatur esse harum debitis eaque?</p>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat ducimus tenetur fuga incidunt at officia, nisi accusantium quaerat magni hic! Repudiandae culpa libero quasi delectus aperiam cupiditate minima officiis voluptatem.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <app-carrosel></app-carrosel>
   </main>
 </div>
+<div class="data-popup d-share">
+  <div class="wrap">
+    <div class="data-content">
+      <a  class="close-trigger"><i class="fa-solid fa-xmark"></i></a>
+      <div class="form">
+        <label >Copy link</label>
+        <input type="text" disabled value="https://pt.quarkus.io/guides/rest-client-multipart">
+        <span><i class="fa-regular fa-copy"></i></span>
+      </div>
+      <div class="media-share list-inline">
+        <label >Share</label>
+        <ul>
+          <li><a ><i class="fa-brands fa-facebook"></i></a></li>
+          <li><a ><i class="fa-brands fa-twitter"></i></a></li>
+          <li><a ><i class="fa-brands fa-whatsapp"></i></a></li>
+          <li><a ><i class="fa-brands fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="data-popup d-share">
+  <div class="wrap">
+    <div class="data-content">
+      <a  class="close-trigger"><i class="fa-solid fa-xmark"></i></a>
+      <h3>The Question</h3>
+      <form action="">
+        <div>
+          <input type="text" placeholder="Name">
+        </div>
+        <div>
+          <input type="text" placeholder="Email">
+        </div>
+        <div><textarea name="" placeholder="Your question is" id="" cols="30" rows="5"></textarea></div>
+        <div class="button">
+          <button type="submit" class="secondary-btn">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<div class="data-popup d-review">
+  <div class="wrap">
+    <div class="data-content">
+      <a  class="close-trigger"><i class="fa-solid fa-xmark"></i></a>
+      <h3>White a Review</h3>
+      <form action="">
+        <div class="dotgrid">
+          <div class="wrapper">
+            <div>
+              <input type="text" placeholder="Name">
+            </div>
+            <div>
+              <input type="text" placeholder="Email">
+            </div>
+          </div>
+        </div>
+        <div class="rating">
+          <span>Your rating:</span>
+          <div class="stars">
+            <input type="radio" name="rating" id="star5">
+            <label for="star5"><i class="fa-solid fa-star"></i></label>
+            <input type="radio" name="rating" id="star4">
+            <label for="star4"> <i class="fa-solid fa-star"></i></label>
+            <input type="radio" name="rating" id="star3">
+            <label for="star3"> <i class="fa-solid fa-star"></i></label>
+            <input type="radio" name="rating" id="star2">
+            <label for="star2"> <i class="fa-solid fa-star"></i></label>
+            <input type="radio" name="rating" id="star1">
+            <label for="star1"> <i class="fa-solid fa-star"></i></label>
+          </div>
+        </div>
+        <div>
+          <input type="text" placeholder="Review title">
+        </div>
+        <div><textarea name="" placeholder="Your review is" id="" cols="30" rows="5"></textarea></div>
+        <div class="button">
+          <button type="submit" class="secondary-btn">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="cart-menu active">
+  <div class="wrap">
+    <a  class="close-trigger"><i class="fa-solid fa-xmark"></i></a>
+    <div class="scrollto cart-outer">
+      <div class="wrapper">
+        <div class="cart-list">
+          <div class="wrapper">
+            <div class="cart-header">
+              <h2>Shopping cart</h2>
+            </div>
+            <div class="cart-body scrollto">
+              <div class="product-list">
+                <div class="wrapper">
+                  <ul>
+                    <li>
+                      <div class="grouping">
+                        <div class="quantity">
+                          <div class="control">
+                            <button>-</button>
+                            <input type="text" value="1">
+                            <button>+</button>
+                          </div>
+                        </div>
+                        <div class="thumbnail">
+                          <a >
+                            <img src="\assets\imgs\product_01.jpg" alt="">
+                          </a>
+                        </div>
+                      </div>
+                      <div class="variants">
+                        <h4 class="dot-title"><a >The sweater</a></h4>
+                        <div class="color grey-color">
+                          <span>Color:</span>
+                          <span>Tosca</span>
+                        </div>
+                        <div class="size grey-color">
+                          <span>Size:</span>
+                          <span>L</span>
+                        </div>
+                        <div class="price">$45</div>
+                        <a  class="item-remove">
+                          <i class="fa-solid fa-xmark"></i>
+                        </a>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="grouping">
+                        <div class="quantity">
+                          <div class="control">
+                            <button>-</button>
+                            <input type="text" value="1">
+                            <button>+</button>
+                          </div>
+                        </div>
+                        <div class="thumbnail">
+                          <a >
+                            <img src="\assets\imgs\product_01.jpg" alt="">
+                          </a>
+                        </div>
+                      </div>
+                      <div class="variants">
+                        <h4 class="dot-title"><a >The sweater</a></h4>
+                        <div class="color grey-color">
+                          <span>Color:</span>
+                          <span>Tosca</span>
+                        </div>
+                        <div class="size grey-color">
+                          <span>Size:</span>
+                          <span>L</span>
+                        </div>
+                        <div class="price">$45</div>
+                        <a  class="item-remove">
+                          <i class="fa-solid fa-xmark"></i>
+                        </a>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="grouping">
+                        <div class="quantity">
+                          <div class="control">
+                            <button>-</button>
+                            <input type="text" value="1">
+                            <button>+</button>
+                          </div>
+                        </div>
+                        <div class="thumbnail">
+                          <a >
+                            <img src="\assets\imgs\product_01.jpg" alt="">
+                          </a>
+                        </div>
+                      </div>
+                      <div class="variants">
+                        <h4 class="dot-title"><a >The sweater</a></h4>
+                        <div class="color grey-color">
+                          <span>Color:</span>
+                          <span>Tosca</span>
+                        </div>
+                        <div class="size grey-color">
+                          <span>Size:</span>
+                          <span>L</span>
+                        </div>
+                        <div class="price">$45</div>
+                        <a  class="item-remove">
+                          <i class="fa-solid fa-xmark"></i>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="cart-footer">
+              <div class="discount">
+                <form action="">
+                  <input type="text" class="input" placeholder="Cupom">
+                  <input type="submit" class="submit" value="Apply">
+                </form>
+              </div>
+              <div class="math-pricing">
+                <ul>
+                  <li>
+                    <span>Subtotal</span>
+                    <span class="value" ></span>
+                  </li>
+                  <ul>
+                    <li><span>Shipping</span></li>
+                    <li>
+                      <div>
+                        <input type="radio" class="checker" name="shipping" id="">
+                        <label for="">Free</label>
+                      </div>
+                      <span class="value" >$0.00</span>
+                    </li>
+                    <li>
+                      <div>
+                        <input type="radio" class="checker" name="shipping" id="">
+                        <label for="">Flat</label>
+                      </div>
+                      <span class="value" >$147.00</span>
+                    </li>
+                  </ul>
+                </ul>
+              </div>
+              <div class="button">
+                <a href="" class="secondary-btn">Checkout</a>
+                <a href="" class="grey-link">View Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <app-footer-home></app-footer-home>

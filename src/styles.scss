@@ -325,6 +325,39 @@ h4 {font-size: 1em;}
   flex-shrink: 0;
 }
 
+.item-floating {
+  position: absolute;
+  font-size: 10px;
+  font-weight: var(--fw600);
+  top: -8px;
+  right: 0;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.inner-footer .bottom,
+.page-single .carousel {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.sort-data,
+.data-popup {
+  display: none;
+  animation: var(--fade);
+}
+
+.secondary-btn:hover.active,
+.data-popup.active {
+  display: block;
+}
+
 @media (min-width: 992px) {
   .scrollto .wrapper {
     --display: grid;

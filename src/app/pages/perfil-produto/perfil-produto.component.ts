@@ -19,6 +19,8 @@ export class PerfilProdutoComponent implements OnInit {
   activeTamanho: number = 0;
   activeCor: number = 0
   quantidade: number = 1; // Valor inicial da quantidade
+  abaSelcionada: string = "Product details"
+  itemFloating: number = 3;
 
   tamanhoBlusas = [
     {
@@ -104,6 +106,10 @@ export class PerfilProdutoComponent implements OnInit {
   detalhesSelecionados = {
     tamanho: this.tamanhoBlusas[0],
     cor: this.cores[0],
+  }
+
+  trocarAba(data: string) {
+    this.abaSelcionada = data;
   }
 
   tradeImg(index: number) {
