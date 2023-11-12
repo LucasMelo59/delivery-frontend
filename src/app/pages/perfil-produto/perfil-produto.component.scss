@@ -724,6 +724,49 @@ form .button button,
   background-color: var(--dark-color);
  }
 
+ .cart-menu .cart-footer {
+  margin: 0 -20px;
+  padding: 20px;
+  background-color: var(--flashwhite-color);
+  margin-top: auto;
+ }
+
+ .cart-menu .cart-outer > .wrapper {
+  height: 100vh;
+  padding: 0;
+ }
+
+ .cart-menu form  {
+  position: relative;
+  margin-bottom: 20px;
+ }
+
+ .cart-menu form .input {
+  line-height: 34px;
+  border: 0;
+  border-radius: 7px;
+  background-color: var(--white-color);
+ }
+
+ .cart-menu form .submit {
+  position: absolute;
+  top: 	10px;
+  right: 10px;
+  max-width: 90px;
+  height: 34px;
+  line-height: 1;
+  background-color: var(--grey-color);
+  color: var(--white-color);
+  padding: 0;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: var(--transition-background);
+ }
+
+ .cart-menu form .submit:hover {
+  background-color: var(--dark-color);
+ }
+
 @media (min-width: 481px){
   .product .wrapper {
     --gutter: 60px;
