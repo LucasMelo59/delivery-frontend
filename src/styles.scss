@@ -120,6 +120,17 @@ h2 {font-size: 2.5em;}
 h3 {font-size: 2em;}
 h4 {font-size: 1em;}
 
+
+@keyframes fade-bottom {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 /* #reused style */
 
 .container {
@@ -170,7 +181,12 @@ h4 {font-size: 1em;}
   font-size: 18px;
 }
 
-.grey-color {
+.grey-link {
+  color: inherit;
+  transition: var(--transition-color);
+}
+
+.grey-color, .grey-link:hover {
   color: var(--grey-color);
 }
 
@@ -370,3 +386,7 @@ h4 {font-size: 1em;}
     width: unset;
   }
 }
+
+
+
+

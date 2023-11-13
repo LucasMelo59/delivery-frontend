@@ -693,7 +693,7 @@ form .button button,
   text-overflow: ellipsis;
  }
 
- .product-list .variants > div{
+ .product-list .variants > div {
   font-size: var(--fs14);
   line-height: 1.4;
  }
@@ -736,19 +736,19 @@ form .button button,
   padding: 0;
  }
 
- .cart-menu form  {
+ .cart-footer form  {
   position: relative;
   margin-bottom: 20px;
  }
 
- .cart-menu form .input {
+ .cart-footer form .input {
   line-height: 34px;
   border: 0;
   border-radius: 7px;
   background-color: var(--white-color);
  }
 
- .cart-menu form .submit {
+ .cart-footer form .submit {
   position: absolute;
   top: 	10px;
   right: 10px;
@@ -763,9 +763,162 @@ form .button button,
   transition: var(--transition-background);
  }
 
- .cart-menu form .submit:hover {
+ .cart-footer form .submit:hover {
+  color: var(--light-color);
   background-color: var(--dark-color);
  }
+
+ .cart-footer .math-pricing ul li {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+ }
+
+ .cart-footer .math-pricing ul ul {
+  width: 100%;
+ }
+
+ .cart-footer .math-pricing ul li span:not(.value) ,
+ .cart-footer .math-pricing ul li label {
+  color: var(--grey-color);
+ }
+
+
+ .cart-footer .math-pricing ul ul li:not(:first-child) {
+  padding-left: 20px;
+ }
+
+ .cart-footer .math-pricing .total {
+  font-size: 18px;
+  font-weight: var(--fw600);
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--light-color);
+ }
+
+ .cart-footer .button {
+  text-align: center;
+ }
+
+ .cart-footer .button .secondary-btn {
+  display: block;
+  margin: 20px 0 10px;
+ }
+
+ .cart-footer .button .secondary-btn {
+  background-color: var(--primary-color);
+  border: 0;
+  text-transform: capitalize;
+  line-height: 54px;
+  border-radius: 7px;
+  min-width: 240px;
+ }
+
+ .cart-footer .button .secondary-btn:hover {
+  background-color: var(--grey-color);
+  color: var(--white-color);
+ }
+
+ .cart-menu .product-list > .wrapper {
+  max-width: 400px;
+ }
+
+ input.checker {
+  position: relative;
+  padding: 5px;
+  margin: 0 5px 0 2px;
+  cursor: pointer;
+ }
+
+ input.checker::after, input.checker::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+ }
+
+ input.checker::before {
+  width: 16px;
+  height: 16px;
+  transform: translate(-50%, -50%);
+  background-color: var(--white-color);
+  border: 1px solid var(--grey-color);
+  border-radius: 50%;
+  transition: var(--transition-border);
+ }
+
+ input.checker::after {
+  width: 10px;
+  height: 10px;
+  background-color: var(--dark-color);
+  transform: translate(-50%, 50%) scale(0);
+  border-radius: 50%;
+  transition: var(--transition-transform);
+ }
+
+ input.checker:checked::before {
+  border-color: var(--dark-color);
+ }
+
+ input.checker:checked::after {
+  transform: translate(-50%, 50%) scale(1);
+ }
+
+ form :where(input, textarea, select) {
+  font-size: var(--fs14);
+  border: 1px solid var(--light-color);
+  outline: 0;
+  background-color: transparent;
+  padding: 10px 20px;
+  transition: border .3s;
+}
+
+form :where(input, textarea, select):focus {
+  border-color: var(--dark-color);
+}
+
+form :where(input, textarea, select)::placeholder {
+  color: var(--grey-color);
+}
+
+// .scrollto > .wrapper {
+//   --display: flex;
+//   padding-bottom: 20px;
+//   overflow-x: auto;
+//   overscroll-behavior-inline: contain;
+//   scroll-snap-type: inline mandatory;
+// }
+
+.scrollto::-webkit-scrollbar{
+  width: 12px;
+  height: 40px;
+}
+
+.scrollto::-webkit-scrollbar-thumb{
+  --border-color: var(var(--white-color));
+  background-color: var(--light-color);
+  border: 3px solid var(--border-color);
+  border-radius: 20px;
+}
+
+.scrollto:hover::-webkit-scrollbar-thumb{
+  background-color: var(--grey-color);
+}
+
+.scrollto::-webkit-scrollbar-thumb:hover{
+  background-color: var(--grey-color);
+}
+
+.scrollto {
+  --display: flex;
+    padding-bottom: 20px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+}
+
+
 
 @media (min-width: 481px){
   .product .wrapper {
@@ -799,6 +952,8 @@ form .button button,
 
   }
 }
+
+
 
 @media (min-width: 768px) {
   .product.dotgrid .image {
