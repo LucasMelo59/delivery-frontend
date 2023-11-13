@@ -21,6 +21,7 @@ import { SectionsCardsGuideComponent } from './exibicao/sections-cards-guide/sec
 import { SimpleBannerComponent } from './banners/simple-banner/simple-banner.component';
 import { SectionBlogComponent } from './exibicao/section-blog/section-blog.component';
 import { SectionInstaBlogComponent } from './exibicao/section-insta-blog/section-insta-blog.component';
+import { CartListComponent } from './cart-list/cart-list.component';
 
 register();
 
@@ -34,7 +35,7 @@ register();
     SliderComponent,
     SectionsCardsGuideComponent,
     SectionBlogComponent,
-    SectionInstaBlogComponent
+    SectionInstaBlogComponent,
 
   ],
   imports: [
@@ -57,7 +58,7 @@ register();
     SliderComponent,
     SectionsCardsGuideComponent,
     SectionBlogComponent,
-    SectionInstaBlogComponent
+    SectionInstaBlogComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

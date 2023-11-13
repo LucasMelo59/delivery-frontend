@@ -21,6 +21,21 @@ export class PerfilProdutoComponent implements OnInit {
   quantidade: number = 1; // Valor inicial da quantidade
   abaSelcionada: string = "Product details"
   itemFloating: number = 3;
+  routerBreadCrumb  = [
+    {
+      title: "Home",
+      routerLink: "/home"
+    },
+    {
+      title: "Produtos",
+      routerLink: "/home"
+    },
+    {
+      title: "Nome Produto",
+      routerLink: "/."
+    },
+  ]
+
 
   tamanhoBlusas = [
     {

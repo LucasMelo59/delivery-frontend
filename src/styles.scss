@@ -365,8 +365,11 @@ h4 {font-size: 1em;}
 
 .sort-data,
 .data-popup {
-  display: none;
   animation: var(--fade);
+}
+
+.data-popup {
+  display: none;
 }
 
 .secondary-btn:hover.active,

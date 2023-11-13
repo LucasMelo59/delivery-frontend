@@ -14,7 +14,6 @@ import { ComponentsModule } from '../components.module';
   imports: [
     CommonModule,
     RouterModule,
-    
   ],
   exports: [
     NavHeaderComponent,

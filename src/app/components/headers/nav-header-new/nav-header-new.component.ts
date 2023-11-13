@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-nav-header-new',
@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class NavHeaderNewComponent {
   mobileButton: boolean = false;
   showMenu: boolean = false;
+  cartButton:boolean = false;
   route = [
     {
       rotas: [
@@ -40,6 +41,15 @@ export class NavHeaderNewComponent {
       ]
     }
   ]
+
+  @Input() routerBreadCrumb  = [
+    {
+      title: "Home",
+      routerLink: "/home"
+    },
+  ]
+
+
   routeMobile = [
     {
       title: "Home",

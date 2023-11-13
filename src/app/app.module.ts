@@ -19,6 +19,7 @@ import { CarrinhoUsuarioComponent } from './pages/carrinho-usuario/carrinho-usua
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { CartListComponent } from './components/cart-list/cart-list.component';
 
 register();
 
@@ -28,14 +29,15 @@ register();
     PerfilProdutoComponent,
     HomeComponent,
     PaginaComprasComponent,
-    CarrinhoUsuarioComponent
+    CarrinhoUsuarioComponent,
+    CartListComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     RouterModule,
-    CardModule, 
+    CardModule,
     CommonModule,
     TemplatesModule,
     ComponentsModule,

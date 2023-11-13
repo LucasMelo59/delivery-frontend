@@ -1,7 +1,7 @@
 
 
 <div id="page" class="page-single">
-  <app-nav-header-new></app-nav-header-new>
+  <app-nav-header-new [routerBreadCrumb]="routerBreadCrumb" ></app-nav-header-new>
   <main>
     <div class="section">
       <div class="container">
@@ -361,138 +361,6 @@
   </div>
 </div> -->
 
-<div class="cart-menu active">
-  <div class="wrap">
-    <a  class="close-trigger"><i class="fa-solid fa-xmark"></i></a>
-    <div class="scrollto cart-outer">
-      <div class="wrapper">
-        <div class="cart-list">
-          <div class="wrapper">
-            <div class="cart-header">
-              <h3>Shopping cart</h3>
-            </div>
-            <div class="cart-body scrollto">
-              <div class="product-list">
-                <div class="wrapper">
-                  <ul>
-                    <li>
-                      <div class="grouping">
-                        <div class="quantity">
-                          <div class="control">
-                            <button>-</button>
-                            <input type="text" value="1">
-                            <button>+</button>
-                          </div>
-                        </div>
-                        <div class="thumbnail">
-                          <a >
-                            <img src="\assets\imgs\product_01.jpg" alt="">
-                          </a>
-                        </div>
-                      </div>
-                      <div class="variants">
-                        <h4 class="dot-title"><a >The sweater</a></h4>
-                        <div class="color grey-color">
-                          <span>Color:</span>
-                          <span>Tosca</span>
-                        </div>
-                        <div class="size grey-color">
-                          <span>Size:</span>
-                          <span>L</span>
-                        </div>
-                        <div class="price">$45</div>
-                        <a  class="item-remove">
-                          <i class="fa-solid fa-xmark"></i>
-                        </a>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="grouping">
-                        <div class="quantity">
-                          <div class="control">
-                            <button>-</button>
-                            <input type="text" value="1">
-                            <button>+</button>
-                          </div>
-                        </div>
-                        <div class="thumbnail">
-                          <a >
-                            <img src="\assets\imgs\product_01.jpg" alt="">
-                          </a>
-                        </div>
-                      </div>
-                      <div class="variants">
-                        <h4 class="dot-title"><a >The sweater</a></h4>
-                        <div class="color grey-color">
-                          <span>Color:</span>
-                          <span>Tosca</span>
-                        </div>
-                        <div class="size grey-color">
-                          <span>Size:</span>
-                          <span>L</span>
-                        </div>
-                        <div class="price">$45</div>
-                        <a  class="item-remove">
-                          <i class="fa-solid fa-xmark"></i>
-                        </a>
-                      </div>
-                    </li>
-
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="cart-footer">
-              <div class="discount">
-                <form action="">
-                  <input type="text" class="input" placeholder="Cupom">
-                  <input type="submit" class="submit" value="Apply">
-                </form>
-              </div>
-              <div class="math-pricing">
-                <ul>
-                  <!-- <li>
-                    <span>Subtotal</span>
-                    <span class="value" ></span>
-                  </li> -->
-                  <!-- <ul>
-                    <li><span>Shipping</span></li>
-                    <li>
-                      <div>
-                        <input type="radio" class="checker" name="shipping" id="">
-                        <label for="">Free</label>
-                      </div>
-                      <span class="value" >$0.00</span>
-                    </li>
-                    <li>
-                      <div>
-                        <input type="radio" class="checker" name="shipping" id="">
-                        <label for="">Flat</label>
-                      </div>
-                      <span class="value" >$10</span>
-                    </li>
-                  </ul> -->
-                  <li>
-                    <span>Promo discount</span>
-                    <span class="value">- .$0. 00</span>
-                  </li>
-                  <li>
-                    <span class="total" >Total</span>
-                    <span class="value">$147.00</span>
-                  </li>
-                </ul>
-              </div>
-              <div class="button">
-                <a href="" class="secondary-btn">Checkout</a>
-                <a href="" class="grey-link">View Cart</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 <app-footer-home></app-footer-home>
