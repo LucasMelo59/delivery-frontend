@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { PerfilProdutoService } from './perfil-produto.service';
 import { ProdutoRest } from 'src/app/models/entity/ProdutoRest';
 import { ProdutoImgs } from 'src/app/models/entity/ProdutoImgs';
@@ -13,8 +13,10 @@ import Swiper from 'swiper';
 })
 export class PerfilProdutoComponent implements OnInit {
 
+  listImgsTeste = ['/assets/imgs/product_01.jpg', '/assets/imgs/product_02.jpg', '/assets/imgs/product_02b.jpg', '/assets/imgs/product_03.jpg']
+  @ViewChild('swiperContainer') swiperContainer!: ElementRef;
+
   listImagensProduto : any[] = []
-  productId: any = "";
   mainImg: any;
   activeTamanho: number = 0;
   activeCor: number = 0
@@ -69,9 +71,42 @@ export class PerfilProdutoComponent implements OnInit {
   ]
 
 
+
+
+
+
   constructor(private serviceProduto: PerfilProdutoService, private serviceArquivo: ArquivosService,  private route: ActivatedRoute){}
 
+
   ngOnInit(): void {
+
+
+    const model = {
+      nome: this.route.snapshot.paramMap.get('nome')
+    }
+
+    this.serviceProduto.getProdutosWithFilter(model).subscribe((Produtos: ProdutoRest[]) => {
+
+      Produtos.forEach((produto:ProdutoRest) => {
+        console.log(produto);
+
+        produto.produto_imgs_id.forEach((imagens_id: any) => {
+          this.serviceArquivo.downlodImagem(imagens_id).subscribe((res: any) => {
+            console.log(res);
+
+              const reader = new FileReader();
+              reader.onload = () => {
+                this.listImagensProduto.push(reader.result as string);
+                this.mainImg = this.listImagensProduto[0];
+              }
+              reader.readAsDataURL(res)
+            })
+        })
+      });
+
+    })
+
+    console.log(this.listImagensProduto);
 
     const thumbImage = new Swiper('.thumbnail-image' , {
       // loop: true,
@@ -82,9 +117,7 @@ export class PerfilProdutoComponent implements OnInit {
       watchSlidesProgress: true,
 
     })
-
-    const mainImage = new Swiper('.main-image' , {
-      loop: true,
+     const mainImage = new Swiper('.main-image' , {
       autoHeight: true,
 
       pagination: {
@@ -96,25 +129,6 @@ export class PerfilProdutoComponent implements OnInit {
       }
 
     })
-
-    this.productId = this.route.snapshot.paramMap.get('id');
-    this.serviceProduto.getProdutoById(this.productId).subscribe((res: ProdutoRest) => {
-      console.log(res);
-
-      res.produto_imgs.forEach((x:ProdutoImgs) => {
-        this.serviceArquivo.downlodImagem(x.id).subscribe((res: any) => {
-          const reader = new FileReader();
-          reader.onload = () => {
-            this.listImagensProduto.push(reader.result as string);
-            this.mainImg = this.listImagensProduto[0];
-          }
-          reader.readAsDataURL(res)
-
-        })
-      });
-
-    })
-
 
   }
 
@@ -164,7 +178,6 @@ export class PerfilProdutoComponent implements OnInit {
   adicionarAoCarrinho() {
     const detalhes_produto = {
       quantidade: this.quantidade,
-      produto_id: this.productId,
       tamanho: this.detalhesSelecionados.tamanho.tamanho,
       cor: this.detalhesSelecionados.cor.cor
     }

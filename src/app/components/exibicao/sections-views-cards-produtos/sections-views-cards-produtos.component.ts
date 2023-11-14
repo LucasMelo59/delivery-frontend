@@ -28,14 +28,14 @@ export class SectionsViewsCardsProdutosComponent implements OnInit{
   show = false;
 
   submitFilter(data: any, tabActive: number) {
-    // this.submit_data.emit(data)
+    this.submit_data.emit(data)
     this.activeTab = tabActive;
     this.titleTab = data;
     this.showOptions();
   }
 
-  detailsProduct(produto_id: number) {
-    this.route.navigate(['/produtos', produto_id])
+  detailsProduct(produto_nome: string) {
+    this.route.navigate(['/produtos', produto_nome])
   }
 
   showOptions() {

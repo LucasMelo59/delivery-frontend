@@ -20,17 +20,15 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.loading = true;
     const model = {
-      categoria: "featured"
+      categoria: "swiper"
     }
     this.service.getProdutosWithFilter(model)
     .pipe(
-      delay(4000),
       tap(() => {
         this.loading = false;
       })
     )
     .subscribe((produtos: ProdutoRest[]) => {
-      console.log(produtos);
 
       produtos.forEach((produto:ProdutoRest) => {
         let imagens: any[] = []
@@ -54,14 +52,14 @@ export class HomeComponent implements OnInit {
   }
 
 
-   submitId(data:any) {
+   submitFilter(data:any) {
     this.loading = true
+    console.log(data);
     const filter = {
       categoria: data
     }
     this.service.getProdutosWithFilter(filter)
     .pipe(
-      delay(4000),
       tap(() => {
         this.loading = false;
         this.data_produto_dto = []

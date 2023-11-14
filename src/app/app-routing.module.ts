@@ -13,7 +13,7 @@ const routes: Routes = [
     component: HomeComponent
   },
  {
-  path: 'produtos/:id',
+  path: 'produtos/:nome',
   component: PerfilProdutoComponent
  },
  {
