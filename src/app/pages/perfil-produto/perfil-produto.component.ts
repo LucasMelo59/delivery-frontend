@@ -47,26 +47,19 @@ export class PerfilProdutoComponent implements OnInit {
       tamanho: "XXL"
     },
     {
-      tamanho: "Small"
+      tamanho: "P"
     }
   ]
 
   cores = [
     {
-      style: "hsl(353,100%,67%)",
-      cor: "vermelho"
+      cor: "tosca"
     },
     {
-      style: "hsl(37,100%,65%)",
-      cor: "laranja"
+      cor: "brown"
     },
     {
-      style: "hsl(49,100%,60%)",
-      cor: "amarelo"
-    },
-    {
-      style: "hsl(304,100%,78%)",
-      cor: "rosa"
+      cor: "ocean"
     }
   ]
 
@@ -109,7 +102,6 @@ export class PerfilProdutoComponent implements OnInit {
     console.log(this.listImagensProduto);
 
     const thumbImage = new Swiper('.thumbnail-image' , {
-      // loop: true,
       direction: 'vertical',
       spaceBetween: 15,
       slidesPerView: 1,
@@ -119,7 +111,6 @@ export class PerfilProdutoComponent implements OnInit {
     })
      const mainImage = new Swiper('.main-image' , {
       autoHeight: true,
-
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -142,7 +133,6 @@ export class PerfilProdutoComponent implements OnInit {
   }
 
   tradeImg(index: number) {
-
     this.mainImg = this.listImagensProduto[index]
   }
 
