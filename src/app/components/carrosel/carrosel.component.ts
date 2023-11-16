@@ -1,5 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription, timer } from 'rxjs';
+import { Produto_ArquivoDTO } from 'src/app/models/dto/produto_arquivoDTO';
 import Swiper from 'swiper';
 import { register } from 'swiper/element/bundle';
 
@@ -14,6 +15,9 @@ import { register } from 'swiper/element/bundle';
 
 
 export class CarroselComponent implements OnInit  {
+
+  @Input() produtosList: Produto_ArquivoDTO[] = [];
+
   ngOnInit(): void {
 
     const swiper = new Swiper('.carouselbox', {

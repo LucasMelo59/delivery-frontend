@@ -1,19 +1,19 @@
 
 <div class="products_container  grid" *ngIf="loading === false; else loadings">
-    <div  class="product_item" style="cursor: pointer;" *ngFor="let item of data_products">
+    <div  class="product_item" style="cursor: pointer;" >
 
-      <div class="product_banner" (click)="detailsProduct(item.produto.id)">
+      <div class="product_banner" (click)="detailsProduct(data_products.produto.id)">
         <a  class="product_images header-img" >
-          <img src="{{item.imagens[0]}}" class="product_img default" alt="">
+          <img src="{{data_products.imagens[0]}}" class="product_img default" alt="">
 
-          <img src="{{item.imagens[1]}}" class="product_img hover" alt="">
+          <img src="{{data_products.imagens[1]}}" class="product_img hover" alt="">
         </a>
         <!-- [ngClass]="{ 'size-active': activeTamanho === index }" -->
          <!-- <div class="produtc_badge light-pink">Hot</div> -->
       </div>
       <div class="product_content">
-          <span class="product_category">{{item.produto.categoria}}</span>
-          <h3 class="product_title" >{{item.produto.nome}}</h3>
+          <span class="product_category">{{data_products.produto.categoria}}</span>
+          <h3 class="product_title" >{{data_products.produto.nome}}</h3>
         <div class="product_rating" >
           <i class="fa-regular fa-star"></i>
           <i class="fa-regular fa-star"></i>
@@ -22,7 +22,7 @@
           <i class="fa-regular fa-star"></i>
         </div>
         <div class="product_price flex" >
-          <span class="new_price">R$ {{item.produto.preco}}</span>
+          <span class="new_price">R$ {{data_products.produto.preco}}</span>
           <span class="old_price">R$ 267.85</span>
         </div>
 

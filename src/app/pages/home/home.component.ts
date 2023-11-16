@@ -14,13 +14,13 @@ import { delay, tap } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
   data_produto_dto: Produto_ArquivoDTO[] = [];
+  data_produto_dto_carousel: Produto_ArquivoDTO[] = []
   loading: boolean = false;
   constructor(private service: PerfilProdutoService, private service_imgs: ArquivosService){}
 
   ngOnInit(): void {
     this.loading = true;
     const model = {
-      categoria: "swiper"
     }
     this.service.getProdutosWithFilter(model)
     .pipe(
@@ -48,6 +48,7 @@ export class HomeComponent implements OnInit {
       })
       console.log(this.data_produto_dto);
 
+      this.data_produto_dto_carousel = this.data_produto_dto.filter(x => x.produto.categoria === 'swiper');
     })
   }
 
@@ -86,7 +87,6 @@ export class HomeComponent implements OnInit {
           produto: produto
         })
       })
-
 
     })
   }

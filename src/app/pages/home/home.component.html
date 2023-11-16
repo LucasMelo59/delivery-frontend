@@ -2,7 +2,7 @@
     <app-nav-header-new></app-nav-header-new>
     <app-slider ></app-slider>
     <app-sections-cards-guide></app-sections-cards-guide>
-    <app-carrosel></app-carrosel>
+    <app-carrosel [produtosList]="data_produto_dto_carousel" ></app-carrosel>
     <app-sections-views-cards-produtos [data_products]="data_produto_dto" (submit_data)="submitFilter($event)" ></app-sections-views-cards-produtos>
     <app-simple-banner></app-simple-banner>
     <app-section-blog></app-section-blog>

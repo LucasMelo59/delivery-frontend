@@ -33,7 +33,7 @@
             <i class="fa-solid fa-chevron-down"></i>
           </h3>
           <ul [ngClass]="{'show': show}" >
-            <li [ngClass]="{'active': activeTab === 1}" (click)="submitFilter('swipe' ,1)"><a  class="tabbed-trigger ">swipe</a></li>
+            <li [ngClass]="{'active': activeTab === 1}" (click)="submitFilter('swiper' ,1)"><a  class="tabbed-trigger ">swipe</a></li>
             <li [ngClass]="{'active': activeTab === 2}" (click)="submitFilter('dress' ,2)" ><a  class="tabbed-trigger">Dress</a></li>
             <li [ngClass]="{'active': activeTab === 3}" (click)="submitFilter('shirt' ,3)" ><a  class="tabbed-trigger">shirt</a></li>
           </ul>
@@ -43,7 +43,7 @@
         <div id="sweater" class="sort-data active">
           <div class="dotgrid">
             <div class="wrapper">
-              <div class="item " *ngFor="let item of data_products" (click)="detailsProduct(item.produto.nome)" >
+              <!-- <div class="item " *ngFor="let item of data_products" (click)="detailsProduct(item.produto.nome)" >
                 <div class="dot-image">
                   <div class="thumbnail">
                     <img src="\assets\produtcs\57968303-800-auto.jpg" alt="">
@@ -60,8 +60,8 @@
                     <span class="current">38</span>
                   </div>
                 </div>
-              </div>
-
+              </div> -->
+              <app-card-produto *ngFor="let item of data_products" [data_products]="item" ></app-card-produto>
             </div>
           </div>
         </div>

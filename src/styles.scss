@@ -221,7 +221,7 @@ h4 {font-size: 1em;}
 
 .dotgrid .wrapper {
   display: var(--display, grid);
-  --grid-col: 175px;
+  --grid-col: 220px;
   grid-template-columns: repeat(auto-fit, minmax(min(var(--grid-col), 100%), 1fr));
   gap: 	var(--gutter, 30px);
 }
