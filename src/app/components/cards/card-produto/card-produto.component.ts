@@ -11,7 +11,6 @@ import { Produto_ArquivoDTO } from 'src/app/models/dto/produto_arquivoDTO';
 })
 export class CardProdutoComponent implements OnInit{
   @Input() data_products!: Produto_ArquivoDTO;
-  @Input() loading = false;
 
   constructor(private route: Router) {}
   ngOnInit(): void {

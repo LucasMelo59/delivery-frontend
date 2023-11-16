@@ -15,11 +15,11 @@ import { delay, tap } from 'rxjs';
 export class HomeComponent implements OnInit {
   data_produto_dto: Produto_ArquivoDTO[] = [];
   data_produto_dto_carousel: Produto_ArquivoDTO[] = []
-  loading: boolean = false;
+  loading: boolean = true;
   constructor(private service: PerfilProdutoService, private service_imgs: ArquivosService){}
 
   ngOnInit(): void {
-    this.loading = true;
+    // this.loading = true;
     const model = {
     }
     this.service.getProdutosWithFilter(model)
@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit {
       })
       console.log(this.data_produto_dto);
 
-      this.data_produto_dto_carousel = this.data_produto_dto.filter(x => x.produto.categoria === 'swiper');
+      this.data_produto_dto_carousel = this.data_produto_dto;
     })
   }
 

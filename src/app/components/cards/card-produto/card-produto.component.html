@@ -1,5 +1,5 @@
 
-<div class="products_container  grid" *ngIf="loading === false; else loadings">
+<div class="products_container  grid" >
     <div  class="product_item" style="cursor: pointer;" (click)="detailsProduct(data_products.produto.nome)" >
 
       <div class="product_banner">
@@ -34,7 +34,5 @@
 </div>
 
 
-  <ng-template #loadings>
-    <app-cards-skeleton></app-cards-skeleton>
-  </ng-template>
+
 

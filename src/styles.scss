@@ -284,6 +284,16 @@ h4 {font-size: 1em;}
   bottom: 0;
 }
 
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 70%);
+  }
+
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
+
 .dot-title {
   font-family: var(--primary-font);
   font-size: var(--fs14);

@@ -17,7 +17,7 @@ import { register } from 'swiper/element/bundle';
 export class CarroselComponent implements OnInit  {
 
   @Input() produtosList: Produto_ArquivoDTO[] = [];
-
+  @Input() loading: boolean = false;
   ngOnInit(): void {
 
     const swiper = new Swiper('.carouselbox', {

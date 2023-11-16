@@ -34,7 +34,7 @@ export class SectionsViewsCardsProdutosComponent implements OnInit{
     this.showOptions();
   }
 
-  
+
   showOptions() {
     this.show = !this.show;
   }
