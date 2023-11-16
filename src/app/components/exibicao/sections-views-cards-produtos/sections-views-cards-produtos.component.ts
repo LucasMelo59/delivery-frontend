@@ -34,10 +34,7 @@ export class SectionsViewsCardsProdutosComponent implements OnInit{
     this.showOptions();
   }
 
-  detailsProduct(produto_nome: string) {
-    this.route.navigate(['/produtos', produto_nome])
-  }
-
+  
   showOptions() {
     this.show = !this.show;
   }

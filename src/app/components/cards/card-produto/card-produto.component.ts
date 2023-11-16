@@ -16,12 +16,15 @@ export class CardProdutoComponent implements OnInit{
   constructor(private route: Router) {}
   ngOnInit(): void {
 
-
+  }
+  detailsProduct(produto_nome: string) {
+    this.route.navigate(['/produtos', produto_nome])
   }
 
-  detailsProduct(produto_id: number) {
-    this.route.navigate(['/produtos', produto_id])
-  }
+
+  // detailsProduct(produto_id: number) {
+  //   this.route.navigate(['/produtos', produto_id])
+  // }
 
 
 }
