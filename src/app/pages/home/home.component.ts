@@ -6,6 +6,8 @@ import { Produto_ArquivoDTO } from 'src/app/models/dto/produto_arquivoDTO';
 import { ProdutoImgs } from 'src/app/models/entity/ProdutoImgs';
 import { ArquivosService } from 'src/app/service/arquivos.service';
 import { delay, tap } from 'rxjs';
+import { HomeServiceService } from './home-service.service';
+import { CarrinhoDeCompras } from 'src/app/models/entity/CarrinhoDeCompras';
 
 @Component({
   selector: 'app-home',
@@ -13,14 +15,17 @@ import { delay, tap } from 'rxjs';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+
   data_produto_dto: Produto_ArquivoDTO[] = [];
   data_produto_dto_carousel: Produto_ArquivoDTO[] = []
   loading: boolean = true;
-  constructor(private service: PerfilProdutoService, private service_imgs: ArquivosService){}
+  carrinho_de_compras!: CarrinhoDeCompras;
+  constructor(private service: PerfilProdutoService, private service_imgs: ArquivosService, private home: HomeServiceService){}
 
   ngOnInit(): void {
     // this.loading = true;
     const model = {
+      categoria: 'swiper'
     }
     this.service.getProdutosWithFilter(model)
     .pipe(
@@ -49,6 +54,16 @@ export class HomeComponent implements OnInit {
       console.log(this.data_produto_dto);
 
       this.data_produto_dto_carousel = this.data_produto_dto;
+    })
+
+    this.home.getCarrinhoComProdutos(1).subscribe((x: CarrinhoDeCompras) => {
+      console.log(x);
+      this.carrinho_de_compras = x;
+
+      x.carrinho_produto.forEach(y => {
+        console.log(y);
+
+      })
     })
   }
 

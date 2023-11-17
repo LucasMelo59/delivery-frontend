@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Produto_ArquivoDTO } from 'src/app/models/dto/produto_arquivoDTO';
 
 @Component({
   selector: 'app-nav-header-new',
@@ -8,7 +9,7 @@ import { Component, Input } from '@angular/core';
 export class NavHeaderNewComponent {
   mobileButton: boolean = false;
   showMenu: boolean = false;
-  cartButton:boolean = false;
+  cartList:Produto_ArquivoDTO[] = [];
   route = [
     {
       rotas: [
