@@ -88,23 +88,23 @@
               <div class="product-list">
                 <div class="wrapper">
                   <ul>
-                    <li>
+                    <li *ngFor="let item of testando" >
                       <div class="grouping">
                         <div class="quantity">
                           <div class="control">
                             <button>+</button>
-                            <input type="text" value="1">
+                            <input type="text" value="{{item.quantidade}}">
                             <button>-</button>
                           </div>
                         </div>
                         <div class="thumbnail">
                           <a >
-                            <img src="\assets\imgs\product_01.jpg" alt="">
+                            <img src="{{item.imagens[0]}}" alt="">
                           </a>
                         </div>
                       </div>
                       <div class="variants">
-                        <h4 class="dot-title"><a >The sweater</a></h4>
+                        <h4 class="dot-title"><a >{{item.produto.nome}}</a></h4>
                         <div class="color grey-color">
                           <span>Color:</span>
                           <span>Tosca</span>
@@ -113,38 +113,7 @@
                           <span>Size:</span>
                           <span>L</span>
                         </div>
-                        <div class="price">$45</div>
-                        <a  class="item-remove">
-                          <i class="fa-solid fa-xmark"></i>
-                        </a>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="grouping">
-                        <div class="quantity">
-                          <div class="control">
-                            <button>+</button>
-                            <input type="text" value="1">
-                            <button>-</button>
-                          </div>
-                        </div>
-                        <div class="thumbnail">
-                          <a >
-                            <img src="\assets\imgs\product_01.jpg" alt="">
-                          </a>
-                        </div>
-                      </div>
-                      <div class="variants">
-                        <h4 class="dot-title"><a >The sweater</a></h4>
-                        <div class="color grey-color">
-                          <span>Color:</span>
-                          <span>Tosca</span>
-                        </div>
-                        <div class="size grey-color">
-                          <span>Size:</span>
-                          <span>L</span>
-                        </div>
-                        <div class="price">$45</div>
+                        <div class="price">{{item.produto.preco}}</div>
                         <a  class="item-remove">
                           <i class="fa-solid fa-xmark"></i>
                         </a>

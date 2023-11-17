@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Produto_ArquivoDTO } from 'src/app/models/dto/produto_arquivoDTO';
 
 @Component({
@@ -6,10 +6,18 @@ import { Produto_ArquivoDTO } from 'src/app/models/dto/produto_arquivoDTO';
   templateUrl: './nav-header-new.component.html',
   styleUrls: ['./nav-header-new.component.scss']
 })
-export class NavHeaderNewComponent {
+export class NavHeaderNewComponent implements OnInit {
+
+
+  ngOnInit(): void {
+    console.log(this.testando);
+  }
+
+  quantidade: number = 1;
   mobileButton: boolean = false;
   showMenu: boolean = false;
   cartList:Produto_ArquivoDTO[] = [];
+  @Input() testando:any[] = []
   route = [
     {
       rotas: [
@@ -82,5 +90,19 @@ export class NavHeaderNewComponent {
     this.showMenu = !this.showMenu;
   }
 
+
+  aumentarQuantidade() {
+    if (this.quantidade < 1) {
+      this.quantidade = 1;
+    } else {
+      this.quantidade++;
+    }
+  }
+
+  diminuirQuantidade() {
+    if (this.quantidade > 1) {
+      this.quantidade--;
+    }
+  }
 
 }

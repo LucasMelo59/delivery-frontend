@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
   data_produto_dto_carousel: Produto_ArquivoDTO[] = []
   loading: boolean = true;
   carrinho_de_compras!: CarrinhoDeCompras;
+  testando: any[] = [];
   constructor(private service: PerfilProdutoService, private service_imgs: ArquivosService, private home: HomeServiceService){}
 
   ngOnInit(): void {
@@ -62,6 +63,25 @@ export class HomeComponent implements OnInit {
 
       x.carrinho_produto.forEach(y => {
         console.log(y);
+        let imgs: any[] = []
+        if (y.produto.produto_imgs.length > 1) {
+
+          this.service_imgs.downlodImagem(y.produto.produto_imgs[0].id).subscribe(imagem => {
+            const reader = new FileReader();
+            reader.onload = () => {
+              imgs.push(reader.result as string)
+            }
+            reader.readAsDataURL(imagem)
+          })
+          this.testando.push(
+            {
+              produto:y.produto,
+              imagens: imgs,
+              quantidade: y.quantidade
+            }
+          )
+
+        }
 
       })
     })
@@ -85,20 +105,20 @@ export class HomeComponent implements OnInit {
       console.log(produtos);
 
       produtos.forEach((produto:ProdutoRest) => {
-        let imagen: any[] = [];
+        let imagem: any[] = [];
         produto.produto_imgs_id.forEach((imagens_produto: number) => {
 
           this.service_imgs.downlodImagem(imagens_produto).subscribe((bytes: any) => {
             const reader = new FileReader();
             reader.onload = () => {
-              imagen.push(reader.result as string)
+              imagem.push(reader.result as string)
             }
             reader.readAsDataURL(bytes)
           })
 
         })
         this.data_produto_dto.push({
-          imagens: imagen,
+          imagens: imagem,
           produto: produto
         })
       })
