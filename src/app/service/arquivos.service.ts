@@ -16,6 +16,9 @@ export class ArquivosService {
     return this.http.get(`${this.apiUrl}/arquivos/download?id=${id}`, { responseType: 'blob'})
   }
 
+  getItensCarrinho() {
+    return this.http.get(`${this.apiUrl}/v1/carts/1`)
+  }
 
 
 }

@@ -88,13 +88,13 @@
               <div class="product-list">
                 <div class="wrapper">
                   <ul>
-                    <li *ngFor="let item of testando" >
+                    <li *ngFor="let item of cartList; let i = index " >
                       <div class="grouping">
                         <div class="quantity">
                           <div class="control">
-                            <button>+</button>
+                            <button (click)="aumentarQuantidade(i)" >+</button>
                             <input type="text" value="{{item.quantidade}}">
-                            <button>-</button>
+                            <button (click)="diminuirQuantidade(i)" >-</button>
                           </div>
                         </div>
                         <div class="thumbnail">

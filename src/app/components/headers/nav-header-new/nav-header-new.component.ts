@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Carrinho_DTO } from 'src/app/models/dto/carrinho_DTO';
 import { Produto_ArquivoDTO } from 'src/app/models/dto/produto_arquivoDTO';
+import { ArquivosService } from 'src/app/service/arquivos.service';
 
 @Component({
   selector: 'app-nav-header-new',
@@ -8,10 +10,35 @@ import { Produto_ArquivoDTO } from 'src/app/models/dto/produto_arquivoDTO';
 })
 export class NavHeaderNewComponent implements OnInit {
 
+  constructor(private service: ArquivosService) {}
 
   ngOnInit(): void {
-    console.log(this.testando);
+    this.service.getItensCarrinho().subscribe((x: any) => {
+      x.carrinho_produto.forEach((y: any) => {
+        let imagem: any[] = []
+        y.produto.produto_imgs.forEach((xy: any) => {
+          if(xy) {
+            this.service.downlodImagem(xy.id).subscribe(imagens => {
+              const reader = new FileReader();
+              reader.onload = () => {
+                imagem.push(reader.result as string)
+              }
+              reader.readAsDataURL(imagens)
+            })
+          }
+        })
+        this.cartList.push({
+          imagens: imagem,
+          produto: y.produto,
+          quantidade: y.quantidade
+        })
+      })
+
+    })
+    console.log(this.cartList);
   }
+
+
 
   quantidade: number = 1;
   mobileButton: boolean = false;
@@ -91,18 +118,22 @@ export class NavHeaderNewComponent implements OnInit {
   }
 
 
-  aumentarQuantidade() {
-    if (this.quantidade < 1) {
-      this.quantidade = 1;
-    } else {
-      this.quantidade++;
-    }
+  aumentarQuantidade(index: any) {
+    // const dados:Carrinho_DTO = {
+    //   produto_id: data.produto.id,
+    //   quantidade: 1,
+    //   user_id: 1,
+    //   carrinho_de_compras_id: 2,
+    //   carrinho_produto: 2
+    // }
+    this.cartList[index].quantidade += 1;
+    console.log(this.cartList[index].quantidade);
   }
 
-  diminuirQuantidade() {
-    if (this.quantidade > 1) {
-      this.quantidade--;
-    }
+  diminuirQuantidade(index: number) {
+    this.cartList[index].quantidade -= 1;
+    console.log(this.cartList[index].quantidade);
+
   }
 
 }
