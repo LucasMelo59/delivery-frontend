@@ -28,4 +28,8 @@ export class ArquivosService {
     return this.http.post(`${this.apiUrl}/v1/carsProducts/decrementar`, data)
   }
 
+  deletarProdutoLista(data: any) {
+    return this.http.post(`${this.apiUrl}/v1/carsProducts/deletar`, data)
+  }
+
 }

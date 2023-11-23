@@ -114,7 +114,7 @@
                           <span>L</span>
                         </div>
                         <div class="price">{{item.produto.preco}}</div>
-                        <a  class="item-remove">
+                        <a  class="item-remove" (click)="deletarProduto(item, i)" >
                           <i class="fa-solid fa-xmark"></i>
                         </a>
                       </div>
