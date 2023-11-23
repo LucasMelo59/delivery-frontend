@@ -50,7 +50,9 @@ export class HomeComponent implements OnInit {
         this.data_produto_dto.push({
           produto: produto,
           imagens: imagens,
-          quantidade: 0
+          quantidade: 0,
+          carrinho_id: 0,
+          carrinho_produto_id: 0
         });
       })
       console.log(this.data_produto_dto);
@@ -121,7 +123,9 @@ export class HomeComponent implements OnInit {
         this.data_produto_dto.push({
           imagens: imagem,
           produto: produto,
-          quantidade: 0
+          quantidade: 0,
+          carrinho_id: 0,
+          carrinho_produto_id: 0
         })
       })
 

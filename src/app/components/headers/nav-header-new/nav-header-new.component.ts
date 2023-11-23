@@ -14,6 +14,8 @@ export class NavHeaderNewComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getItensCarrinho().subscribe((x: any) => {
+      console.log(x);
+
       x.carrinho_produto.forEach((y: any) => {
         let imagem: any[] = []
         y.produto.produto_imgs.forEach((xy: any) => {
@@ -30,7 +32,9 @@ export class NavHeaderNewComponent implements OnInit {
         this.cartList.push({
           imagens: imagem,
           produto: y.produto,
-          quantidade: y.quantidade
+          quantidade: y.quantidade,
+          carrinho_id: x.id,
+          carrinho_produto_id: 0
         })
       })
 
@@ -118,22 +122,39 @@ export class NavHeaderNewComponent implements OnInit {
   }
 
 
-  aumentarQuantidade(index: any) {
-    // const dados:Carrinho_DTO = {
-    //   produto_id: data.produto.id,
-    //   quantidade: 1,
-    //   user_id: 1,
-    //   carrinho_de_compras_id: 2,
-    //   carrinho_produto: 2
-    // }
-    this.cartList[index].quantidade += 1;
-    console.log(this.cartList[index].quantidade);
+  aumentarQuantidade(data: any ,index: any) {
+    const dados:Carrinho_DTO = {
+      produto_id: data.produto.id,
+      quantidade: 1,
+      user_id: 1,
+      carrinho_de_compras_id: data.carrinho_id,
+      carrinho_produto: 2
+    }
+
+    this.service.addProdutoCart(dados).subscribe(x => {
+      console.log(x);
+      this.cartList[index].quantidade += 1;
+      console.log(this.cartList[index].quantidade);
+    })
+
+
+
   }
 
-  diminuirQuantidade(index: number) {
-    this.cartList[index].quantidade -= 1;
-    console.log(this.cartList[index].quantidade);
+  diminuirQuantidade(data:any, index: number) {
 
+    const dados:Carrinho_DTO = {
+      produto_id: data.produto.id,
+      quantidade: 1,
+      user_id: 1,
+      carrinho_de_compras_id: data.carrinho_id,
+      carrinho_produto: 2
+    }
+
+    this.service.decrementarProdutoCart(dados).subscribe(x => {
+      this.cartList[index].quantidade -= 1;
+      console.log(this.cartList[index].quantidade);
+    })
   }
 
 }

@@ -20,5 +20,12 @@ export class ArquivosService {
     return this.http.get(`${this.apiUrl}/v1/carts/1`)
   }
 
+  addProdutoCart(data: any) {
+    return this.http.post(`${this.apiUrl}/v1/carsProducts/addProducts`,data)
+  }
+
+  decrementarProdutoCart(data: any) {
+    return this.http.post(`${this.apiUrl}/v1/carsProducts/decrementar`, data)
+  }
 
 }

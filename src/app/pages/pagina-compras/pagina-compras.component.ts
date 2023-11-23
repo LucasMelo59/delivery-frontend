@@ -45,7 +45,9 @@ export class PaginaComprasComponent implements OnInit{
           this.data_products.push({
             produto: produto,
             imagens: imagens,
-            quantidade: 0
+            quantidade: 0,
+            carrinho_id: 0,
+            carrinho_produto_id: 0
           });
       })
     })

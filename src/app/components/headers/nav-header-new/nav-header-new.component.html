@@ -92,9 +92,9 @@
                       <div class="grouping">
                         <div class="quantity">
                           <div class="control">
-                            <button (click)="aumentarQuantidade(i)" >+</button>
+                            <button (click)="aumentarQuantidade(item,i)" >+</button>
                             <input type="text" value="{{item.quantidade}}">
-                            <button (click)="diminuirQuantidade(i)" >-</button>
+                            <button (click)="diminuirQuantidade(item, i)" >-</button>
                           </div>
                         </div>
                         <div class="thumbnail">
