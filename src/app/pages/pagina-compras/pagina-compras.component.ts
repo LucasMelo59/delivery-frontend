@@ -47,7 +47,9 @@ export class PaginaComprasComponent implements OnInit{
             imagens: imagens,
             quantidade: 0,
             carrinho_id: 0,
-            carrinho_produto_id: 0
+            carrinho_produto_id: 0,
+            carrinho_total: 0
+
           });
       })
     })

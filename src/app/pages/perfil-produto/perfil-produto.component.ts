@@ -5,6 +5,7 @@ import { ProdutoImgs } from 'src/app/models/entity/ProdutoImgs';
 import { ArquivosService } from 'src/app/service/arquivos.service';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import Swiper from 'swiper';
+import { Produto_ArquivoDTO } from 'src/app/models/dto/produto_arquivoDTO';
 
 @Component({
   selector: 'app-perfil-produto',
@@ -13,16 +14,18 @@ import Swiper from 'swiper';
 })
 export class PerfilProdutoComponent implements OnInit {
 
-  listImgsTeste = ['/assets/imgs/product_01.jpg', '/assets/imgs/product_02.jpg', '/assets/imgs/product_02b.jpg', '/assets/imgs/product_03.jpg']
   @ViewChild('swiperContainer') swiperContainer!: ElementRef;
 
   listImagensProduto : any[] = []
+  cartsList: Produto_ArquivoDTO[] = []
+  quantidadeCart: number = 0;
   mainImg: any;
   activeTamanho: number = 0;
   activeCor: number = 0
   quantidade: number = 1; // Valor inicial da quantidade
   abaSelcionada: string = "Product details"
   itemFloating: number = 3;
+  produto!: ProdutoRest;
   routerBreadCrumb  = [
     {
       title: "Home",
@@ -71,6 +74,9 @@ export class PerfilProdutoComponent implements OnInit {
   constructor(private serviceProduto: PerfilProdutoService, private serviceArquivo: ArquivosService,  private route: ActivatedRoute){}
 
 
+
+
+
   ngOnInit(): void {
 
 
@@ -81,11 +87,10 @@ export class PerfilProdutoComponent implements OnInit {
     this.serviceProduto.getProdutosWithFilter(model).subscribe((Produtos: ProdutoRest[]) => {
 
       Produtos.forEach((produto:ProdutoRest) => {
-        console.log(produto);
+        this.produto = produto
 
         produto.produto_imgs_id.forEach((imagens_id: any) => {
           this.serviceArquivo.downlodImagem(imagens_id).subscribe((res: any) => {
-            console.log(res);
 
               const reader = new FileReader();
               reader.onload = () => {
@@ -95,11 +100,11 @@ export class PerfilProdutoComponent implements OnInit {
               reader.readAsDataURL(res)
             })
         })
+
       });
 
     })
 
-    console.log(this.listImagensProduto);
 
     const thumbImage = new Swiper('.thumbnail-image' , {
       direction: 'vertical',
@@ -121,11 +126,48 @@ export class PerfilProdutoComponent implements OnInit {
 
     })
 
+    this.buscarProdutosNoCarrinhos();
   }
 
   detalhesSelecionados = {
     tamanho: this.tamanhoBlusas[0],
     cor: this.cores[0],
+  }
+
+
+  buscarProdutosNoCarrinhos() {
+    this.cartsList = []
+    this.serviceArquivo.getItensCarrinho().subscribe((x: any) => {
+      console.log(x);
+
+      x.carrinho_produto.forEach((y: any) => {
+        let imagem: any[] = []
+        y.produto.produto_imgs.forEach((xy: any) => {
+          if(xy) {
+            this.serviceArquivo.downlodImagem(xy.id).subscribe(imagens => {
+              const reader = new FileReader();
+              reader.onload = () => {
+                imagem.push(reader.result as string)
+              }
+              reader.readAsDataURL(imagens)
+            })
+          }
+        })
+        this.cartsList.push({
+          imagens: imagem,
+          produto: y.produto,
+          quantidade: y.quantidade,
+          carrinho_id: x.id,
+          carrinho_produto_id: 0,
+          carrinho_total: x.carTotal
+        })
+
+        this.quantidadeCart += y.quantidade
+        console.log(this.quantidade);
+      })
+
+    })
+    return this.cartsList
   }
 
   trocarAba(data: string) {
@@ -168,12 +210,25 @@ export class PerfilProdutoComponent implements OnInit {
   adicionarAoCarrinho() {
     const detalhes_produto = {
       quantidade: this.quantidade,
-      tamanho: this.detalhesSelecionados.tamanho.tamanho,
-      cor: this.detalhesSelecionados.cor.cor
+      carrinho_de_compras_id: 4,
+      produto_id: this.produto.id,
     }
-    console.log(detalhes_produto);
+    this.serviceArquivo.addProdutoCart(detalhes_produto).subscribe(x => {
+      this.quantidadeCart += 1
+    })
 
   }
+
+  compreAgora() {
+    const mensagem = "testando comprar byaurora , produto nome: " + this.produto.nome + "produto preco: " + this.produto.preco + "tamanho: " + this.detalhesSelecionados.tamanho.tamanho
+    const url = "https://wa.me/5585998567281?text="+mensagem
+
+    window.open(url, '_blank');
+  }
+
+
+
+
 
 
 }

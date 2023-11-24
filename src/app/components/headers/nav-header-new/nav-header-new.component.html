@@ -29,7 +29,7 @@
             <div class="list-inline">
               <ul>
                 <li ><a ><i class="fa-solid fa-magnifying-glass"></i></a></li>
-                <li  (click)="toggleMenu()" style="cursor: pointer;" ><a ><span class="item-floating">0</span><i class="fa-solid fa-bag-shopping"></i></a></li>
+                <li  (click)="toggleMenu()" style="cursor: pointer;" ><a ><span class="item-floating">{{this.quantidade}}</span><i class="fa-solid fa-bag-shopping"></i></a></li>
               </ul>
             </div>
           </div>
@@ -85,7 +85,7 @@
               <h3>Shopping cart</h3>
             </div>
             <div class="cart-body scrollto">
-              <div class="product-list">
+              <div class="product-list" *ngIf="cartList" >
                 <div class="wrapper">
                   <ul>
                     <li *ngFor="let item of cartList; let i = index " >
@@ -159,7 +159,11 @@
                   </li>
                   <li>
                       <span class="total" >Total </span>
-                      <span class="value" > $147.00</span>
+                      <span class="value" *ngIf="cartList.length > 0; else teste" > $ {{cartList[0].carrinho_total}}</span>
+                      <ng-template #teste>
+                        <!-- Conteúdo a ser exibido se 'mostrarElemento' for falso -->
+                        <span class="value">0.00</span>
+                      </ng-template>
                   </li>
                 </ul>
               </div>

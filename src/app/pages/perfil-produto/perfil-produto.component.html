@@ -1,14 +1,14 @@
 
 
 <div id="page" class="page-single">
-  <app-nav-header-new [routerBreadCrumb]="routerBreadCrumb" ></app-nav-header-new>
-  <main>
+  <app-nav-header-new [routerBreadCrumb]="routerBreadCrumb" [cartList]="cartsList" [quantidade]="quantidadeCart"  ></app-nav-header-new>
+  <main   >
     <div class="section">
       <div class="container">
         <div class="wrap">
           <div class="product dotgrid">
             <div class="wrapper">
-              <div class="image">
+              <div class="image"  >
                 <div class="outer-main">
                   <div class="main-image swiper" #swiperContainer >
                     <div class="wrap swiper-wrapper" >
@@ -31,12 +31,12 @@
                   </div>
                 </div>
               </div>
-              <div class="summary">
+              <div class="summary" *ngIf="produto" >
                 <div class="entry">
-                  <h1 class="title">The Swater in Tosca</h1>
+                  <h1 class="title">{{produto.nome}}</h1>
                   <div class="product-group">
                     <div class="product-price">
-                      <span class="current">$45.00</span>
+                      <span class="current">${{produto.preco}}</span>
                       <div class="wrap">
                         <span class="before">$62.00</span>
                         <span class="discount">-25%</span>
@@ -50,14 +50,14 @@
                       <a >3 Reviews</a>
                     </div>
                   </div>
-                  <div class="product-color">
+                  <!-- <div class="product-color">
                     <span>Colors</span>
                     <div class="wrap">
                       <button class="tosca selected"></button>
                       <button class="ocean"></button>
                       <button class="brown"></button>
                     </div>
-                  </div>
+                  </div> -->
                   <div class="product-size">
                     <span>Size:</span>
                     <div class="wrap">
@@ -78,10 +78,10 @@
                       <button class="increase" (click)="aumentarQuantidade()" >+</button>
                     </div>
                     <div class="addcart button">
-                      <button type="submit" class="primary-btn">Add to cart</button>
+                      <button type="submit" class="primary-btn" (click)="adicionarAoCarrinho()" >Adicionar ao carrinho</button>
                     </div>
                     <div class="buynow button">
-                      <button type="submit" class="secondary-btn">Buy Now</button>
+                      <button type="submit" class="secondary-btn" (click)="compreAgora()" >Compre agora</button>
                     </div>
                   </div>
                   <div class="product-control list-inline">

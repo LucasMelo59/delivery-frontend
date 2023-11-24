@@ -18,6 +18,8 @@ export class SectionsViewsCardsProdutosComponent implements OnInit{
 
   constructor(private route: Router){}
   ngOnInit(): void {
+
+    
   }
   @Input() loading: boolean = false;
   @Input() data_products: Produto_ArquivoDTO[] = []

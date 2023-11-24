@@ -17,7 +17,7 @@ export class ArquivosService {
   }
 
   getItensCarrinho() {
-    return this.http.get(`${this.apiUrl}/v1/carts/1`)
+    return this.http.get(`${this.apiUrl}/v1/carts/4`)
   }
 
   addProdutoCart(data: any) {

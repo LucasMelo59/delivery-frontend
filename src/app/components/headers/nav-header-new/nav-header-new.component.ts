@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Carrinho_DTO } from 'src/app/models/dto/carrinho_DTO';
 import { Produto_ArquivoDTO } from 'src/app/models/dto/produto_arquivoDTO';
 import { ArquivosService } from 'src/app/service/arquivos.service';
@@ -8,47 +8,21 @@ import { ArquivosService } from 'src/app/service/arquivos.service';
   templateUrl: './nav-header-new.component.html',
   styleUrls: ['./nav-header-new.component.scss']
 })
-export class NavHeaderNewComponent implements OnInit {
+export class NavHeaderNewComponent implements OnInit, OnChanges {
 
-  constructor(private service: ArquivosService) {}
-
-  ngOnInit(): void {
-    this.service.getItensCarrinho().subscribe((x: any) => {
-      console.log(x);
-
-      x.carrinho_produto.forEach((y: any) => {
-        let imagem: any[] = []
-        y.produto.produto_imgs.forEach((xy: any) => {
-          if(xy) {
-            this.service.downlodImagem(xy.id).subscribe(imagens => {
-              const reader = new FileReader();
-              reader.onload = () => {
-                imagem.push(reader.result as string)
-              }
-              reader.readAsDataURL(imagens)
-            })
-          }
-        })
-        this.cartList.push({
-          imagens: imagem,
-          produto: y.produto,
-          quantidade: y.quantidade,
-          carrinho_id: x.id,
-          carrinho_produto_id: 0
-        })
-      })
-
-    })
-    console.log(this.cartList);
-  }
-
-
-
-  quantidade: number = 1;
+  @Input() quantidade: number = 0;
   mobileButton: boolean = false;
   showMenu: boolean = false;
-  cartList:Produto_ArquivoDTO[] = [];
+  @Input() cartList:Produto_ArquivoDTO[] = [];
   @Input() testando:any[] = []
+
+  @Output() atualizarLista = new EventEmitter()
+
+
+  emitirEvento() {
+    this.atualizarLista.emit()
+  }
+
   route = [
     {
       rotas: [
@@ -113,6 +87,60 @@ export class NavHeaderNewComponent implements OnInit {
       routerLink: "/home"
     }
   ]
+
+  constructor(private service: ArquivosService) {}
+  ngOnChanges(changes: SimpleChanges): void {
+      this.buscarProdutosNoCarrinhos()
+  }
+
+  ngOnInit(): void {
+    this.service.getItensCarrinho().subscribe((x: any) => {
+      this.quantidade = x.qtdProdutos
+    })
+  }
+
+
+
+
+  buscarProdutosNoCarrinhos() {
+
+
+    this.service.getItensCarrinho().subscribe((x: any) => {
+      let cartsList: Produto_ArquivoDTO[] = []
+      this.quantidade = 0
+      x.carrinho_produto.forEach((y: any) => {
+        let imagem: any[] = []
+        y.produto.produto_imgs.forEach((xy: any) => {
+          if(xy) {
+            this.service.downlodImagem(xy.id).subscribe(imagens => {
+              const reader = new FileReader();
+              reader.onload = () => {
+                imagem.push(reader.result as string)
+              }
+              reader.readAsDataURL(imagens)
+            })
+          }
+        })
+
+        cartsList.push({
+          imagens: imagem,
+          produto: y.produto,
+          quantidade: y.quantidade,
+          carrinho_id: x.id,
+          carrinho_produto_id: 0,
+          carrinho_total: x.carTotal
+        })
+
+        this.quantidade += y.quantidade
+        this.cartList = cartsList
+      })
+
+    })
+  }
+
+
+
+
   toggleMenuMobile() {
     this.mobileButton = !this.mobileButton;
   }
@@ -133,6 +161,7 @@ export class NavHeaderNewComponent implements OnInit {
 
     this.service.addProdutoCart(dados).subscribe(x => {
       this.cartList[index].quantidade += 1;
+      this.quantidade += 1
       console.log(this.cartList[index].quantidade);
     })
 

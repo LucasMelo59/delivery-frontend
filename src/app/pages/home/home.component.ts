@@ -52,7 +52,8 @@ export class HomeComponent implements OnInit {
           imagens: imagens,
           quantidade: 0,
           carrinho_id: 0,
-          carrinho_produto_id: 0
+          carrinho_produto_id: 0,
+          carrinho_total: 0
         });
       })
       console.log(this.data_produto_dto);
@@ -125,7 +126,8 @@ export class HomeComponent implements OnInit {
           produto: produto,
           quantidade: 0,
           carrinho_id: 0,
-          carrinho_produto_id: 0
+          carrinho_produto_id: 0,
+          carrinho_total: 0
         })
       })
 
