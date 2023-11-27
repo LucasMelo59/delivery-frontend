@@ -17,6 +17,8 @@ export class PerfilProdutoComponent implements OnInit {
   @ViewChild('swiperContainer') swiperContainer!: ElementRef;
 
   listImagensProduto : any[] = []
+  data_produto_dto_carousel: Produto_ArquivoDTO[] = []
+  data_produto_dto: Produto_ArquivoDTO[] = []
   cartsList: Produto_ArquivoDTO[] = []
   quantidadeCart: number = 0;
   mainImg: any;
@@ -127,6 +129,7 @@ export class PerfilProdutoComponent implements OnInit {
     })
 
     this.buscarProdutosNoCarrinhos();
+    this.buscarDadosCarrosel()
   }
 
   detalhesSelecionados = {
@@ -169,6 +172,46 @@ export class PerfilProdutoComponent implements OnInit {
     })
     return this.cartsList
   }
+
+
+  buscarDadosCarrosel() {
+    const model = {
+      categoria: 'swiper'
+    }
+    this.serviceProduto.getProdutosWithFilter(model)
+    .pipe(
+      // tap(() => {
+      //   this.loading = false;
+      // })
+    )
+    .subscribe((produtos: ProdutoRest[]) => {
+
+      produtos.forEach((produto:ProdutoRest) => {
+        let imagens: any[] = []
+        produto.produto_imgs_id.forEach((imagens_produto:number) => {
+          this.serviceArquivo.downlodImagem(imagens_produto).subscribe(bytes => {
+            const reader = new FileReader();
+            reader.onload = () => {
+              imagens.push(reader.result as string)
+            }
+            reader.readAsDataURL(bytes)
+          })
+        })
+        this.data_produto_dto.push({
+          produto: produto,
+          imagens: imagens,
+          quantidade: 0,
+          carrinho_id: 0,
+          carrinho_produto_id: 0,
+          carrinho_total: 0
+        });
+      })
+      console.log(this.data_produto_dto);
+
+      this.data_produto_dto_carousel = this.data_produto_dto;
+    })
+  }
+
 
   trocarAba(data: string) {
     this.abaSelcionada = data;

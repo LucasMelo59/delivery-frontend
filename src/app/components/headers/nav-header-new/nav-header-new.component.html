@@ -7,15 +7,15 @@
               <a  class="menu-trigger" (click)="toggleMenuMobile()"><i class="fa-solid fa-bars"></i></a>
             </div>
             <div class="list-inline">
-              <ul>
+              <!-- <ul>
                 <li><a ><i class="fa-regular fa-user"></i></a></li>
                 <li><a><span class="item-floating">7</span>
                   <i class="fa-regular fa-heart"></i>
                 </a></li>
-              </ul>
+              </ul> -->
             </div>
           </div>
-          <div class="header-center">
+          <div class="header-center" style="margin-right: 20px;">
             <nav class="menu" >
               <div class="list" *ngFor="let item of route; let index" >
                 <div class="list-items" *ngFor="let rotas of item.rotas">
@@ -23,13 +23,13 @@
                 </div>
               </div>
             </nav>
-            <div class="branding"><a routerLink="/home">By Aurora <img width="25px" src="/assets/borboleta-asa-grande.png" alt=""></a></div>
+            <div class="branding"><a style="padding-right: 40px;" routerLink="/home">By Aurora <img width="25px" src="/assets/borboleta-asa-grande.png" alt=""></a></div>
           </div>
           <div class="header-right">
             <div class="list-inline">
               <ul>
-                <li ><a ><i class="fa-solid fa-magnifying-glass"></i></a></li>
-                <li  (click)="toggleMenu()" style="cursor: pointer;" ><a ><span class="item-floating">{{this.quantidade}}</span><i class="fa-solid fa-bag-shopping"></i></a></li>
+                <!-- <li ><a ><i class="fa-solid fa-magnifying-glass"></i></a></li> -->
+                <li  (click)="toggleMenu()" style="cursor: pointer;" ><a><span class="item-floating">{{this.quantidade}}</span><i class="fa-solid fa-bag-shopping"></i></a></li>
               </ul>
             </div>
           </div>

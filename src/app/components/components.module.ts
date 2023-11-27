@@ -59,6 +59,7 @@ register();
     SectionsCardsGuideComponent,
     SectionBlogComponent,
     SectionInstaBlogComponent,
+    SectionsViewsCategoryComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

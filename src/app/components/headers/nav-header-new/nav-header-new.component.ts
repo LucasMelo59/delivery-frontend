@@ -35,21 +35,12 @@ export class NavHeaderNewComponent implements OnInit, OnChanges {
           title: "Products",
           routerLink: "/shop"
         },
-        {
-          title: "Disc",
-          routerLink: "/home"
-        }
       ]
     },
     {
       rotas: [
         {
-          title: "Specials",
-          routerLink: "/home"
-        },
-
-        {
-          title: "Sale",
+          title: "About",
           routerLink: "/shop"
         },
       ]

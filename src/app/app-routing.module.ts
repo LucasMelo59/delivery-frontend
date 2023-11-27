@@ -23,12 +23,16 @@ const routes: Routes = [
  {
   path: 'cart',
   component: CarrinhoUsuarioComponent
- }
+ },
+ {path: '', redirectTo: 'home', pathMatch: 'full'},
+ {path: '**', redirectTo: 'home'}
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    scrollPositionRestoration: 'top'
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

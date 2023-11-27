@@ -1,4 +1,4 @@
-
+<!--
 <div class="products_container  grid" >
     <div  class="product_item" style="cursor: pointer;" (click)="detailsProduct(data_products.produto.nome)" >
 
@@ -8,8 +8,8 @@
 
           <img src="{{data_products.imagens[1]}}" class="product_img hover" alt="">
         </a>
-        <!-- [ngClass]="{ 'size-active': activeTamanho === index }" -->
-         <!-- <div class="produtc_badge light-pink">Hot</div> -->
+         [ngClass]="{ 'size-active': activeTamanho === index }"
+          <div class="produtc_badge light-pink">Hot</div>
       </div>
       <div class="product_content">
           <span class="product_category">{{data_products.produto.categoria}}</span>
@@ -26,10 +26,32 @@
           <span class="old_price">R$ 267.85</span>
         </div>
 
-        <!-- <a href="" class="action_btn cart_btn" aria-label="Add To Cart">
+        <a href="" class="action_btn cart_btn" aria-label="Add To Cart">
           <i class="fa-solid fa-cart-plus"></i>
-        </a> -->
+        </a>
       </div>
+  </div>
+</div> -->
+
+
+<div class="item" style="cursor: pointer;" (click)="detailsProduct(data_products.produto.nome)" >
+  <div class="dot-image">
+    <a  class="product-permalink"></a>
+      <div class="thumbnail header-img">
+        <img src="{{data_products.imagens[0]}}" alt="">
+      </div>
+      <div class="thumbnail hover header-img">
+        <img src="{{data_products.imagens[1]}}" alt="">
+      </div>
+
+    <div class="label"><span> -25%</span></div>
+  </div>
+  <div class="dot-info">
+    <h2 class="dot-title"><a >{{data_products.produto.nome}}</a></h2>
+    <div class="product-price">
+      <span class="before" >${{data_products.produto.preco}}</span>
+      <span class="current" >$45.00</span>
+    </div>
   </div>
 </div>
 
