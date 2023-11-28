@@ -19,11 +19,12 @@ export class SectionsViewsCardsProdutosComponent implements OnInit{
   constructor(private route: Router){}
   ngOnInit(): void {
 
-    
+
   }
   @Input() loading: boolean = false;
   @Input() data_products: Produto_ArquivoDTO[] = []
   @Output() submit_data = new EventEmitter();
+  @Output() submit_perfilProduto = new EventEmitter();
   data_imagens = [];
   activeTab = 1;
   titleTab = "Swipe"
@@ -34,6 +35,10 @@ export class SectionsViewsCardsProdutosComponent implements OnInit{
     this.activeTab = tabActive;
     this.titleTab = data;
     this.showOptions();
+  }
+
+  submitPerfilProduto(data: any) {
+    this.submit_perfilProduto.emit(data)
   }
 
 

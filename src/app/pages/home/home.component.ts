@@ -8,6 +8,7 @@ import { ArquivosService } from 'src/app/service/arquivos.service';
 import { delay, tap } from 'rxjs';
 import { HomeServiceService } from './home-service.service';
 import { CarrinhoDeCompras } from 'src/app/models/entity/CarrinhoDeCompras';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +22,7 @@ export class HomeComponent implements OnInit {
   loading: boolean = true;
   carrinho_de_compras!: CarrinhoDeCompras;
   testando: any[] = [];
-  constructor(private service: PerfilProdutoService, private service_imgs: ArquivosService, private home: HomeServiceService){}
+  constructor(private service: PerfilProdutoService, private service_imgs: ArquivosService, private home: HomeServiceService, private router: Router){}
 
   ngOnInit(): void {
     // this.loading = true;
@@ -92,6 +93,10 @@ export class HomeComponent implements OnInit {
   }
 
 
+  navigationPerfilProd(data: any) {
+    this.router.navigate(['/produtos', data])
+  }
+
    submitFilter(data:any) {
     this.loading = true
     console.log(data);
@@ -135,7 +140,7 @@ export class HomeComponent implements OnInit {
   }
 
   buscarProdutoPorNome(data: any) {
-    
+
   }
 
 

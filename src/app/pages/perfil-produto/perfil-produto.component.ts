@@ -82,7 +82,8 @@ export class PerfilProdutoComponent implements OnInit {
 
   ngOnInit(): void {
 
-    
+    const nomeProduto = this.route.snapshot.paramMap.get('nome')
+    this.buscarProdutoPorNome(nomeProduto)
 
     const thumbImage = new Swiper('.thumbnail-image' , {
       direction: 'vertical',
@@ -120,29 +121,40 @@ export class PerfilProdutoComponent implements OnInit {
 
     this.serviceProduto.getProdutosWithFilter(model)
     .pipe(
-      catchError(() => this.router.navigate(['/home']))
+      catchError(error => {
+        if(error) {
+        this.router.navigate(['/home'])
+        }
+        throw error
+      })
     )
-    .subscribe((Produtos: ProdutoRest[]) => {
+    .subscribe((produtos: ProdutoRest[]) => {
 
-      Produtos.forEach((produto:ProdutoRest) => {
-        this.mainImg = []
-        this.listImagensProduto = []
-        this.produto = produto
+      if(produtos.length > 0 ) {
+        produtos.forEach((produto:ProdutoRest) => {
+          this.mainImg = []
+          this.listImagensProduto = []
+          this.produto = produto
 
-        produto.produto_imgs_id.forEach((imagens_id: any) => {
-          this.serviceArquivo.downlodImagem(imagens_id).subscribe((res: any) => {
+          produto.produto_imgs_id.forEach((imagens_id: any) => {
+            this.serviceArquivo.downlodImagem(imagens_id).subscribe((res: any) => {
 
-              const reader = new FileReader();
-              reader.onload = () => {
-                this.listImagensProduto.push(reader.result as string);
-                this.mainImg = this.listImagensProduto[0];
-              }
-              reader.readAsDataURL(res)
-            })
-        })
+                const reader = new FileReader();
+                reader.onload = () => {
+                  this.listImagensProduto.push(reader.result as string);
+                  this.mainImg = this.listImagensProduto[0];
+                }
+                reader.readAsDataURL(res)
+              })
+          })
 
-      });
-      this.router.navigate(['/produtos', data])
+        });
+        this.router.navigate(['/produtos', data])
+      } else {
+        this.router.navigate(['/home'])
+      }
+
+
     })
   }
 
