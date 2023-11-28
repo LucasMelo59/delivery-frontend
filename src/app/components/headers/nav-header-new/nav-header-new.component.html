@@ -159,7 +159,7 @@
                   </li>
                   <li>
                       <span class="total" >Total </span>
-                      <span class="value" *ngIf="cartList.length > 0; else teste" > $ {{cartList[0].carrinho_total}}</span>
+                      <span class="value" *ngIf="cartList.length > 0; else teste" > $ {{cartList[0].carrinho_total | number: '1.2-2'}}</span>
                       <ng-template #teste>
                         <!-- Conteúdo a ser exibido se 'mostrarElemento' for falso -->
                         <span class="value">0.00</span>
