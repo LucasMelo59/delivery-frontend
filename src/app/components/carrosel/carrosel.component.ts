@@ -1,4 +1,5 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { Subscription, timer } from 'rxjs';
 import { Produto_ArquivoDTO } from 'src/app/models/dto/produto_arquivoDTO';
 import Swiper from 'swiper';
@@ -18,7 +19,14 @@ export class CarroselComponent implements OnInit  {
 
   @Input() produtosList: Produto_ArquivoDTO[] = [];
   @Input() loading: boolean = false;
+  @Output() carregarDadosProduto = new EventEmitter()
+
+
+  constructor(private router: Router) {}
+
   ngOnInit(): void {
+
+
 
     const swiper = new Swiper('.carouselbox', {
       spaceBetween: 30,
@@ -51,6 +59,12 @@ export class CarroselComponent implements OnInit  {
         });
 
   }
+
+
+  carregarDadosProdutos(dado: any) {
+    this.carregarDadosProduto.emit(dado)
+  }
+
 }
 
 

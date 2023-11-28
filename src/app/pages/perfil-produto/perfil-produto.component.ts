@@ -6,6 +6,7 @@ import { ArquivosService } from 'src/app/service/arquivos.service';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import Swiper from 'swiper';
 import { Produto_ArquivoDTO } from 'src/app/models/dto/produto_arquivoDTO';
+import { catchError, pipe } from 'rxjs';
 
 @Component({
   selector: 'app-perfil-produto',
@@ -73,7 +74,7 @@ export class PerfilProdutoComponent implements OnInit {
 
 
 
-  constructor(private serviceProduto: PerfilProdutoService, private serviceArquivo: ArquivosService,  private route: ActivatedRoute){}
+  constructor(private serviceProduto: PerfilProdutoService, private serviceArquivo: ArquivosService,  private route: ActivatedRoute, private router: Router){}
 
 
 
@@ -81,32 +82,7 @@ export class PerfilProdutoComponent implements OnInit {
 
   ngOnInit(): void {
 
-
-    const model = {
-      nome: this.route.snapshot.paramMap.get('nome')
-    }
-
-    this.serviceProduto.getProdutosWithFilter(model).subscribe((Produtos: ProdutoRest[]) => {
-
-      Produtos.forEach((produto:ProdutoRest) => {
-        this.produto = produto
-
-        produto.produto_imgs_id.forEach((imagens_id: any) => {
-          this.serviceArquivo.downlodImagem(imagens_id).subscribe((res: any) => {
-
-              const reader = new FileReader();
-              reader.onload = () => {
-                this.listImagensProduto.push(reader.result as string);
-                this.mainImg = this.listImagensProduto[0];
-              }
-              reader.readAsDataURL(res)
-            })
-        })
-
-      });
-
-    })
-
+    
 
     const thumbImage = new Swiper('.thumbnail-image' , {
       direction: 'vertical',
@@ -135,6 +111,39 @@ export class PerfilProdutoComponent implements OnInit {
   detalhesSelecionados = {
     tamanho: this.tamanhoBlusas[0],
     cor: this.cores[0],
+  }
+
+  buscarProdutoPorNome(data: any) {
+    const model = {
+      nome: data
+    }
+
+    this.serviceProduto.getProdutosWithFilter(model)
+    .pipe(
+      catchError(() => this.router.navigate(['/home']))
+    )
+    .subscribe((Produtos: ProdutoRest[]) => {
+
+      Produtos.forEach((produto:ProdutoRest) => {
+        this.mainImg = []
+        this.listImagensProduto = []
+        this.produto = produto
+
+        produto.produto_imgs_id.forEach((imagens_id: any) => {
+          this.serviceArquivo.downlodImagem(imagens_id).subscribe((res: any) => {
+
+              const reader = new FileReader();
+              reader.onload = () => {
+                this.listImagensProduto.push(reader.result as string);
+                this.mainImg = this.listImagensProduto[0];
+              }
+              reader.readAsDataURL(res)
+            })
+        })
+
+      });
+      this.router.navigate(['/produtos', data])
+    })
   }
 
 

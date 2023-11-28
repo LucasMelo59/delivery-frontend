@@ -250,7 +250,7 @@
         </div>
       </div>
     </div>
-    <app-carrosel [produtosList]="data_produto_dto_carousel" ></app-carrosel>
+    <app-carrosel [produtosList]="data_produto_dto_carousel" (carregarDadosProduto)="buscarProdutoPorNome($event)"></app-carrosel>
   </main>
 </div>
 <!-- <div class="data-popup d-share">

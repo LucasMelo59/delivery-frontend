@@ -27,7 +27,7 @@
                   </div>
                 </div> -->
                 <div class="item swiper-slide" *ngFor="let produto of produtosList" >
-                  <app-card-produto [data_products]="produto" ></app-card-produto>
+                  <app-card-produto [data_products]="produto" (carregaDadosProduto)="carregarDadosProdutos($event)" ></app-card-produto>
                 </div>
               </div>
             </div>

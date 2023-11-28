@@ -134,10 +134,9 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  submitCategoria(model: any) {
-
+  buscarProdutoPorNome(data: any) {
+    
   }
-
 
 
 }
