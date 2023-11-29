@@ -6,4 +6,5 @@ export interface Produto_ArquivoDTO {
   carrinho_id: number;
   carrinho_produto_id: number;
   carrinho_total: number;
+  tamanho?: string;
 }

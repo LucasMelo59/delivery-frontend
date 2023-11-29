@@ -15,7 +15,7 @@ export class NavHeaderNewComponent implements OnInit, OnChanges {
   showMenu: boolean = false;
   @Input() cartList:Produto_ArquivoDTO[] = [];
   @Input() testando:any[] = []
-
+  diferencaDescontoTotal: number = 0.00;
   @Output() atualizarLista = new EventEmitter()
 
 
@@ -119,8 +119,10 @@ export class NavHeaderNewComponent implements OnInit, OnChanges {
           quantidade: y.quantidade,
           carrinho_id: x.id,
           carrinho_produto_id: 0,
-          carrinho_total: x.carTotal
+          carrinho_total: x.carTotal,
+          tamanho: y.tamanho
         })
+        console.log(cartsList);
 
         this.quantidade += y.quantidade
         this.cartList = cartsList
@@ -142,12 +144,13 @@ export class NavHeaderNewComponent implements OnInit, OnChanges {
 
 
   aumentarQuantidade(data: any ,index: any) {
-    const dados:Carrinho_DTO = {
+    const dados = {
       produto_id: data.produto.id,
       quantidade: 1,
       user_id: 1,
       carrinho_de_compras_id: data.carrinho_id,
-      carrinho_produto: 2
+      carrinho_produto: 2,
+      tamanho: data.tamanho
     }
 
     this.service.addProdutoCart(dados).subscribe(x => {
@@ -163,12 +166,13 @@ export class NavHeaderNewComponent implements OnInit, OnChanges {
   diminuirQuantidade(data:any, index: number) {
 
     if(this.cartList[index].quantidade > 1) {
-      const dados:Carrinho_DTO = {
+      const dados = {
         produto_id: data.produto.id,
         quantidade: 1,
         user_id: 1,
         carrinho_de_compras_id: data.carrinho_id,
-        carrinho_produto: 2
+        carrinho_produto: 2,
+        tamanho: data.tamanho
       }
 
       this.service.decrementarProdutoCart(dados).subscribe(x => {
@@ -179,12 +183,13 @@ export class NavHeaderNewComponent implements OnInit, OnChanges {
 
   deletarProduto(data: any, index: number) {
 
-    const dados:Carrinho_DTO = {
+    const dados = {
       produto_id: data.produto.id,
       quantidade: 1,
       user_id: 1,
       carrinho_de_compras_id: data.carrinho_id,
-      carrinho_produto: 2
+      carrinho_produto: 2,
+      tamanho: data.tamanho
     }
 
     if(data) {
@@ -192,6 +197,12 @@ export class NavHeaderNewComponent implements OnInit, OnChanges {
         this.cartList.splice(index, 1)
       })
     }
+  }
+
+  aplicarDesconto() {
+    let quantidadeDesconto = 25;
+    this.diferencaDescontoTotal = this.cartList[0].carrinho_total * (quantidadeDesconto/100)
+    this.cartList[0].carrinho_total -= this.diferencaDescontoTotal
   }
 
 

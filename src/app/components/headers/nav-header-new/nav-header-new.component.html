@@ -110,8 +110,8 @@
                           <span>Tosca</span>
                         </div>
                         <div class="size grey-color">
-                          <span>Size:</span>
-                          <span>L</span>
+                          <span>Size: </span>
+                          <span>{{item.tamanho}}</span>
                         </div>
                         <div class="price">{{item.produto.preco}}</div>
                         <a  class="item-remove" (click)="deletarProduto(item, i)" >
@@ -125,9 +125,9 @@
             </div>
             <div class="cart-footer">
               <div class="discount">
-                <form action="">
+                <form >
                   <input type="text" class="input" placeholder="Cupom">
-                  <input type="submit" class="submit" value="Apply">
+                  <input type="submit" (click)="aplicarDesconto()" class="submit" value="Apply">
                 </form>
               </div>
               <div class="math-pricing">
@@ -155,7 +155,7 @@
                   </ul> -->
                   <li>
                     <span>Promo discount</span>
-                    <span class="value">- .$0. 00</span>
+                    <span class="value">- .$ {{diferencaDescontoTotal | number: '1.2-2'}}</span>
                   </li>
                   <li>
                       <span class="total" >Total </span>

@@ -165,6 +165,8 @@ export class PerfilProdutoComponent implements OnInit {
       console.log(x);
 
       x.carrinho_produto.forEach((y: any) => {
+        console.log(y);
+
         let imagem: any[] = []
         y.produto.produto_imgs.forEach((xy: any) => {
           if(xy) {
@@ -183,11 +185,12 @@ export class PerfilProdutoComponent implements OnInit {
           quantidade: y.quantidade,
           carrinho_id: x.id,
           carrinho_produto_id: 0,
-          carrinho_total: x.carTotal
+          carrinho_total: x.carTotal,
+          tamanho: y.tamanho
         })
 
         this.quantidadeCart += y.quantidade
-        console.log(this.quantidade);
+        console.log(this.cartsList);
       })
 
     })
@@ -276,8 +279,12 @@ export class PerfilProdutoComponent implements OnInit {
       quantidade: this.quantidade,
       carrinho_de_compras_id: 4,
       produto_id: this.produto.id,
+      tamanho: this.detalhesSelecionados.tamanho.tamanho
     }
+
     this.serviceArquivo.addProdutoCart(detalhes_produto).subscribe(x => {
+      console.log(x);
+
       this.quantidadeCart += 1
     })
 
